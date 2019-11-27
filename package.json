@@ -27,5 +27,17 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "This is our 2019 Fall semester exam in which we have to create an onboarding site for a gambling website.\r The site will contain a game, a form and a list.\r The project will be written in REACT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ourangelofsorrows/fall2019_exam.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ourangelofsorrows/fall2019_exam/issues"
+  },
+  "homepage": "https://github.com/ourangelofsorrows/fall2019_exam#readme"
 }
