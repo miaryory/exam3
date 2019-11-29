@@ -1,21 +1,46 @@
 import React from "react";
 
-const name = "Angel";
-
-function RandomNum() {
-  return Math.floor(Math.random() * 5) + 1;
+function FindEmoji() {
+  function RandomNum() {
+    return Math.floor(Math.random() * 5) + 1;
+  }
+  const number = RandomNum();
+  const emoji = `./temp_assets/${number}.png`;
+  return emoji;
 }
-const number = RandomNum();
 
-const emoji = `./temp_assets/${number}.png`;
+let emoji1 = FindEmoji();
+let emoji2 = FindEmoji();
+let emoji3 = FindEmoji();
+let gamestatus = "nothing";
+
+function CheckForWin() {
+
+  console.log(emoji1, emoji2, emoji3);
+  if (emoji1 === emoji2 && emoji2 === emoji3) {
+    gamestatus = "win";
+    console.log(gamestatus);
+    return gamestatus;
+  } else {
+    gamestatus = "lose";
+    console.log(gamestatus);
+    return gamestatus;
+  }
+}
+
+
+CheckForWin();
+
+//*click spin > run game code to find new emojis and display them > then 
+
 export default function Gameplace() {
   return (
     <div>
       <p>This is where the game goes</p>
-      <p>
-        my name is {name}, and i have {number} cats
-      </p>
-      <img src={require(`${emoji}`)} alt="random emoji"></img>
+      <img src={require(`${emoji1}`)} alt="random emoji"></img>
+      <img src={require(`${emoji2}`)} alt="random emoji"></img>
+      <img src={require(`${emoji3}`)} alt="random emoji"></img>
+      <button>Spin</button>
     </div>
   );
 }
