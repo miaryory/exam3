@@ -1,0 +1,93 @@
+[{
+        "date": "23 November",
+        "winners7": {
+            "number": 1,
+            "price": "6.000.000"
+        },
+        "winners6t": {
+            "number": 6,
+            "price": "100.044"
+        },
+        "winners6": {
+            "number": 6,
+            "price": "100.044"
+        },
+        "winners5": {
+            "number": 7348,
+            "price": "96"
+        },
+        "winners4": {
+            "number": 107601,
+            "price": "50"
+        }
+    },
+    {
+        "date": "16 November",
+        "winners7": {
+            "number": 1,
+            "price": "10.000.000"
+        },
+        "winners6t": {
+            "number": 7,
+            "price": "95.697"
+        },
+        "winners6": {
+            "number": 116,
+            "price": "2.916"
+        },
+        "winners5": {
+            "number": 6217,
+            "price": "126"
+        },
+        "winners4": {
+            "number": 97000,
+            "price": "50"
+        }
+    },
+    {
+        "date": "09 November",
+        "winners7": {
+            "number": 0,
+            "price": "0"
+        },
+        "winners6t": {
+            "number": 9,
+            "price": "65.967"
+        },
+        "winners6": {
+            "number": 208,
+            "price": "1.456"
+        },
+        "winners5": {
+            "number": 7975,
+            "price": "87"
+        },
+        "winners4": {
+            "number": 115030,
+            "price": "50"
+        }
+    },
+    {
+        "date": "02 November",
+        "winners7": {
+            "number": 2,
+            "price": "3.000.000"
+        },
+        "winners6t": {
+            "number": 1,
+            "price": "639.554"
+        },
+        "winners6": {
+            "number": 130,
+            "price": "2.489"
+        },
+        "winners5": {
+            "number": 6580,
+            "price": "114"
+        },
+        "winners4": {
+            "number": 105490,
+            "price": "50"
+        }
+    }
+]
