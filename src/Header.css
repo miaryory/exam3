@@ -1,6 +1,6 @@
 /* ////////// HEADER /////////// */
 header {
-    background-color: #333;
+    background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -17,33 +17,33 @@ nav {
     grid-column: 2/3;
 }
 
-ul {
+nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
 }
 
-li {
+nav ul li {
     float: left;
     border-right: 1px solid #bbb;
 }
 
-li a {
+nav li a {
     display: block;
-    color: white;
+    color: black;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
 
-li a:hover {
-    background-color: #111;
+nav li a:hover {
+    color: #DF7B2A;
     text-decoration: underline;
-    transition: all 1.5s;
+    transition: all .5s;
 }
 
-li:last-child {
+nav li:last-child {
     float: right;
     border-right: none;
 }
