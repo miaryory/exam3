@@ -1,4 +1,26 @@
 import React from "react";
+import "./Game.css";
+
+const default_emoji1 = `./temp_assets/wot.png`;
+const default_emoji2 = `./temp_assets/wot.png`;
+const default_emoji3 = `./temp_assets/wot.png`;
+const default_gamestatus = "nothing";
+
+function rungame() {
+  let emoji1 = FindEmoji();
+  let emoji2 = FindEmoji();
+  let emoji3 = FindEmoji();
+  let gamestatus = CheckForWin(emoji1, emoji2, emoji3);
+  console.log(gamestatus);
+
+  return {
+    emoji1: emoji1,
+    emoji2: emoji2,
+    emoji3: emoji3,
+    gamestatus: gamestatus
+  }
+
+}
 
 function FindEmoji() {
   function RandomNum() {
@@ -9,38 +31,53 @@ function FindEmoji() {
   return emoji;
 }
 
-let emoji1 = FindEmoji();
-let emoji2 = FindEmoji();
-let emoji3 = FindEmoji();
-let gamestatus = "nothing";
+function CheckForWin(emoji1, emoji2, emoji3) {
+  console.log(emoji1, emoji2, emoji3)
+  let gamestatus = default_gamestatus;
 
-function CheckForWin() {
-
-  console.log(emoji1, emoji2, emoji3);
   if (emoji1 === emoji2 && emoji2 === emoji3) {
     gamestatus = "win";
-    console.log(gamestatus);
-    return gamestatus;
   } else {
     gamestatus = "lose";
-    console.log(gamestatus);
-    return gamestatus;
   }
+  return gamestatus;
 }
 
 
-CheckForWin();
 
-//*click spin > run game code to find new emojis and display them > then 
+export default class Gameplace extends React.Component {
+  ///read react docs about this part - got that from there thanks to idw :)))
+  constructor(props) {
+    super(props);
+    this.state = {
+      emoji1: default_emoji1,
+      emoji2: default_emoji2,
+      emoji3: default_emoji3,
+      gamestatus: default_gamestatus
+    };
+    this.spin = this.spin.bind(this); //this is a boilerplate for ES6 because of  a quirk thank u idw :)))
+  }
 
-export default function Gameplace() {
-  return (
-    <div>
-      <p>This is where the game goes</p>
-      <img src={require(`${emoji1}`)} alt="random emoji"></img>
-      <img src={require(`${emoji2}`)} alt="random emoji"></img>
-      <img src={require(`${emoji3}`)} alt="random emoji"></img>
-      <button>Spin</button>
-    </div>
-  );
+
+
+  //spin! it spin!!!
+  spin() {
+    this.setState(rungame());
+  }
+
+  render() {
+    return (
+      <div id="fullGame" >
+        <div id="mainRow">
+          <p>Click "Spin" to start</p>
+          <img src={require(`${this.state.emoji1}`)} alt="random emoji" className="oneEmoji"></img>
+          <img src={require(`${this.state.emoji2}`)} alt="random emoji" className="oneEmoji"></img>
+          <img src={require(`${this.state.emoji3}`)} alt="random emoji" className="oneEmoji"></img>
+          <p>you {this.state.gamestatus} !</p>
+        </div>
+        <button onClick={this.spin}>Spin</button>
+      </div>
+
+    );
+  }
 }
