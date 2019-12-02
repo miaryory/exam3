@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import "./Header.css";
 import logo from "./temp_assets/logo.png";
 import Modal from "react-bootstrap/Modal";
@@ -36,8 +35,11 @@ export default function Header() {
 
       <Modal show={show} onHide={handleClose} animation={false}>
         <Modal.Header closeButton></Modal.Header>
-        <Modal.Body>Form here!{Login}</Modal.Body>
+        <Modal.Body>
+          Form here! <Login />
+        </Modal.Body>
         <Modal.Footer>
+          <p>Create account</p>
           <Button variant="primary" onClick={handleClose}>
             OK
           </Button>

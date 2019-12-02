@@ -3,7 +3,6 @@ import "./App.css";
 import Header from "./Header";
 import Footer from "./Footer";
 import Banner from "./Banner";
-import Login from "./Login";
 import SlotMachine from "./SlotMachine";
 import BuyRows from "./BuyRows";
 import FourOptions from "./FourOptions";
@@ -30,7 +29,6 @@ function MainSite() {
     <div className="FullSite">
       <Header />
       <Banner />
-      <Login />
       <SlotMachine />
       <BuyRows />
       <FourOptions />
