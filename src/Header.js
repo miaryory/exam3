@@ -1,50 +1,87 @@
 import React from "react";
+import ReactDOM from "react-dom";
+import Modal from "react-modal";
 import "./Header.css";
-import logo from "./temp_assets/logo.png";
-import Modal from "react-bootstrap/Modal";
 import Login from "./Login";
-import { Button } from "react-bootstrap";
+import logo from "./temp_assets/logo.png";
+
+Modal.setAppElement("body");
+
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)"
+  }
+};
 
 export default function Header() {
-  const [show, setShow] = React.useState(false);
+  var subtitle;
+  var closeB;
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+  function openModal() {
+    setIsOpen(true);
+  }
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  function afterOpenModal() {
+    // Add style here
+    subtitle.style.color = "rgba(0, 0, 0, 0.8);";
+    closeB.style.color = "#aaa";
+    closeB.style.backgroundColor = "white";
+    closeB.style.float = "right";
+    closeB.style.fontSize = "30px";
+    closeB.style.fontWeight = "700";
+    closeB.style.marginRight = "-6px";
+    closeB.style.marginTop = "-69px";
+    closeB.style.border = "none";
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
 
   return (
-    <header>
-      <img id="logoImg" src={logo}></img>
-      <nav id="desktop-nav">
-        <ul>
-          <li>
-            <a href="#home">Section1</a>
-          </li>
-          <li>
-            <a href="#news">Section2</a>
-          </li>
-          <li>
-            <a href="#contact">Section3</a>
-          </li>
-          <li>
-            <a onClick={handleShow} href="#about">
-              Log in
-            </a>
-          </li>
-        </ul>
-      </nav>
-
-      <Modal show={show} onHide={handleClose} animation={false}>
-        <Modal.Header closeButton></Modal.Header>
-        <Modal.Body>
-          Form here! <Login />
-        </Modal.Body>
-        <Modal.Footer>
-          <p>Create account</p>
-          <Button variant="primary" onClick={handleClose}>
-            OK
-          </Button>
-        </Modal.Footer>
+    <div>
+      <header id="header">
+        <img id="logoImg" src={logo}></img>
+        <nav id="desktop-nav">
+          <ul>
+            <li>
+              <a href="#home">Section1</a>
+            </li>
+            <li>
+              <a href="#news">Section2</a>
+            </li>
+            <li>
+              <a href="#contact">Section3</a>
+            </li>
+            <li>
+              <a onClick={openModal} href="#about">
+                Log in
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      {/* <button onClick={openModal}>Open Modal</button> */}
+      <Modal
+        isOpen={modalIsOpen}
+        onAfterOpen={afterOpenModal}
+        onRequestClose={closeModal}
+        style={customStyles}
+        contentLabel="Modal LogIn"
+      >
+        <h2 ref={_subtitle => (subtitle = _subtitle)}>Hello</h2>
+        <button ref={_closeB => (closeB = _closeB)} onClick={closeModal}>
+          &times;
+        </button>
+        <div>
+          <Login />
+        </div>
       </Modal>
-    </header>
+    </div>
   );
 }
