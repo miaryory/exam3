@@ -14,13 +14,17 @@ const customStyles = {
     right: "auto",
     bottom: "auto",
     marginRight: "-50%",
-    transform: "translate(-50%, -50%)"
+    transform: "translate(-50%, -50%)",
+    // height: "50%",
+    // width: "40%",
+    // paddingTop: "80px"
+    padding: "80px 50px 20px"
   }
 };
 
 export default function Header() {
-  var subtitle;
-  var closeB;
+  // var subtitle;
+  var close;
   const [modalIsOpen, setIsOpen] = React.useState(false);
   function openModal() {
     setIsOpen(true);
@@ -28,15 +32,14 @@ export default function Header() {
 
   function afterOpenModal() {
     // Add style here
-    subtitle.style.color = "rgba(0, 0, 0, 0.8);";
-    closeB.style.color = "#aaa";
-    closeB.style.backgroundColor = "white";
-    closeB.style.float = "right";
-    closeB.style.fontSize = "30px";
-    closeB.style.fontWeight = "700";
-    closeB.style.marginRight = "-6px";
-    closeB.style.marginTop = "-69px";
-    closeB.style.border = "none";
+    close.style.color = "#aaa";
+    close.style.backgroundColor = "white";
+    close.style.float = "right";
+    close.style.fontSize = "30px";
+    close.style.fontWeight = "700";
+    close.style.marginRight = "-6px";
+    close.style.marginTop = "-69px";
+    close.style.border = "none";
   }
 
   function closeModal() {
@@ -74,8 +77,8 @@ export default function Header() {
         style={customStyles}
         contentLabel="Modal LogIn"
       >
-        <h2 ref={_subtitle => (subtitle = _subtitle)}>Hello</h2>
-        <button ref={_closeB => (closeB = _closeB)} onClick={closeModal}>
+        {/* <h2 ref={_subtitle => (subtitle = _subtitle)}>Hello</h2> */}
+        <button ref={_close => (close = _close)} onClick={closeModal}>
           &times;
         </button>
         <div>
