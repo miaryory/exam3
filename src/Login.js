@@ -14,20 +14,16 @@ class Login extends Component {
   };
 
   handleSubmit(event) {
-    alert(
-      "A username was submitted: " +
-        this.state.username +
-        " ." +
-        "A password was submitted:" +
-        this.state.password +
-        " ."
+    console.log(
+      "username: " + this.state.username + " password: " + this.state.password
     );
+
     event.preventDefault();
   }
 
   render() {
     return (
-      <form className="form-login" onSubmit={this.handleSubmit}>
+      <form className="form-login" onSubmit={this.handleSubmit} noValidate>
         <label className="form-login-label-username" htmlFor="username">
           Username:
         </label>
@@ -35,6 +31,7 @@ class Login extends Component {
           className="form-login-input-username"
           type="text"
           name="username"
+          required
           value={this.state.username}
           onChange={this.handleChange}
         />
@@ -46,6 +43,7 @@ class Login extends Component {
           className="form-login-input-password"
           type="password"
           name="password"
+          required
           value={this.state.password}
           onChange={this.handleChange}
         />

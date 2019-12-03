@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import Modal from "react-modal";
 import "./Header.css";
 import Login from "./Login";
@@ -15,9 +14,6 @@ const customStyles = {
     bottom: "auto",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
-    // height: "50%",
-    // width: "40%",
-    // paddingTop: "80px"
     padding: "80px 50px 20px"
   }
 };
@@ -48,7 +44,7 @@ export default function Header() {
 
   return (
     <div>
-      <header id="header">
+      <header>
         <img id="logoImg" src={logo}></img>
         <nav id="desktop-nav">
           <ul>
