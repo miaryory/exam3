@@ -58,6 +58,19 @@ import useForm from "react-hook-form";
 export default function Login() {
   const { register, errors, handleSubmit } = useForm({ mode: "onChange" });
   const onSubmit = data => {
+    const data = JSON.stringify(data);
+    // fetch("https://kea3rdsemester-91fd.restdb.io/rest/subscribers", {
+    //   method: "post",
+    //   headers: {
+    //     "Content-Type": "application/json; charset=utf-8",
+    //     "x-apikey": "5d887df9fd86cb75861e2626",
+    //     "cache-control": "no-cache"
+    //   },
+    //   body: data
+    // })
+    //   .then(res => res.json())
+    //   .then(console.log(data));
+
     console.log(data);
   };
 
@@ -72,7 +85,7 @@ export default function Login() {
             required: "This is a required",
             minLength: {
               value: 3,
-              message: "Username must have more then 5 characters!"
+              message: "Username must have more then 3 characters!"
             },
             maxLength: {
               value: 10,
