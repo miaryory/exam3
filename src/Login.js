@@ -72,11 +72,11 @@ export default function Login() {
             required: "This is a required",
             minLength: {
               value: 3,
-              message: "Min length is 3"
+              message: "Username must have more then 5 characters!"
             },
             maxLength: {
               value: 10,
-              message: "Max length is 10"
+              message: "Username must have no more then 10 characters!"
             }
           })}
         />
