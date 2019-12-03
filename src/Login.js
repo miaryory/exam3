@@ -58,7 +58,7 @@ import useForm from "react-hook-form";
 export default function Login() {
   const { register, errors, handleSubmit } = useForm({ mode: "onChange" });
   const onSubmit = data => {
-    const data = JSON.stringify(data);
+    // const postData = JSON.stringify(data);
     // fetch("https://kea3rdsemester-91fd.restdb.io/rest/subscribers", {
     //   method: "post",
     //   headers: {
@@ -66,7 +66,7 @@ export default function Login() {
     //     "x-apikey": "5d887df9fd86cb75861e2626",
     //     "cache-control": "no-cache"
     //   },
-    //   body: data
+    //   body: postData
     // })
     //   .then(res => res.json())
     //   .then(console.log(data));
