@@ -14,7 +14,8 @@ const customStyles = {
     bottom: "auto",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
-    padding: "80px 50px 20px"
+    // padding: "80px 50px 20px"
+    padding: "10px 50px 20px"
   }
 };
 
@@ -33,8 +34,8 @@ export default function Header() {
     close.style.float = "right";
     close.style.fontSize = "30px";
     close.style.fontWeight = "700";
-    close.style.marginRight = "-6px";
-    close.style.marginTop = "-69px";
+    close.style.marginRight = "-32px";
+    close.style.marginTop = "-10px";
     close.style.border = "none";
   }
 
