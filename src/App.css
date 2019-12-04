@@ -53,8 +53,10 @@
 }
 
 .FullSite {
-    background-color: green;
+    background-color: #004B32;
 }
+
+
 
 
 /* ///////// LOGIN STYLE ////////////// */
@@ -81,13 +83,12 @@
 
 .form-login-container input {
     display: block;
-    box-sizing: border-box;
     width: 100%;
     border-radius: 4px;
-    border: 1px solid black;
+    border: 0.3px solid black;
     padding: 10px 15px;
     margin-bottom: 10px;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .form-login-container label {
@@ -102,17 +103,21 @@
 }
 
 
-.form-login-submit {
+.form-login-container .form-login-submit {
     background-color: #4CAF50;
     color: white;
     text-transform: uppercase;
     border: none;
-    margin-top: 40px;
-    padding: 12px;
-    font-size: 16px;
+    margin-top: 30px;
+    padding: 7px;
+    font-size: 12px;
     font-weight: 100;
-    letter-spacing: 10px;
+    letter-spacing: 6px;
     cursor: pointer;
+    width: 70%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
@@ -191,11 +196,12 @@
     color: white;
     text-transform: uppercase;
     border: none;
-    margin-top: 40px;
-    padding: 15px;
-    font-size: 16px;
+    margin-top: 30px;
+    padding: 8px;
+    font-size: 10px;
     font-weight: 100;
-    letter-spacing: 10px;
+    letter-spacing: 6px;
+    border-radius: 5px;
     display: block;
 }
 
@@ -223,7 +229,47 @@ input:disabled {
     display: block;
 }
 
+.acount-container input {
+    display: block;
+}
+
 
 svg {
-    width: 30px;
+    width: 25px;
+    margin-top: -10px;
+}
+
+
+.phone {
+    width: 220px;
+}
+
+/* .acount-checkbox {
+    display: block;
+}
+
+.label-checkbox {
+    display: inline;
+} */
+
+
+/* The container */
+.label-checkbox {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    font-size: 12px;
+    margin-top: 15px;
+
+}
+
+.label-checkbox input {
+    position: absolute;
+    opacity: 1;
+    cursor: pointer;
+    height: 15px;
+    width: 13px;
+    left: 11px;
+    top: 3px;
 }

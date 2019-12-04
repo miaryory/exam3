@@ -66,6 +66,7 @@ export default function BtnForm() {
         {errors.email && <p>{errors.email.message}</p>}
         <label htmlFor="phone">Phone number</label>
         <PhoneInput
+          className="phone"
           name="phone"
           placeholder="Enter phone number"
           // value={this.state.value}
@@ -113,7 +114,41 @@ export default function BtnForm() {
           })}
         />
         {errors.password && <p>{errors.password.message}</p>}
-        <input className="form-acount-submit" type="submit" />
+
+        {/* <input
+          className="acount-checkbox"
+          name="checkbox"
+          type="checkbox"
+          placeholder="By clicking Sign Up, you agree to our Terms and that you have read our Data Use Policy.Subscribe to Newsletter. 18+"
+          name="Subscribe to Newsletter"
+          id="customCheck1"
+          ref={register({
+            required: "This is required"
+          })}
+        />
+        <label htmlFor="checkbox" className="label-checkbox">
+          By clicking Sign Up, you agree to our Terms and that you have read our
+          Data Use Policy. Subscribe to Newsletter. 18+
+        </label>
+        {errors.checkbox && <p>{errors.checkbox.message}</p>} */}
+
+        <label htmlFor="checkboxV" className="label-checkbox">
+          By clicking Sign Up, you agree to our Terms and that you have read our
+          Data Use Policy. Subscribe to Newsletter. 18+
+          <input
+            className="acount-checkbox"
+            name="checkboxV"
+            type="checkbox"
+            placeholder="By clicking Sign Up, you agree to our Terms and that you have read our Data Use Policy.Subscribe to Newsletter. 18+"
+            name="Subscribe to Newsletter"
+            ref={register({
+              required: "This is required"
+            })}
+          />
+        </label>
+        {errors.checkboxV && <p>{errors.checkboxV.message}</p>}
+
+        <input className="form-acount-submit" type="Submit" value="Sing up" />
       </form>
     </div>
   );

@@ -111,6 +111,7 @@ export default function Login() {
         {errors.passwordL && <p>{errors.passwordL.message}</p>}
 
         <input className="form-login-submit" type="submit" />
+        <h6>Create acount</h6>
       </form>
     </div>
   );
