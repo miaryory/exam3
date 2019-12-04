@@ -45,8 +45,19 @@
     cursor: pointer;
 } */
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-rendering: optimizeLegibility;
+}
+
+.FullSite {
+    background-color: green;
+}
 
 
+/* ///////// LOGIN STYLE ////////////// */
 .login-container {
     max-width: 600px;
     margin: 0 auto;
@@ -123,4 +134,96 @@
 
 .form-login-container input:disabled {
     opacity: 0.4;
+}
+
+
+
+/* ///////// CREATE ACOUNT STYLE ////////////// */
+.acount-container {
+    max-width: 600px;
+    margin: 0 auto;
+
+}
+
+.form-acount-container {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #0e101c;
+    color: white;
+
+}
+
+.form-acount-container p {
+    color: #bf1650;
+}
+
+.form-acount-container p::before {
+    display: inline;
+    content: "⚠ ";
+}
+
+
+.form-acount-submit input {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid white;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    background-color: red;
+}
+
+.form-acount-submit label {
+    line-height: 2;
+    text-align: left;
+    display: block;
+    margin-bottom: 13px;
+    margin-top: 20px;
+    color: white;
+    font-size: 14px;
+    font-weight: 200;
+}
+
+.form-acount-submit {
+    background: green;
+    color: white;
+    text-transform: uppercase;
+    border: none;
+    margin-top: 40px;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 100;
+    letter-spacing: 10px;
+    display: block;
+}
+
+.form-acount-submit:hover {
+    background: green;
+}
+
+.form-acount-submit {
+    transition: 0.3s all;
+    transform: translateY(3px);
+    border: 1px solid transparent;
+    opacity: 0.8;
+}
+
+input:disabled {
+    opacity: 0.4;
+}
+
+
+.form-acount-submit {
+    -webkit-appearance: none;
+}
+
+.acount-container label {
+    display: block;
+}
+
+
+svg {
+    width: 30px;
 }

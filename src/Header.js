@@ -78,6 +78,7 @@ export default function Header() {
         <button ref={_close => (close = _close)} onClick={closeModal}>
           &times;
         </button>
+
         <div>
           <Login />
         </div>

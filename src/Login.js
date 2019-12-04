@@ -77,9 +77,9 @@ export default function Login() {
   return (
     <div className="login-container">
       <form className="form-login-container" onSubmit={handleSubmit(onSubmit)}>
-        <label htmlFor="username">Username</label>
+        <label htmlFor="usernameL">Username</label>
         <input
-          name="username"
+          name="usernameL"
           placeholder="Username"
           ref={register({
             required: "This is a required",
@@ -93,11 +93,11 @@ export default function Login() {
             }
           })}
         />
-        {errors.username && <p>{errors.username.message}</p>}
+        {errors.usernameL && <p>{errors.usernameL.message}</p>}
 
-        <label htmlFor="password">Password</label>
+        <label htmlFor="passwordL">Password</label>
         <input
-          name="password"
+          name="passwordL"
           placeholder="password"
           ref={register({
             required: "This is required",
@@ -108,7 +108,7 @@ export default function Login() {
             }
           })}
         />
-        {errors.password && <p>{errors.password.message}</p>}
+        {errors.passwordL && <p>{errors.passwordL.message}</p>}
 
         <input className="form-login-submit" type="submit" />
       </form>
