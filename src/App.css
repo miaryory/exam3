@@ -1,3 +1,8 @@
+:root {
+    --green: #004B32;
+    --orange: #DF7B2A;
+}
+
 /* .form-login {
     text-align: center;
     display: grid;
@@ -273,4 +278,42 @@ svg {
     width: 13px;
     left: 11px;
     top: 3px;
+}
+
+/*PAT WINNERS STYLING*/
+.winners-section {
+    height: 100vh;
+    background-color: white;
+    padding-top: 10vh;
+    text-align: center;
+}
+
+.dropdwon-select {
+    background-color: var(--orange);
+    color: white;
+    padding: 1rem;
+    width: 25vw;
+    display: block;
+    margin: auto;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 10vh;
+}
+
+.winning-numbers {
+    height: 20vh;
+    padding-top: 5vh;
+}
+
+.winning-numbers p {
+    color: white;
+    font-size: 1.2rem;
+    padding: 15px;
+    display: inline-block;
+    background-color: var(--orange);
+    border-radius: 100%;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    margin-left: 2vw;
 }
