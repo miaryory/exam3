@@ -78,7 +78,7 @@ export default function BtnForm() {
         <label htmlFor="zip">Zip code</label>
         <input
           name="zip"
-          placeholder="1111"
+          placeholder="Post number"
           type="tel"
           ref={register({
             required: "This is required",
