@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import "./App.css";
 import useForm from "react-hook-form";
-// import PhoneInput from "react-phone-number-input";
+import Phone from "./Phone";
 
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 
 export default function BtnForm() {
   const { register, errors, handleSubmit } = useForm({ mode: "onChange" });
-  // const [value, setValue] = onChange();
   const onSubmit = data => {
     console.log(data);
   };
@@ -65,7 +64,9 @@ export default function BtnForm() {
         />
         {errors.email && <p>{errors.email.message}</p>}
         <label htmlFor="phone">Phone number</label>
-        <PhoneInput
+        <Phone />
+
+        {/* <PhoneInput
           className="phone"
           name="phone"
           placeholder="Enter phone number"
@@ -75,7 +76,7 @@ export default function BtnForm() {
             required: "This is required"
           })}
         />
-        {errors.phone && <p>{errors.phone.message}</p>}
+        {errors.phone && <p>{errors.phone.message}</p>} */}
 
         <label htmlFor="zip">Zip code</label>
         <input
@@ -148,7 +149,7 @@ export default function BtnForm() {
         </label>
         {errors.checkboxV && <p>{errors.checkboxV.message}</p>}
 
-        <input className="form-acount-submit" type="Submit" value="Sing up" />
+        <input className="form-acount-submit" type="Submit" />
       </form>
     </div>
   );
