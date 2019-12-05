@@ -1,5 +1,4 @@
 import React from "react";
-import "./Week.css";
 
 export default function WinningNumbers(props) {
   return (

@@ -1,0 +1,126 @@
+.winners-section {
+    height: 100vh;
+    background-color: white;
+    padding-top: 5vh;
+    text-align: center;
+}
+
+.dropdwon-select {
+    background-color: var(--orange);
+    color: white;
+    padding: 1rem;
+    width: 80vw;
+    display: block;
+    margin: auto;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 3vh;
+}
+
+.winning-numbers {
+    height: 10vh;
+    padding-top: 3vh;
+}
+
+.winning-numbers p {
+    color: white;
+    font-size: 1.2rem;
+    padding: 5px;
+    display: inline-block;
+    background-color: var(--orange);
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    margin-left: 2vw;
+}
+
+table {
+    border-collapse: collapse;
+    width: 90%;
+    margin: auto;
+    color: black;
+    font-size: 0.9rem;
+    margin-top: 7vh;
+    /* border-radius: 10px;
+    overflow: hidden; */
+}
+
+td,
+th {
+    border: 1.5px solid rgb(190, 190, 190);
+    text-align: center;
+    padding: 0.8rem;
+}
+
+/* DF7B2A */
+thead {
+    background-color: #004B32;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: rgb(231, 231, 231);
+}
+
+td.col-one {
+    font-weight: bold;
+}
+
+@media all and (min-width: 500px) {
+    .dropdwon-select {
+        width: 60vw;
+        margin-bottom: 10vh;
+    }
+
+    table {
+        width: 70%;
+    }
+
+}
+
+@media all and (min-width: 700px) {
+    .dropdwon-select {
+        width: 50vw;
+    }
+
+    table {
+        width: 50%;
+    }
+
+    .winning-numbers p {
+        padding: 10px;
+        width: 50px;
+        height: 50px;
+    }
+
+}
+
+
+@media all and (min-width: 1000px) {
+    table {
+        width: 50%;
+        margin-top: 3vh;
+    }
+
+    .winners-section {
+        padding-top: 10vh;
+    }
+
+    .dropdwon-select {
+        width: 40vw;
+        margin-bottom: 10vh;
+    }
+
+    .winning-numbers {
+        height: 20vh;
+        padding-top: 5vh;
+    }
+
+    .winning-numbers p {
+        padding: 15px;
+        width: 60px;
+        height: 60px;
+        margin-left: 2vw;
+    }
+}

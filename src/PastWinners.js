@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Week from "./WeekStatistics/Week";
+import "./PastWinners.css";
 
 class PastWinners extends Component {
   constructor(props) {

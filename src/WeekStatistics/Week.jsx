@@ -1,6 +1,5 @@
 import React from "react";
 import Row from "./Row";
-import "./Week.css";
 import WinningNumbers from "./WinningNumbers";
 
 export default function Sorted(props) {
