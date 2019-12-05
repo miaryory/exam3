@@ -1,11 +1,11 @@
 import React from "react";
 import "./Footer.css";
-import BtnForm from "./BtnForm";
+import CreateAcount from "./CreateAcount";
 
 export default function Footer() {
   return (
     <>
-      <BtnForm />
+      <CreateAcount />
       <footer>
         <div id="col1">
           <h3>Title here</h3>

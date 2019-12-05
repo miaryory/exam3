@@ -3,9 +3,6 @@ import "./App.css";
 import useForm from "react-hook-form";
 import Phone from "./Phone";
 
-import "react-phone-number-input/style.css";
-import PhoneInput from "react-phone-number-input";
-
 export default function BtnForm() {
   const { register, errors, handleSubmit } = useForm({ mode: "onChange" });
   const onSubmit = data => {
