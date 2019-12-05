@@ -1,10 +1,9 @@
 import React from "react";
-import Table from "react-bootstrap/Table";
 import Row from "./Row";
 
 export default function Sorted(props) {
   return (
-    <Table striped bordered hover>
+    <table>
       <thead>
         <tr>
           <th>Antal rigtige </th>
@@ -20,6 +19,6 @@ export default function Sorted(props) {
           return null;
         })}
       </tbody>
-    </Table>
+    </table>
   );
 }

@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import DropdownButton from "react-bootstrap/DropdownButton";
-import Dropdown from "react-bootstrap/Dropdown";
 import Week from "./WeekStatistics/Week";
 
 class PastWinners extends Component {
@@ -10,27 +8,19 @@ class PastWinners extends Component {
   }
 
   handleClick = e => {
-    this.setState({ week: e.target.dataset.week });
+    this.setState({ week: e.target.value });
   };
 
   render() {
     const { week } = this.state;
     return (
       <>
-        <DropdownButton id="dropdown-basic-button" title="Weekly statistics">
-          <Dropdown.Item onClick={this.handleClick} data-week="23 November">
-            23 November
-          </Dropdown.Item>
-          <Dropdown.Item onClick={this.handleClick} data-week="16 November">
-            16 November
-          </Dropdown.Item>
-          <Dropdown.Item onClick={this.handleClick} data-week="09 November">
-            09 November
-          </Dropdown.Item>
-          <Dropdown.Item onClick={this.handleClick} data-week="02 November">
-            02 November
-          </Dropdown.Item>
-        </DropdownButton>
+        <select onClick={this.handleClick}>
+          <option value="23 November">23 November</option>
+          <option value="16 November">16 November</option>
+          <option value="09 November">09 November</option>
+          <option value="02 November">02 November</option>
+        </select>
 
         <Week date={week} winners={this.props.winners} />
       </>
