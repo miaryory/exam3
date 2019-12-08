@@ -75,7 +75,11 @@ export default function Header() {
         contentLabel="Modal LogIn"
       >
         {/* <h2 ref={_subtitle => (subtitle = _subtitle)}>Hello</h2> */}
-        <button ref={_close => (close = _close)} onClick={closeModal}>
+        <button
+          className="closeBtn"
+          ref={_close => (close = _close)}
+          onClick={closeModal}
+        >
           &times;
         </button>
 

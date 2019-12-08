@@ -105,6 +105,7 @@ td.col-one {
 
     .winners-section {
         padding-top: 10vh;
+        height: auto;
     }
 
     .dropdwon-select {

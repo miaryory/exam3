@@ -109,7 +109,7 @@
 
 
 .form-login-container .form-login-submit {
-    background-color: #4CAF50;
+    background-color: var(--green);
     color: white;
     text-transform: uppercase;
     border: none;
@@ -127,7 +127,7 @@
 
 
 .form-login-submit:hover {
-    background: #4CAF50;
+    background: var(--green);
 }
 
 

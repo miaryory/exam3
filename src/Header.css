@@ -2,20 +2,22 @@
 header {
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    /* display: grid;
+    grid-template-columns: 1fr 1fr; */
 }
 
 #logoImg {
     width: 150px;
-    grid-column: 1/2;
+    /* grid-column: 1/2; */
     float: left;
     padding: 14px 16px;
 }
 
-nav {
+
+
+/* nav {
     grid-column: 2/3;
-}
+} */
 
 nav ul {
     list-style-type: none;
