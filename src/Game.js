@@ -7,9 +7,14 @@ const default_emoji2 = `./assets/dice/placeholder.svg`;
 const default_emoji3 = `./assets/dice/placeholder.svg`;
 const default_gamestatus = "";
 let counter = 0;
+let winstatus;
+
+
 
 function rungame() {
-  if (localStorage.getItem("tries") >= 3) {
+  if (localStorage.getItem("winstatus") == "true") {
+    alert("you already won")
+  } else if (localStorage.getItem("tries") >= 3) {
     alert("max 3 tries!")
   } else {
     counter++;
@@ -43,9 +48,10 @@ function CheckForWin(emoji1, emoji2, emoji3) {
   let gamestatus = default_gamestatus;
 
   if (emoji1 === emoji2 && emoji2 === emoji3) {
-    gamestatus = "Congrats!!! you won 5 free rows with your next Lucky7 purchase!";
+    gamestatus = "win";
+    localStorage.setItem("winstatus", "true");
   } else {
-    gamestatus = "you lose :(";
+    gamestatus = "lose";
   }
   return gamestatus;
 
@@ -83,9 +89,8 @@ export default class Gameplace extends React.Component {
     return (
       <div id="fullGame" >
         <div id="mainRow">
-          <p>Click "Spin" to start</p>
-          <button onClick={this.spin} id="spinBTN">Spin</button>
-          <div className="machineWrap">
+          <div id="machineWrap">
+            <div id="whiteBox"></div>
             <img src={machineImg} alt="slotmachine" id="machineImg" />
           </div>
           <div id="dice">
@@ -93,6 +98,7 @@ export default class Gameplace extends React.Component {
             <img src={require(`${this.state.emoji2}`)} alt="random emoji" className="oneEmoji"></img>
             <img src={require(`${this.state.emoji3}`)} alt="random emoji" className="oneEmoji" id="lastemoji"></img>
           </div>
+          <button onClick={this.spin} id="spinBTN">Spin</button>
           <p>{this.state.gamestatus}</p>
         </div>
 
