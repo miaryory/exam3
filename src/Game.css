@@ -22,7 +22,7 @@
 }
 #dice{
     position: absolute;
-    top: 135%;
+    top: 145%;
     text-align: center;
     left: 30%;
 
@@ -31,10 +31,11 @@
 #machineImg{
     margin: 2em;
     width: 30%;
+    position: relative;
 }
 #spinBTN{
     position: absolute;
-    top: 160%;
+    top: 170%;
     left: 39%;
     font-family: 'Rye', cursive;
     font-size: 4em;
@@ -44,4 +45,29 @@
     padding: .6em 1.5em;
     border-radius: 7%;
     cursor: pointer;
+}
+
+#whiteBox{
+    position: absolute;
+    top: 135%;
+    margin: 0 35em 0 35em;
+    text-align: center;
+    padding: 7em 13em;
+    background-color:  white;
+}
+
+#gameH1{
+    color: var(--orange);
+    font-family: 'Rye', cursive;
+    text-align: center;
+    margin: 1em;
+}
+
+#gameDesc{
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+    font-size: 1em;
+    margin: 1em;
+    color: white;
+
 }
