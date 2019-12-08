@@ -1,33 +1,40 @@
 import React from "react";
 import "./Game.css";
+import machineImg from "./assets/slotmachine.svg";
 
-const default_emoji1 = `./temp_assets/wot.png`;
-const default_emoji2 = `./temp_assets/wot.png`;
-const default_emoji3 = `./temp_assets/wot.png`;
-const default_gamestatus = "nothing";
+const default_emoji1 = `./assets/dice/placeholder.svg`;
+const default_emoji2 = `./assets/dice/placeholder.svg`;
+const default_emoji3 = `./assets/dice/placeholder.svg`;
+const default_gamestatus = "";
+let counter = 0;
 
 function rungame() {
-  let emoji1 = FindEmoji();
-  let emoji2 = FindEmoji();
-  let emoji3 = FindEmoji();
-  let gamestatus = CheckForWin(emoji1, emoji2, emoji3);
-  console.log(gamestatus);
-
-  return {
-    emoji1: emoji1,
-    emoji2: emoji2,
-    emoji3: emoji3,
-    gamestatus: gamestatus
+  if (localStorage.getItem("tries") >= 3) {
+    alert("max 3 tries!")
+  } else {
+    counter++;
+    let emoji1 = FindEmoji();
+    let emoji2 = FindEmoji();
+    let emoji3 = FindEmoji();
+    let gamestatus = CheckForWin(emoji1, emoji2, emoji3);
+    console.log(gamestatus);
+    console.log(counter);
+    localStorage.setItem("tries", counter);
+    return {
+      emoji1: emoji1,
+      emoji2: emoji2,
+      emoji3: emoji3,
+      gamestatus: gamestatus
+    }
   }
-
 }
 
 function FindEmoji() {
   function RandomNum() {
-    return Math.floor(Math.random() * 5) + 1;
+    return Math.floor(Math.random() * 7) + 1;
   }
   const number = RandomNum();
-  const emoji = `./temp_assets/${number}.png`;
+  const emoji = `./assets/dice/${number}.svg`;
   return emoji;
 }
 
@@ -36,13 +43,17 @@ function CheckForWin(emoji1, emoji2, emoji3) {
   let gamestatus = default_gamestatus;
 
   if (emoji1 === emoji2 && emoji2 === emoji3) {
-    gamestatus = "win";
+    gamestatus = "Congrats!!! you won 5 free rows with your next Lucky7 purchase!";
   } else {
-    gamestatus = "lose";
+    gamestatus = "you lose :(";
   }
   return gamestatus;
-}
 
+}
+//reee this is not working yet aaaaaaaaaa
+/*function AlertFunk(gamestatus){
+  alert(gamestatus);
+}*/
 
 
 export default class Gameplace extends React.Component {
@@ -56,6 +67,7 @@ export default class Gameplace extends React.Component {
       gamestatus: default_gamestatus
     };
     this.spin = this.spin.bind(this); //this is a boilerplate for ES6 because of  a quirk thank u idw :)))
+
   }
 
 
@@ -63,6 +75,8 @@ export default class Gameplace extends React.Component {
   //spin! it spin!!!
   spin() {
     this.setState(rungame());
+    /*AlertFunk();*/
+
   }
 
   render() {
@@ -70,12 +84,18 @@ export default class Gameplace extends React.Component {
       <div id="fullGame" >
         <div id="mainRow">
           <p>Click "Spin" to start</p>
-          <img src={require(`${this.state.emoji1}`)} alt="random emoji" className="oneEmoji"></img>
-          <img src={require(`${this.state.emoji2}`)} alt="random emoji" className="oneEmoji"></img>
-          <img src={require(`${this.state.emoji3}`)} alt="random emoji" className="oneEmoji"></img>
-          <p>you {this.state.gamestatus} !</p>
+          <button onClick={this.spin} id="spinBTN">Spin</button>
+          <div className="machineWrap">
+            <img src={machineImg} alt="slotmachine" id="machineImg" />
+          </div>
+          <div id="dice">
+            <img src={require(`${this.state.emoji1}`)} alt="random emoji" className="oneEmoji"></img>
+            <img src={require(`${this.state.emoji2}`)} alt="random emoji" className="oneEmoji"></img>
+            <img src={require(`${this.state.emoji3}`)} alt="random emoji" className="oneEmoji" id="lastemoji"></img>
+          </div>
+          <p>{this.state.gamestatus}</p>
         </div>
-        <button onClick={this.spin}>Spin</button>
+
       </div>
 
     );
