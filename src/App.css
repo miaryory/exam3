@@ -1,50 +1,3 @@
-/* .form-login {
-    text-align: center;
-    display: grid;
-    grid-template-columns: 1;
-    grid-template-rows: 5;
-}
-
-.form-login-label-username {
-    grid-column: 1/2;
-    grid-row: 1/2;
-    text-align: left;
-    margin-top: -22px;
-}
-
-.form-login-input-username {
-    grid-column: 1/2;
-    grid-row: 2/3;
-    margin-bottom: 20px;
-}
-
-.form-login-label-password {
-    grid-column: 1/2;
-    grid-row: 3/4;
-    text-align: left;
-}
-
-.form-login-input-password {
-    grid-column: 1/2;
-    grid-row: 4/5;
-    margin-bottom: 20px;
-} */
-
-/* .form-login-submit {
-    grid-column: 1/2;
-    grid-row: 5/6;
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-} */
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -55,8 +8,6 @@
 .FullSite {
     background-color: #004B32;
 }
-
-
 
 
 /* ///////// LOGIN STYLE ////////////// */
@@ -85,10 +36,11 @@
     display: block;
     width: 100%;
     border-radius: 4px;
-    border: 0.3px solid black;
+    border: 1px solid black;
     padding: 10px 15px;
     margin-bottom: 10px;
     font-size: 12px;
+
 }
 
 .form-login-container label {
@@ -114,10 +66,11 @@
     font-weight: 100;
     letter-spacing: 6px;
     cursor: pointer;
-    width: 70%;
+    width: 100%;
     display: block;
     margin-left: auto;
     margin-right: auto;
+    height: 40px;
 }
 
 
@@ -141,6 +94,18 @@
     opacity: 0.4;
 }
 
+.form-login-container h6 {
+    font-weight: 300;
+    font-size: 10px;
+    text-align: center;
+    margin-top: -5px;
+}
+
+
+.form-login-container h6:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
 
 
 /* ///////// CREATE ACOUNT STYLE ////////////// */
@@ -244,14 +209,6 @@ svg {
 .phone {
     width: 220px;
 }
-
-/* .acount-checkbox {
-    display: block;
-}
-
-.label-checkbox {
-    display: inline;
-} */
 
 
 /* The container */
