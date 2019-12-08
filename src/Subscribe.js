@@ -12,13 +12,13 @@ export default function Subscribe() {
     <div className="subscribe-container">
       <h1>Do you want more free spins?</h1>
       <h5>
-        Sign up for LUCKY 7's Newsletter and get <span>3</span> free spins!
+        Subscribe to our newsletter and get <span>3</span> spins for FREE!
       </h5>
       <form
         className="form-subscribe-container"
         onSubmit={handleSubmit(onSubmit)}
       >
-        <label htmlFor="firstname">First name</label>
+        {/* <label htmlFor="firstname">First name</label>
         <input
           name="firstname"
           placeholder="first name"
@@ -34,12 +34,12 @@ export default function Subscribe() {
             }
           })}
         />
-        {errors.firstname && <p>{errors.firstname.message}</p>}
+        {errors.firstname && <p>{errors.firstname.message}</p>} */}
 
-        <label htmlFor="email">Email</label>
+        {/* <label htmlFor="email">Email</label> */}
         <input
           name="email"
-          placeholder="name@yahoo.com"
+          placeholder="Enter your email..."
           type="text"
           ref={register({
             required: "This is required",
@@ -54,8 +54,8 @@ export default function Subscribe() {
         <input className="form-subscribe-submit" type="Submit" />
 
         <label htmlFor="subscribeCheckbox" className="subscribe-label-checkbox">
-          Yes, I want to sign up for LUCKY 7's Newsletter. I have read and agree
-          to the Website Terms of Use .
+          Yes, I want to subscribe for LUCKY 7 newsletter. I have read and agree
+          to the Website Terms of Use. View our privacy policy
           <input
             className="subscribeCheckbox"
             name="subscribeCheckbox"
@@ -66,12 +66,12 @@ export default function Subscribe() {
           />
         </label>
         {errors.subscribeCheckbox && <p>{errors.subscribeCheckbox.message}</p>}
-        <h6>
+        {/* <h6>
           You must be at least 18 years old to sign up for Newsletter. You can
           unsubscribe at any time through the link in all messages we send out.
           For more information on how we use your personal data, please see our
           Privacy Policy.
-        </h6>
+        </h6> */}
       </form>
     </div>
   );

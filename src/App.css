@@ -277,11 +277,13 @@ svg {
 
 /* ///////// SUBSCRIBE STYLE ////////////// */
 .subscribe-container {
-    max-width: 600px;
+    max-width: 580px;
     margin: 0 auto;
     background-color: white;
     color: black;
-    padding: 2em;
+    padding: 1em;
+    height: 300px;
+    padding-top: 35px;
 }
 
 .subscribe-container h1 {
@@ -289,11 +291,13 @@ svg {
     font-size: 33px;
     color: #DF7B2A;
     margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 .subscribe-container h5 {
     font-size: 18px;
     font-weight: 400;
+    margin-bottom: 25px;
 
 }
 
@@ -368,6 +372,7 @@ svg {
     float: right;
     margin-top: -33px;
     margin-right: 222px;
+    opacity: 1;
 }
 
 .form-subscribe-submit:hover {
@@ -404,7 +409,7 @@ input:disabled {
 .subscribe-label-checkbox {
     display: block;
     position: relative;
-    padding-left: 35px;
+    padding-left: 24px;
     cursor: pointer;
     font-size: 12px;
     margin-top: 15px;
@@ -422,6 +427,6 @@ input:disabled {
     cursor: pointer;
     height: 15px;
     width: 13px;
-    left: 11px;
+    left: 2px;
     top: 3px;
 }
