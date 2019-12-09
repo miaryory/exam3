@@ -98,37 +98,30 @@ export default class Gameplace extends React.Component {
         <div id="mainRow">
           <div id="machineWrap">
             <button onClick={this.spin} id="spinBTN">
-              {" "}
-              Spin{" "}
-            </button>{" "}
-            <div id="whiteBox"> </div>{" "}
+              Spin
+            </button>
+            <div id="whiteBox"> </div>
             <img src={machineImg} alt="slotmachine" id="machineImg" />
-          </div>{" "}
+          </div>
           <div id="dice">
             <img
               src={require(`${this.state.emoji1}`)}
               alt="random emoji"
               className="oneEmoji"
-            >
-              {" "}
-            </img>{" "}
+            ></img>
             <img
               src={require(`${this.state.emoji2}`)}
               alt="random emoji"
               className="oneEmoji"
-            >
-              {" "}
-            </img>{" "}
+            ></img>
             <img
               src={require(`${this.state.emoji3}`)}
               alt="random emoji"
               className="oneEmoji"
               id="lastemoji"
-            >
-              {" "}
-            </img>{" "}
+            ></img>
           </div>
-          <p> {this.state.gamestatus} </p>{" "}
+          <p> {this.state.gamestatus} </p>
         </div>
       </div>
     );
