@@ -84,7 +84,7 @@ export default class Gameplace extends React.Component {
     /*AlertFunk();*/
 
   }
-
+  /*note*/
   render() {
     return (
       <div id="fullGame" >
