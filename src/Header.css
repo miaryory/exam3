@@ -1,21 +1,23 @@
 /* ////////// HEADER /////////// */
 header {
-    background-color: white;
+    background-color: transparent;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    /* display: grid;
+    grid-template-columns: 1fr 1fr; */
 }
 
 #logoImg {
     width: 150px;
-    grid-column: 1/2;
+    /* grid-column: 1/2; */
     float: left;
     padding: 14px 16px;
 }
 
-nav {
+
+
+/* nav {
     grid-column: 2/3;
-}
+} */
 
 nav ul {
     list-style-type: none;
@@ -31,7 +33,7 @@ nav ul li {
 
 nav li a {
     display: block;
-    color: black;
+    color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -46,4 +48,46 @@ nav li a:hover {
 nav li:last-child {
     float: right;
     border-right: none;
+}
+
+.login-title {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.login-forget {
+    font-weight: 700;
+    font-size: 13px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.login-new {
+    font-weight: 700;
+    letter-spacing: -.5px;
+    font-size: 22px;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.login-singup {
+    width: 100%;
+    background-color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    border: 2px solid black;
+    align-items: center;
+    transition: all .15s ease;
+    height: 40px;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-bottom: 20px;
+}
+
+.login-singup:hover {
+    background-color: #F6F3F3;
 }

@@ -1,18 +1,25 @@
 import React from "react";
 import "./Footer.css";
 import CreateAcount from "./CreateAcount";
+import CreateAcount2 from "./CreateAcount2";
+
+import Subscribe from "./Subscribe";
 
 export default function Footer() {
   return (
     <>
+      <Subscribe />
       <CreateAcount />
+      <CreateAcount2 />
+
       <footer>
+        <p>© 2019 LUCKY 7 </p>
         <div id="col1">
           <h3>Title here</h3>
 
           <ul>
             <li>
-              <a href="#">Link1</a>
+              <a href="#">Privacy Policy</a>
             </li>
             <li>
               <a href="#">Link2</a>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
+import "./Header.css";
 import useForm from "react-hook-form";
 import Phone from "./Phone";
 
@@ -11,6 +12,7 @@ export default function BtnForm() {
 
   return (
     <div className="acount-container">
+      <h6 className="login-new"> I'm new here</h6>
       <form className="form-acount-container" onSubmit={handleSubmit(onSubmit)}>
         <label htmlFor="firstname">First Name</label>
         <input
@@ -46,6 +48,7 @@ export default function BtnForm() {
           })}
         />
         {errors.lastname && <p>{errors.lastname.message}</p>}
+
         <label htmlFor="email">Email</label>
         <input
           name="email"
@@ -60,25 +63,29 @@ export default function BtnForm() {
           })}
         />
         {errors.email && <p>{errors.email.message}</p>}
-        <label htmlFor="phone">Phone number</label>
-        <Phone />
 
-        {/* <PhoneInput
-          className="phone"
-          name="phone"
-          placeholder="Enter phone number"
-          // value={this.state.value}
-          // onChange={value => this.setState({ value })}
+        <label htmlFor="password">Password</label>
+        <input
+          name="password"
+          placeholder="password"
           ref={register({
-            required: "This is required"
+            required: "This is required",
+            pattern: {
+              value: /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/i,
+              message:
+                "Must contain: one number, one uppercase and lowercase letter, at least 8 characters"
+            }
           })}
         />
-        {errors.phone && <p>{errors.phone.message}</p>} */}
+        {errors.password && <p>{errors.password.message}</p>}
+
+        <label htmlFor="phone">Phone number</label>
+        <Phone />
 
         <label htmlFor="zip">Zip code</label>
         <input
           name="zip"
-          placeholder="1111"
+          placeholder="Post number"
           type="tel"
           ref={register({
             required: "This is required",
@@ -98,38 +105,6 @@ export default function BtnForm() {
         />
         {errors.zip && <p>{errors.zip.message}</p>}
 
-        <label htmlFor="password">Password</label>
-        <input
-          name="password"
-          placeholder="password"
-          ref={register({
-            required: "This is required",
-            pattern: {
-              value: /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/i,
-              message:
-                "Must contain: one number, one uppercase and lowercase letter, at least 8 characters"
-            }
-          })}
-        />
-        {errors.password && <p>{errors.password.message}</p>}
-
-        {/* <input
-          className="acount-checkbox"
-          name="checkbox"
-          type="checkbox"
-          placeholder="By clicking Sign Up, you agree to our Terms and that you have read our Data Use Policy.Subscribe to Newsletter. 18+"
-          name="Subscribe to Newsletter"
-          id="customCheck1"
-          ref={register({
-            required: "This is required"
-          })}
-        />
-        <label htmlFor="checkbox" className="label-checkbox">
-          By clicking Sign Up, you agree to our Terms and that you have read our
-          Data Use Policy. Subscribe to Newsletter. 18+
-        </label>
-        {errors.checkbox && <p>{errors.checkbox.message}</p>} */}
-
         <label htmlFor="checkboxV" className="label-checkbox">
           By clicking Sign Up, you agree to our Terms and that you have read our
           Data Use Policy. Subscribe to Newsletter. 18+
@@ -146,7 +121,8 @@ export default function BtnForm() {
         </label>
         {errors.checkboxV && <p>{errors.checkboxV.message}</p>}
 
-        <input className="form-acount-submit" type="Submit" />
+        <label htmlFor="submit"></label>
+        <input className="form-acount-submit" type="submit" value="Sign up" />
       </form>
     </div>
   );

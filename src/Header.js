@@ -14,13 +14,12 @@ const customStyles = {
     bottom: "auto",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
-    // padding: "80px 50px 20px"
-    padding: "10px 50px 20px"
+    padding: "10px 50px 20px",
+    width: "530px"
   }
 };
 
 export default function Header() {
-  // var subtitle;
   var close;
   const [modalIsOpen, setIsOpen] = React.useState(false);
   function openModal() {
@@ -28,7 +27,7 @@ export default function Header() {
   }
 
   function afterOpenModal() {
-    // Add style here
+    // Style for modal
     close.style.color = "#aaa";
     close.style.backgroundColor = "white";
     close.style.float = "right";
@@ -66,7 +65,7 @@ export default function Header() {
           </ul>
         </nav>
       </header>
-      {/* <button onClick={openModal}>Open Modal</button> */}
+
       <Modal
         isOpen={modalIsOpen}
         onAfterOpen={afterOpenModal}
@@ -74,14 +73,15 @@ export default function Header() {
         style={customStyles}
         contentLabel="Modal LogIn"
       >
-        {/* <h2 ref={_subtitle => (subtitle = _subtitle)}>Hello</h2> */}
         <button ref={_close => (close = _close)} onClick={closeModal}>
           &times;
         </button>
-
-        <div>
-          <Login />
-        </div>
+        <h3 className="login-title">Welcome back!</h3>
+        <Login />
+        <p className="login-forget">Did you forget your password?</p>
+        {/* <h6>Create acount</h6> */}
+        <h6 className="login-new"> I'm new here</h6>
+        <button className="login-singup">Sign up</button>
       </Modal>
     </div>
   );
