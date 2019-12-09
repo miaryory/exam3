@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
 import "./Header.css";
-import Login from "./Login";
+//import Login from "./Login";
 import logo from "./temp_assets/logo.png";
+import useForm from "react-hook-form";
 
 Modal.setAppElement("body");
 
@@ -20,7 +21,7 @@ const customStyles = {
 };
 
 export default function Header() {
-  var close;
+  let close;
   const [modalIsOpen, setIsOpen] = React.useState(false);
   function openModal() {
     setIsOpen(true);
@@ -42,47 +43,162 @@ export default function Header() {
     setIsOpen(false);
   }
 
-  return (
-    <div>
-      <header>
-        <img id="logoImg" src={logo}></img>
-        <nav id="desktop-nav">
-          <ul>
-            <li>
-              <a href="#home">Section1</a>
-            </li>
-            <li>
-              <a href="#news">Section2</a>
-            </li>
-            <li>
-              <a href="#contact">Section3</a>
-            </li>
-            <li>
-              <a onClick={openModal} href="#about">
-                Log in
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </header>
+  /************************* */
+  const { register, errors } = useForm({ mode: "onChange" });
 
-      <Modal
-        isOpen={modalIsOpen}
-        onAfterOpen={afterOpenModal}
-        onRequestClose={closeModal}
-        style={customStyles}
-        contentLabel="Modal LogIn"
-      >
-        <button ref={_close => (close = _close)} onClick={closeModal}>
-          &times;
-        </button>
-        <h3 className="login-title">Welcome back!</h3>
-        <Login />
-        <p className="login-forget">Did you forget your password?</p>
-        {/* <h6>Create acount</h6> */}
-        <h6 className="login-new"> I'm new here</h6>
-        <button className="login-singup">Sign up</button>
-      </Modal>
-    </div>
-  );
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    fetch(
+      "https://kea3rdsemester-91fd.restdb.io/rest/" +
+        "subscribers?fetchchildren=true",
+      {
+        method: "get",
+        headers: {
+          "Content-Type": "application/json; charset=utf-8",
+          "x-apikey": "5d887df9fd86cb75861e2626",
+          "cache-control": "no-cache"
+        }
+      }
+    )
+      .then(e => e.json())
+      .then(e => setUsers(e));
+  }, []);
+
+  const [email, setEmail] = useState(" ");
+
+  const [password, setPassword] = useState(" ");
+
+  const [logged, setLogStatus] = useState(false);
+
+  const submit = evt => {
+    evt.preventDefault();
+    users.map(user => {
+      if (email === user.email && password === user.password) {
+        setLogStatus(true);
+      }
+    });
+  };
+
+  const handleLogOut = evt => {
+    evt.preventDefault();
+    setLogStatus(false);
+    closeModal();
+    alert("You are logged out");
+  };
+
+  /********************** */
+
+  if (logged) {
+    return (
+      <div>
+        <header>
+          <img id="logoImg" src={logo}></img>
+          <nav id="desktop-nav">
+            <ul>
+              <li>
+                <a href="#home">Section1</a>
+              </li>
+              <li>
+                <a href="#news">Section2</a>
+              </li>
+              <li>
+                <a href="#contact">Section3</a>
+              </li>
+              <li>
+                <a onClick={handleLogOut} href="#about">
+                  Log out
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        <header>
+          <img id="logoImg" src={logo}></img>
+          <nav id="desktop-nav">
+            <ul>
+              <li>
+                <a href="#home">Section1</a>
+              </li>
+              <li>
+                <a href="#news">Section2</a>
+              </li>
+              <li>
+                <a href="#contact">Section3</a>
+              </li>
+              <li>
+                <a onClick={openModal} href="#about">
+                  Log in
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+
+        <Modal
+          isOpen={modalIsOpen}
+          onAfterOpen={afterOpenModal}
+          onRequestClose={closeModal}
+          style={customStyles}
+          contentLabel="Modal LogIn"
+        >
+          <button ref={_close => (close = _close)} onClick={closeModal}>
+            &times;
+          </button>
+          <h3 className="login-title">Welcome back!</h3>
+          <div className="login-container" onSubmit={submit}>
+            <form className="form-login-container">
+              <label htmlFor="email">Email</label>
+              <input
+                onChange={e => setEmail(e.target.value)}
+                name="email"
+                placeholder="E-mail"
+                type="text"
+                ref={register({
+                  required: "This is required",
+                  pattern: {
+                    value: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+                    message: "Invalid email address"
+                  }
+                })}
+              />
+              {errors.email && <p>{errors.email.message}</p>}
+
+              <label htmlFor="passwordL">Password</label>
+              <input
+                onChange={e => setPassword(e.target.value)}
+                name="passwordL"
+                placeholder="password"
+                ref={register({
+                  required: "This is required",
+                  pattern: {
+                    value: /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/i,
+                    message:
+                      "Must contain: one number, one uppercase and lowercase letter, at least 8 characters"
+                  }
+                })}
+              />
+              {errors.passwordL && <p>{errors.passwordL.message}</p>}
+
+              <label htmlFor="submit"></label>
+              <input
+                className="form-login-submit"
+                type="submit"
+                value="Sign in"
+              />
+            </form>
+          </div>
+          <p className="login-forget">Did you forget your password?</p>
+          {/* <h6>Create acount</h6> */}
+          <h6 className="login-new"> I'm new here</h6>
+          <button className="login-singup">Sign up</button>
+        </Modal>
+      </div>
+    );
+  }
 }

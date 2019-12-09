@@ -81,29 +81,59 @@ export default class Gameplace extends React.Component {
   //spin! it spin!!!
   spin() {
     this.setState(rungame());
+
     /*AlertFunk();*/
 
   }
 
   render() {
-    return (
-      <div id="fullGame" >
-        <div id="mainRow">
-          <div id="machineWrap">
-            <button onClick={this.spin} id="spinBTN">Spin</button>
-            <div id="whiteBox"></div>
-            <img src={machineImg} alt="slotmachine" id="machineImg" />
-          </div>
-          <div id="dice">
-            <img src={require(`${this.state.emoji1}`)} alt="random emoji" className="oneEmoji"></img>
-            <img src={require(`${this.state.emoji2}`)} alt="random emoji" className="oneEmoji"></img>
-            <img src={require(`${this.state.emoji3}`)} alt="random emoji" className="oneEmoji" id="lastemoji"></img>
-          </div>
+    return ( <
+      div id = "fullGame" >
+      <
+      div id = "mainRow" >
+      <
+      div id = "machineWrap" >
+      <
+      button onClick = {
+        this.spin
+      }
+      id = "spinBTN" > Spin < /button> <
+      div id = "whiteBox" > < /div> <
+      img src = {
+        machineImg
+      }
+      alt = "slotmachine"
+      id = "machineImg" / >
+      <
+      /div> <
+      div id = "dice" >
+      <
+      img src = {
+        require(`${this.state.emoji1}`)
+      }
+      alt = "random emoji"
+      className = "oneEmoji" > < /img> <
+      img src = {
+        require(`${this.state.emoji2}`)
+      }
+      alt = "random emoji"
+      className = "oneEmoji" > < /img> <
+      img src = {
+        require(`${this.state.emoji3}`)
+      }
+      alt = "random emoji"
+      className = "oneEmoji"
+      id = "lastemoji" > < /img> <
+      /div>
 
-          <p>{this.state.gamestatus}</p>
-        </div>
+      <
+      p > {
+        this.state.gamestatus
+      } < /p> <
+      /div>
 
-      </div>
+      <
+      /div>
 
     );
   }
