@@ -1,74 +1,197 @@
 @import url('https://fonts.googleapis.com/css?family=Rye&display=swap');
+
 :root {
     --green: #004B32;
     --orange: #DF7B2A;
 }
 
-#fullGame{
+#fullGame {
     text-align: center;
-    
-}
-.oneEmoji{
-    width: 15%;
-    margin-left: 3.5em;
-    margin-bottom:1em;
-    margin-top:1em;
-    
-    
+    max-width: 600px;
+    margin: 0 auto;
+
 }
 
-#lastemoji{
-    margin-left: 3em;
+#machineWrap {
+    max-width: 500px;
+    margin: 0 auto;
+    height: 350px;
 }
-#dice{
+
+.oneEmoji {
+    width: 12%;
+}
+
+.oneEmoji:hover {
+    /* transform: rotate(45deg); */
+    animation: rotateA 3s infinite;
+}
+
+
+@keyframes rotateA {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+.oneEmoji+.oneEmoji {
+    margin-left: 2.2em;
+}
+
+#dice {
     position: absolute;
-    top: 137%;
+    top: 148%;
     text-align: center;
-    left: 30%;
+    left: 51.3%;
+    position: absolute;
+    right: auto;
+    bottom: auto;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
 
 
 }
-#machineImg{
-    margin: 2em;
-    width: 30%;
+
+#machineImg {
+    width: 61%;
     position: relative;
+    margin-top: 20px;
+    z-index: 1;
     pointer-events: none;
 }
-#spinBTN{
+
+#spinBTN {
     position: absolute;
-    top: 163%;
-    left: 39%;
+    top: 174%;
+    left: 51%;
     font-family: 'Rye', cursive;
-    font-size: 4em;
+    font-size: 2.6em;
     color: var(--green);
     background-color: var(--orange);
-    border:none;
+    border: none;
     padding: .6em 1.5em;
     border-radius: 7%;
     cursor: pointer;
+    right: auto;
+    bottom: auto;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
 }
 
-#whiteBox{
+#whiteBox {
     position: absolute;
-    top: 133%;
-    margin: 0 35em 0 35em;
-    text-align: center;
-    padding: 7em 13em;
-    background-color:  white;
+    top: 147%;
+    background-color: white;
+    width: 280px;
+    height: 150px;
+    left: 50%;
+    position: absolute;
+    right: auto;
+    bottom: auto;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
 }
 
-#gameH1{
+#gameH1 {
     color: var(--orange);
     font-family: 'Rye', cursive;
     text-align: center;
     margin: 1em;
 }
 
-#gameDesc{
+#gameDesc {
     text-align: center;
     font-family: Helvetica, sans-serif;
     font-size: 1em;
     margin: 1em;
     color: white;
 
+}
+
+
+@media only screen and (min-width: 300px) and (max-width: 600px) {
+    #fullGame {
+        max-width: 300px;
+    }
+
+    #machineWrap {
+        height: 290px;
+    }
+
+    .oneEmoji {
+        width: 16%;
+    }
+
+    .oneEmoji+.oneEmoji {
+        margin-left: 2.1em;
+    }
+
+    #machineImg {
+        width: 88%;
+        margin-top: 0px;
+    }
+
+    #spinBTN {
+        top: 205%;
+        font-size: 2.3em;
+    }
+
+    #whiteBox {
+        width: 236px;
+        height: 122px;
+        top: 180%;
+    }
+
+    #dice {
+        top: 183%;
+        left: 53%;
+    }
+
+
+}
+
+
+
+
+@media only screen and (min-width: 800px) {
+    #fullGame {
+        max-width: 600px;
+    }
+
+    #machineWrap {
+        height: 400px;
+    }
+
+    .oneEmoji {
+        width: 16%;
+    }
+
+    .oneEmoji+.oneEmoji {
+        margin-left: 2.63em;
+    }
+
+    #dice {
+        top: 150%;
+        left: 50.8%;
+    }
+
+    #machineImg {
+        width: 80%;
+        margin-top: 0px;
+    }
+
+    #spinBTN {
+        top: 184%;
+        font-size: 3.4em;
+    }
+
+    #whiteBox {
+        width: 350px;
+        height: 180px;
+    }
 }

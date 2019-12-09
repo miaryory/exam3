@@ -9,13 +9,11 @@ const default_gamestatus = "";
 let counter = 0;
 let winstatus;
 
-
-
 function rungame() {
   if (localStorage.getItem("winstatus") == "true") {
-    alert("you already won")
+    alert("you already won");
   } else if (localStorage.getItem("tries") >= 3) {
-    alert("max 3 tries!")
+    alert("max 3 tries!");
   } else {
     counter++;
     let emoji1 = FindEmoji();
@@ -30,7 +28,7 @@ function rungame() {
       emoji2: emoji2,
       emoji3: emoji3,
       gamestatus: gamestatus
-    }
+    };
   }
 }
 
@@ -44,7 +42,7 @@ function FindEmoji() {
 }
 
 function CheckForWin(emoji1, emoji2, emoji3) {
-  console.log(emoji1, emoji2, emoji3)
+  console.log(emoji1, emoji2, emoji3);
   let gamestatus = default_gamestatus;
 
   if (emoji1 === emoji2 && emoji2 === emoji3) {
@@ -54,13 +52,24 @@ function CheckForWin(emoji1, emoji2, emoji3) {
     gamestatus = "lose";
   }
   return gamestatus;
+}
 
+function alerting(gamestatus) {
+  if (gamestatus === "win") {
+    alert(
+      "Congratulations! You just won 5 extra rows with your next Lucky7 purchase :)"
+    );
+  }
+  if (gamestatus === "lose" && counter < 3) {
+    alert("You lost, try again!");
+  } else if (gamestatus === "lose" && counter === 3) {
+    alert("unfortunately you've lost and run out of tries.");
+  }
 }
 //reee this is not working yet aaaaaaaaaa
 /*function AlertFunk(gamestatus){
   alert(gamestatus);
 }*/
-
 
 export default class Gameplace extends React.Component {
   ///read react docs about this part - got that from there thanks to idw :)))
@@ -73,68 +82,55 @@ export default class Gameplace extends React.Component {
       gamestatus: default_gamestatus
     };
     this.spin = this.spin.bind(this); //this is a boilerplate for ES6 because of  a quirk thank u idw :)))
-
   }
 
-
-
+  //
   //spin! it spin!!!
   spin() {
     this.setState(rungame());
-
-    /*AlertFunk();*/
-
+    //alerting();
   }
 
+  /*note*/
   render() {
-    return ( <
-      div id = "fullGame" >
-      <
-      div id = "mainRow" >
-      <
-      div id = "machineWrap" >
-      <
-      button onClick = {
-        this.spin
-      }
-      id = "spinBTN" > Spin < /button> <
-      div id = "whiteBox" > < /div> <
-      img src = {
-        machineImg
-      }
-      alt = "slotmachine"
-      id = "machineImg" / >
-      <
-      /div> <
-      div id = "dice" >
-      <
-      img src = {
-        require(`${this.state.emoji1}`)
-      }
-      alt = "random emoji"
-      className = "oneEmoji" > < /img> <
-      img src = {
-        require(`${this.state.emoji2}`)
-      }
-      alt = "random emoji"
-      className = "oneEmoji" > < /img> <
-      img src = {
-        require(`${this.state.emoji3}`)
-      }
-      alt = "random emoji"
-      className = "oneEmoji"
-      id = "lastemoji" > < /img> <
-      /div>
-
-      <
-      p > {
-        this.state.gamestatus
-      } < /p> <
-      /div>
-
-      <
-      /div>
-
+    return (
+      <div id="fullGame">
+        <div id="mainRow">
+          <div id="machineWrap">
+            <button onClick={this.spin} id="spinBTN">
+              {" "}
+              Spin{" "}
+            </button>{" "}
+            <div id="whiteBox"> </div>{" "}
+            <img src={machineImg} alt="slotmachine" id="machineImg" />
+          </div>{" "}
+          <div id="dice">
+            <img
+              src={require(`${this.state.emoji1}`)}
+              alt="random emoji"
+              className="oneEmoji"
+            >
+              {" "}
+            </img>{" "}
+            <img
+              src={require(`${this.state.emoji2}`)}
+              alt="random emoji"
+              className="oneEmoji"
+            >
+              {" "}
+            </img>{" "}
+            <img
+              src={require(`${this.state.emoji3}`)}
+              alt="random emoji"
+              className="oneEmoji"
+              id="lastemoji"
+            >
+              {" "}
+            </img>{" "}
+          </div>
+          <p> {this.state.gamestatus} </p>{" "}
+        </div>
+      </div>
     );
   }
 }
