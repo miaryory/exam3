@@ -22,7 +22,7 @@
 }
 #dice{
     position: absolute;
-    top: 145%;
+    top: 137%;
     text-align: center;
     left: 30%;
 
@@ -36,7 +36,7 @@
 }
 #spinBTN{
     position: absolute;
-    top: 171%;
+    top: 163%;
     left: 39%;
     font-family: 'Rye', cursive;
     font-size: 4em;
@@ -50,7 +50,7 @@
 
 #whiteBox{
     position: absolute;
-    top: 135%;
+    top: 133%;
     margin: 0 35em 0 35em;
     text-align: center;
     padding: 7em 13em;
