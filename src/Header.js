@@ -73,16 +73,7 @@ export default function Header() {
         style={customStyles}
         contentLabel="Modal LogIn"
       >
-<<<<<<< HEAD
-        {/* <h2 ref={_subtitle => (subtitle = _subtitle)}>Hello</h2> */}
-        <button
-          className="closeBtn"
-          ref={_close => (close = _close)}
-          onClick={closeModal}
-        >
-=======
         <button ref={_close => (close = _close)} onClick={closeModal}>
->>>>>>> subscribe
           &times;
         </button>
         <h3 className="login-title">Welcome back!</h3>
