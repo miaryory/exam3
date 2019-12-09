@@ -85,7 +85,7 @@ export default class Gameplace extends React.Component {
   }
 
 
-
+  //
   //spin! it spin!!!
   spin() {
     this.setState(rungame());
