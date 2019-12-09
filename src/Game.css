@@ -156,6 +156,34 @@
 }
 
 
+@media only screen and (min-width: 312px) {
+
+    .oneEmoji+.oneEmoji {
+        margin-left: 2.1em;
+    }
+
+    #machineImg {
+        width: 88%;
+        margin-top: 0px;
+    }
+
+    #spinBTN {
+        top: 205%;
+        font-size: 2.3em;
+    }
+
+    #whiteBox {
+        width: 236px;
+        height: 122px;
+        top: 180%;
+    }
+
+    #dice {
+        top: 180%;
+    }
+}
+
+
 
 
 @media only screen and (min-width: 800px) {
