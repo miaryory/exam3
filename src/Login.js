@@ -24,23 +24,20 @@ export default function Login() {
   return (
     <div className="login-container">
       <form className="form-login-container" onSubmit={handleSubmit(onSubmit)}>
-        <label htmlFor="nameL">Name</label>
+        <label htmlFor="email">Email</label>
         <input
-          name="nameL"
-          placeholder="Name"
+          name="email"
+          placeholder="E-mail"
+          type="text"
           ref={register({
-            required: "This is a required",
-            minLength: {
-              value: 3,
-              message: "Name must have more then 3 characters!"
-            },
-            maxLength: {
-              value: 10,
-              message: "Name must have no more then 10 characters!"
+            required: "This is required",
+            pattern: {
+              value: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+              message: "Invalid email address"
             }
           })}
         />
-        {errors.nameL && <p>{errors.nameL.message}</p>}
+        {errors.email && <p>{errors.email.message}</p>}
 
         <label htmlFor="passwordL">Password</label>
         <input
@@ -57,8 +54,8 @@ export default function Login() {
         />
         {errors.passwordL && <p>{errors.passwordL.message}</p>}
 
-        <input className="form-login-submit" type="submit" />
-        <h6>Create acount</h6>
+        <label htmlFor="submit"></label>
+        <input className="form-login-submit" type="submit" value="Sign in" />
       </form>
     </div>
   );
