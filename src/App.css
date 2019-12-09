@@ -3,6 +3,10 @@
     --orange: #DF7B2A;
 }
 
+#root {
+    width: 100vw;
+}
+
 
 * {
     box-sizing: border-box;
@@ -13,6 +17,7 @@
 
 .FullSite {
     background-color: #004B32;
+    width: 100wh;
 }
 
 
