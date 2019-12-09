@@ -32,6 +32,7 @@ function rungame() {
       gamestatus: gamestatus
     }
   }
+
 }
 
 function FindEmoji() {
@@ -55,6 +56,13 @@ function CheckForWin(emoji1, emoji2, emoji3) {
   }
   return gamestatus;
 
+
+}
+
+function alerting(gamestatus) {
+  if (gamestatus === "win") { alert("Congratulations! You just won 5 extra rows with your next Lucky7 purchase :)") }
+  if (gamestatus === "lose" && counter < 3) { alert("You lost, try again!") }
+  else if (gamestatus === "lose" && counter === 3) { alert("unfortunately you've lost and run out of tries.") }
 }
 //reee this is not working yet aaaaaaaaaa
 /*function AlertFunk(gamestatus){
@@ -81,10 +89,10 @@ export default class Gameplace extends React.Component {
   //spin! it spin!!!
   spin() {
     this.setState(rungame());
-    /*AlertFunk();*/
-
+    //alerting();
   }
 
+  /*note*/
   render() {
     return (
       <div id="fullGame" >
