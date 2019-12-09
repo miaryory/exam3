@@ -90,6 +90,7 @@ export default class Gameplace extends React.Component {
       <div id="fullGame" >
         <div id="mainRow">
           <div id="machineWrap">
+            <button onClick={this.spin} id="spinBTN">Spin</button>
             <div id="whiteBox"></div>
             <img src={machineImg} alt="slotmachine" id="machineImg" />
           </div>
@@ -98,7 +99,7 @@ export default class Gameplace extends React.Component {
             <img src={require(`${this.state.emoji2}`)} alt="random emoji" className="oneEmoji"></img>
             <img src={require(`${this.state.emoji3}`)} alt="random emoji" className="oneEmoji" id="lastemoji"></img>
           </div>
-          <button onClick={this.spin} id="spinBTN">Spin</button>
+
           <p>{this.state.gamestatus}</p>
         </div>
 

@@ -32,10 +32,11 @@
     margin: 2em;
     width: 30%;
     position: relative;
+    pointer-events: none;
 }
 #spinBTN{
     position: absolute;
-    top: 170%;
+    top: 171%;
     left: 39%;
     font-family: 'Rye', cursive;
     font-size: 4em;
