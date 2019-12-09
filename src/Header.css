@@ -52,6 +52,7 @@ nav li:last-child {
     text-align: center;
     margin-top: 20px;
     font-size: 22px;
+    font-weight: 700;
 }
 
 .login-forget {
@@ -81,4 +82,8 @@ nav li:last-child {
     padding-left: 16px;
     padding-right: 16px;
     margin-bottom: 20px;
+}
+
+.login-singup:hover {
+    background-color: #F6F3F3;
 }
