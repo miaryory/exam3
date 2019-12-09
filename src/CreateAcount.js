@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import "./Header.css";
 import useForm from "react-hook-form";
-// import Phone from "./Phone";
-import arrow from "./temp_assets/arrow.png";
+import Phone from "./Phone";
 
 export default function BtnForm() {
   const { register, errors, handleSubmit } = useForm({ mode: "onChange" });
@@ -80,7 +79,7 @@ export default function BtnForm() {
         />
         {errors.password && <p>{errors.password.message}</p>}
 
-        {/* <label htmlFor="phone">Phone number</label>
+        <label htmlFor="phone">Phone number</label>
         <Phone />
 
         <label htmlFor="zip">Zip code</label>
@@ -106,7 +105,6 @@ export default function BtnForm() {
         />
         {errors.zip && <p>{errors.zip.message}</p>}
 
-
         <label htmlFor="checkboxV" className="label-checkbox">
           By clicking Sign Up, you agree to our Terms and that you have read our
           Data Use Policy. Subscribe to Newsletter. 18+
@@ -124,8 +122,7 @@ export default function BtnForm() {
         {errors.checkboxV && <p>{errors.checkboxV.message}</p>}
 
         <label htmlFor="submit"></label>
-        <input className="form-acount-submit" type="submit" value="Sign up" /> */}
-        <img className="arrow" src={arrow}></img>
+        <input className="form-acount-submit" type="submit" value="Sign up" />
       </form>
     </div>
   );
