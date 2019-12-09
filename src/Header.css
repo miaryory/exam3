@@ -1,6 +1,6 @@
 /* ////////// HEADER /////////// */
 header {
-    background-color: white;
+    background-color: transparent;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     /* display: grid;
     grid-template-columns: 1fr 1fr; */
@@ -33,7 +33,7 @@ nav ul li {
 
 nav li a {
     display: block;
-    color: black;
+    color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -70,6 +70,8 @@ nav li:last-child {
     letter-spacing: -.5px;
     font-size: 22px;
     text-align: center;
+    margin-top: 15px;
+    margin-bottom: 5px;
 }
 
 .login-singup {

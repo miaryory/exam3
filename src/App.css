@@ -46,6 +46,7 @@
     padding: 10px 15px;
     margin-bottom: 10px;
     font-size: 12px;
+    height: 45px;
 
 }
 
@@ -118,14 +119,18 @@
 .acount-container {
     max-width: 600px;
     margin: 0 auto;
+    background-color: white;
+    color: black;
+    padding-top: 20px;
+    height: 520px;
+
+    margin-top: 10px;
 
 }
 
 .form-acount-container {
     max-width: 500px;
     margin: 0 auto;
-    background-color: white;
-    color: black;
     padding: 1em;
 
 }
@@ -162,8 +167,8 @@
 
 
 
-.form-acount-submit {
-    background: green;
+.form-acount-container .form-acount-submit {
+    background: var(--green);
     color: white;
     text-transform: uppercase;
     border: none;
@@ -174,10 +179,13 @@
     letter-spacing: 6px;
     border-radius: 5px;
     display: block;
+    opacity: 1;
+    border-color: var(--green);
 }
 
 .form-acount-submit:hover {
-    background: green;
+    background: var(--green);
+    opacity: .9;
 }
 
 .form-acount-submit {
@@ -191,14 +199,10 @@ input:disabled {
     opacity: 0.4;
 }
 
-
-
 svg {
     width: 25px;
     margin-top: -10px;
 }
-
-
 
 /* The container */
 .form-acount-container .label-checkbox {
@@ -222,9 +226,22 @@ svg {
     top: 3px;
 }
 
+.arrow {
+    width: 3%;
+    height: auto;
+    margin-top: 30px;
+    margin-left: 97%;
+}
+
+.welcome {
+    font-size: 60px;
+    text-align: center;
+    margin-top: 50px;
+}
+
 /* ///////// SUBSCRIBE STYLE ////////////// */
 .subscribe-container {
-    max-width: 580px;
+    max-width: 590px;
     margin: 0 auto;
     background-color: white;
     color: black;
@@ -238,13 +255,13 @@ svg {
     font-size: 33px;
     color: #DF7B2A;
     margin-top: 20px;
-    margin-bottom: 10px;
+
 }
 
 .subscribe-container h5 {
     font-size: 18px;
     font-weight: 400;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 
 }
 
@@ -264,8 +281,6 @@ svg {
 
 .form-subscribe-container {
     max-width: 500px;
-    /* margin: 0 auto;
-    padding: 1em; */
     margin-top: 15px;
 
 }
@@ -280,36 +295,25 @@ svg {
 }
 
 
-.form-subscribe-submit input {
-    display: block;
-    box-sizing: border-box;
-    width: 100%;
+.form-subscribe-container input {
+    width: 60%;
     border-radius: 4px;
-    border: 1px solid white;
+    border: 1px solid black;
     padding: 10px 15px;
     margin-bottom: 10px;
     font-size: 14px;
-    background-color: red;
+    height: 40px;
+
 }
 
-.form-subscribe-submit label {
-    line-height: 2;
-    text-align: left;
-    display: block;
-    margin-bottom: 13px;
-    margin-top: 20px;
-    color: white;
-    font-size: 14px;
-    font-weight: 200;
-}
 
-.form-subscribe-submit {
+.form-subscribe-container .form-subscribe-submit {
     background: black;
     color: white;
     text-transform: uppercase;
     border: none;
-    margin-top: 30px;
-    padding: 8px;
+    margin-top: 0px;
+
     font-size: 10px;
     font-weight: 100;
     letter-spacing: 6px;
@@ -317,38 +321,25 @@ svg {
     display: block;
 
     float: right;
-    margin-top: -33px;
-    margin-right: 222px;
+    margin-right: 25px;
+
+
     opacity: 1;
+    width: 35%;
 }
 
 .form-subscribe-submit:hover {
     background: black;
 }
 
-.form-subscribe-submit {
-    transition: 0.3s all;
-    transform: translateY(3px);
-    border: 1px solid transparent;
-    opacity: 0.8;
-}
+
 
 input:disabled {
     opacity: 0.4;
 }
 
 
-.form-subscribe-submit {
-    -webkit-appearance: none;
-}
 
-.subscribe-container label {
-    display: block;
-}
-
-.subscribe-container input {
-    display: block;
-}
 
 
 

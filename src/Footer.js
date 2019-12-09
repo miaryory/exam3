@@ -1,6 +1,8 @@
 import React from "react";
 import "./Footer.css";
 import CreateAcount from "./CreateAcount";
+import CreateAcount2 from "./CreateAcount2";
+import CreateAcount3 from "./CreateAcount3";
 import Subscribe from "./Subscribe";
 
 export default function Footer() {
@@ -8,6 +10,8 @@ export default function Footer() {
     <>
       <Subscribe />
       <CreateAcount />
+      <CreateAcount2 />
+      <CreateAcount3 />
 
       <footer>
         <p>© 2019 LUCKY 7 </p>
