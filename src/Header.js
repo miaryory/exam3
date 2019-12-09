@@ -4,6 +4,7 @@ import "./Header.css";
 //import Login from "./Login";
 import logo from "./temp_assets/logo.png";
 import useForm from "react-hook-form";
+import CreateAccount from "./CreateAcount";
 
 Modal.setAppElement("body");
 
@@ -87,6 +88,12 @@ export default function Header() {
     alert("You are logged out");
   };
 
+  const [newuser, setNewUser] = useState(false);
+  const handleNewUser = evt => {
+    evt.preventDefault();
+    setNewUser(true);
+  };
+
   /********************** */
 
   if (logged) {
@@ -150,53 +157,65 @@ export default function Header() {
           <button ref={_close => (close = _close)} onClick={closeModal}>
             &times;
           </button>
-          <h3 className="login-title">Welcome back!</h3>
-          <div className="login-container" onSubmit={submit}>
-            <form className="form-login-container">
-              <label htmlFor="email">Email</label>
-              <input
-                onChange={e => setEmail(e.target.value)}
-                name="email"
-                placeholder="E-mail"
-                type="text"
-                ref={register({
-                  required: "This is required",
-                  pattern: {
-                    value: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
-                    message: "Invalid email address"
-                  }
-                })}
-              />
-              {errors.email && <p>{errors.email.message}</p>}
 
-              <label htmlFor="passwordL">Password</label>
-              <input
-                onChange={e => setPassword(e.target.value)}
-                name="passwordL"
-                placeholder="password"
-                ref={register({
-                  required: "This is required",
-                  pattern: {
-                    value: /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/i,
-                    message:
-                      "Must contain: one number, one uppercase and lowercase letter, at least 8 characters"
-                  }
-                })}
-              />
-              {errors.passwordL && <p>{errors.passwordL.message}</p>}
+          {newuser ? (
+            <>
+              <CreateAccount />
+              <p onClick={() => setNewUser(false)}>Already an account</p>
+            </>
+          ) : (
+            <>
+              <h3 className="login-title">Welcome back!</h3>
+              <div className="login-container" onSubmit={submit}>
+                <form className="form-login-container">
+                  <label htmlFor="email">Email</label>
+                  <input
+                    onChange={e => setEmail(e.target.value)}
+                    name="email"
+                    placeholder="E-mail"
+                    type="text"
+                    ref={register({
+                      required: "This is required",
+                      pattern: {
+                        value: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+                        message: "Invalid email address"
+                      }
+                    })}
+                  />
+                  {errors.email && <p>{errors.email.message}</p>}
 
-              <label htmlFor="submit"></label>
-              <input
-                className="form-login-submit"
-                type="submit"
-                value="Sign in"
-              />
-            </form>
-          </div>
-          <p className="login-forget">Did you forget your password?</p>
-          {/* <h6>Create acount</h6> */}
-          <h6 className="login-new"> I'm new here</h6>
-          <button className="login-singup">Sign up</button>
+                  <label htmlFor="passwordL">Password</label>
+                  <input
+                    onChange={e => setPassword(e.target.value)}
+                    name="passwordL"
+                    placeholder="password"
+                    ref={register({
+                      required: "This is required",
+                      pattern: {
+                        value: /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/i,
+                        message:
+                          "Must contain: one number, one uppercase and lowercase letter, at least 8 characters"
+                      }
+                    })}
+                  />
+                  {errors.passwordL && <p>{errors.passwordL.message}</p>}
+
+                  <label htmlFor="submit"></label>
+                  <input
+                    className="form-login-submit"
+                    type="submit"
+                    value="Sign in"
+                  />
+                </form>
+              </div>
+              <p className="login-forget">Did you forget your password?</p>
+              {/* <h6>Create acount</h6> */}
+              <h6 className="login-new"> I'm new here</h6>
+              <button className="login-singup" onClick={handleNewUser}>
+                Sign up
+              </button>
+            </>
+          )}
         </Modal>
       </div>
     );

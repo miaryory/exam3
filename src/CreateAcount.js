@@ -6,9 +6,25 @@ import Phone from "./Phone";
 
 export default function BtnForm() {
   const { register, errors, handleSubmit } = useForm({ mode: "onChange" });
-  const onSubmit = data => {
-    console.log(data);
+  const onSubmit = () => {
+    setSubmit(true);
   };
+
+  const [submit, setSubmit] = useState(false);
+
+  // const submitHandler = evt => {
+  //   evt.preventDefault();
+  //   setSubmit(true);
+  // };
+
+  if (submit) {
+    return (
+      <div className="acount-container">
+        <h1 className="welcome">WELCOME</h1>
+        <h5>Thank you for signing up.</h5>
+      </div>
+    );
+  }
 
   return (
     <div className="acount-container">

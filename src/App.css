@@ -122,19 +122,19 @@
 
 /* ///////// CREATE ACOUNT STYLE ////////////// */
 .acount-container {
-    max-width: 600px;
+    max-width: 700px;
     margin: 0 auto;
     background-color: white;
     color: black;
     padding-top: 20px;
-    height: 800px;
+    height: 600px;
 
     margin-top: 10px;
 
 }
 
 .form-acount-container {
-    max-width: 500px;
+    max-width: 600px;
     margin: 0 auto;
     padding: 1em;
 

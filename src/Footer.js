@@ -1,7 +1,6 @@
 import React from "react";
 import "./Footer.css";
 import CreateAcount from "./CreateAcount";
-import CreateAcount2 from "./CreateAcount2";
 
 import Subscribe from "./Subscribe";
 
@@ -10,7 +9,6 @@ export default function Footer() {
     <>
       <Subscribe />
       <CreateAcount />
-      <CreateAcount2 />
 
       <footer>
         <p>© 2019 LUCKY 7 </p>
