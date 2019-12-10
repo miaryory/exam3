@@ -137,18 +137,18 @@
     }
 
     #spinBTN {
-        top: 205%;
+        top: 215%;
         font-size: 2.3em;
     }
 
     #whiteBox {
         width: 236px;
         height: 122px;
-        top: 180%;
+        top: 190%;
     }
 
     #dice {
-        top: 183%;
+        top: 190%;
         left: 53%;
     }
 
@@ -168,20 +168,75 @@
     }
 
     #spinBTN {
-        top: 205%;
+        top: 211%;
         font-size: 2.3em;
     }
 
     #whiteBox {
-        width: 236px;
-        height: 122px;
-        top: 180%;
+        top: 187%;
     }
 
     #dice {
-        top: 180%;
+        top: 186%;
     }
 }
+
+@media only screen and (min-width: 322px) {
+
+    .oneEmoji+.oneEmoji {
+        margin-left: 2.1em;
+    }
+
+    #machineImg {
+        width: 88%;
+        margin-top: 0px;
+    }
+
+    #spinBTN {
+        top: 202%;
+    }
+
+    #whiteBox {
+        top: 178%;
+    }
+
+    #dice {
+        top: 177%;
+    }
+}
+
+@media only screen and (min-width: 601px) {
+
+    .oneEmoji+.oneEmoji {
+        margin-left: 3.2em;
+    }
+
+    #machineImg {
+        width: 88%;
+        margin-top: 0px;
+    }
+
+    #spinBTN {
+        top: 199%;
+        font-size: 3.6em;
+    }
+
+    #whiteBox {
+        top: 156%;
+        width: 393px;
+        height: 173px;
+    }
+
+    #dice {
+        top: 158%;
+    }
+
+    .oneEmoji {
+        width: 16%;
+    }
+}
+
+
 
 
 
@@ -204,7 +259,7 @@
     }
 
     #dice {
-        top: 150%;
+        top: 154%;
         left: 50.8%;
     }
 
@@ -214,8 +269,7 @@
     }
 
     #spinBTN {
-        top: 184%;
-        font-size: 3.4em;
+        top: 191%;
     }
 
     #whiteBox {
