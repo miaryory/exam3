@@ -7,26 +7,29 @@
 
 #fullGame {
     text-align: center;
-    max-width: 600px;
+    /* max-width: 600px; */
     margin: 0 auto;
 
+    max-width: 300px;
 }
+
 
 #machineWrap {
     max-width: 500px;
     margin: 0 auto;
-    height: 350px;
+    /* height: 350px; */
+
+    height: 290px;
 }
 
 .oneEmoji {
-    width: 12%;
+    /* width: 12%; */
+    width: 16%;
 }
 
 .oneEmoji:hover {
-    /* transform: rotate(45deg); */
     animation: rotateA 3s infinite;
 }
-
 
 @keyframes rotateA {
     from {
@@ -38,39 +41,42 @@
     }
 }
 
-
 .oneEmoji+.oneEmoji {
-    margin-left: 2.2em;
+    margin-left: 2.1em;
 }
 
 #dice {
     position: absolute;
-    top: 148%;
+    /* top: 148%; */
     text-align: center;
-    left: 51.3%;
+    /* left: 51.3%; */
     position: absolute;
     right: auto;
     bottom: auto;
     margin-right: -50%;
     transform: translate(-50%, -50%);
 
-
+    top: 183%;
+    left: 53%;
 }
 
 #machineImg {
-    width: 61%;
+    /* width: 61%; */
     position: relative;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     z-index: 1;
     pointer-events: none;
+
+    width: 88%;
+    margin-top: 0px;
 }
 
 #spinBTN {
     position: absolute;
-    top: 174%;
+    /* top: 174%; */
     left: 51%;
     font-family: 'Rye', cursive;
-    font-size: 2.6em;
+    /* font-size: 2.6em; */
     color: var(--green);
     background-color: var(--orange);
     border: none;
@@ -81,20 +87,28 @@
     bottom: auto;
     margin-right: -50%;
     transform: translate(-50%, -50%);
+
+
+    top: 205%;
+    font-size: 2.3em;
 }
 
 #whiteBox {
     position: absolute;
-    top: 147%;
+    /* top: 147%; */
     background-color: white;
-    width: 280px;
-    height: 150px;
+    /* width: 280px; */
+    /* height: 150px; */
     left: 50%;
     position: absolute;
     right: auto;
     bottom: auto;
     margin-right: -50%;
     transform: translate(-50%, -50%);
+
+    width: 236px;
+    height: 122px;
+    top: 184%;
 }
 
 #gameH1 {
@@ -114,79 +128,9 @@
 }
 
 
-@media only screen and (min-width: 300px) and (max-width: 600px) {
-    #fullGame {
-        max-width: 300px;
-    }
-
-    #machineWrap {
-        height: 290px;
-    }
-
-    .oneEmoji {
-        width: 16%;
-    }
-
-    .oneEmoji+.oneEmoji {
-        margin-left: 2.1em;
-    }
-
-    #machineImg {
-        width: 88%;
-        margin-top: 0px;
-    }
-
-    #spinBTN {
-        top: 215%;
-        font-size: 2.3em;
-    }
-
-    #whiteBox {
-        width: 236px;
-        height: 122px;
-        top: 190%;
-    }
-
-    #dice {
-        top: 190%;
-        left: 53%;
-    }
-
-
-}
 
 
 @media only screen and (min-width: 312px) {
-
-    .oneEmoji+.oneEmoji {
-        margin-left: 2.1em;
-    }
-
-    #machineImg {
-        width: 88%;
-        margin-top: 0px;
-    }
-
-    #spinBTN {
-        top: 211%;
-        font-size: 2.3em;
-    }
-
-    #whiteBox {
-        top: 187%;
-    }
-
-    #dice {
-        top: 186%;
-    }
-}
-
-@media only screen and (min-width: 322px) {
-
-    .oneEmoji+.oneEmoji {
-        margin-left: 2.1em;
-    }
-
     #machineImg {
         width: 88%;
         margin-top: 0px;
@@ -197,18 +141,33 @@
     }
 
     #whiteBox {
-        top: 178%;
+        top: 181%;
     }
 
     #dice {
-        top: 177%;
+        top: 180%;
+    }
+}
+
+@media only screen and (min-width: 321px) {
+
+    #spinBTN {
+        top: 193%;
+    }
+
+    #whiteBox {
+        top: 171%;
+    }
+
+    #dice {
+        top: 171%;
     }
 }
 
 @media only screen and (min-width: 601px) {
 
     .oneEmoji+.oneEmoji {
-        margin-left: 3.2em;
+        margin-left: 2.4em;
     }
 
     #machineImg {
@@ -217,28 +176,25 @@
     }
 
     #spinBTN {
-        top: 199%;
-        font-size: 3.6em;
+        top: 165%;
+        font-size: 2.2em;
     }
 
     #whiteBox {
-        top: 156%;
-        width: 393px;
-        height: 173px;
+        top: 143%;
+        width: 238px;
+        height: 116px;
     }
 
     #dice {
-        top: 158%;
+        top: 143%;
+        left: 51.3%;
     }
 
     .oneEmoji {
-        width: 16%;
+        width: 9%;
     }
 }
-
-
-
-
 
 
 @media only screen and (min-width: 800px) {
@@ -259,7 +215,7 @@
     }
 
     #dice {
-        top: 154%;
+        top: 151%;
         left: 50.8%;
     }
 
@@ -269,11 +225,13 @@
     }
 
     #spinBTN {
-        top: 191%;
+        top: 185%;
+        font-size: 3.7em;
     }
 
     #whiteBox {
         width: 350px;
         height: 180px;
+        top: 153%;
     }
 }
