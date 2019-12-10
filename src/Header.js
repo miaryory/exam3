@@ -17,7 +17,9 @@ const customStyles = {
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
     padding: "10px 50px 20px",
-    width: "530px"
+    // width: "530px"
+    width: "80%",
+    height: "93%"
   }
 };
 
@@ -161,7 +163,12 @@ export default function Header() {
           {newuser ? (
             <>
               <CreateAccount />
-              <p onClick={() => setNewUser(false)}>Already an account</p>
+              <button
+                className="alreadyacount"
+                onClick={() => setNewUser(false)}
+              >
+                Already an account
+              </button>
             </>
           ) : (
             <>

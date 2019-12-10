@@ -1,14 +1,14 @@
 import React from "react";
 import "./Footer.css";
-import CreateAcount from "./CreateAcount";
 
 import Subscribe from "./Subscribe";
+import Payment from "./Payment";
 
 export default function Footer() {
   return (
     <>
       <Subscribe />
-      <CreateAcount />
+      <Payment />
 
       <footer>
         <p>© 2019 LUCKY 7 </p>

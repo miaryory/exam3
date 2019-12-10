@@ -15,6 +15,13 @@
     text-rendering: optimizeLegibility;
 }
 
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 .FullSite {
     background-color: #004B32;
     width: 100wh;
@@ -186,6 +193,7 @@
     display: block;
     opacity: 1;
     border-color: var(--green);
+    margin-bottom: 57px;
 }
 
 .form-acount-submit:hover {
@@ -242,6 +250,19 @@ svg {
     font-size: 60px;
     text-align: center;
     margin-top: 50px;
+}
+
+
+.alreadyacount {
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: underline;
+    border: none;
+    background-color: white;
+    display: block;
+    margin: 0 auto;
+    margin-top: 110px;
 }
 
 /* ///////// SUBSCRIBE STYLE ////////////// */
@@ -372,4 +393,126 @@ input:disabled {
     width: 13px;
     left: 2px;
     top: 3px;
+}
+
+/* ///////// PAYMENT STYLE ////////////// */
+.payment-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.payment-title {
+    font-size: 28px;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.payment-products-title {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    height: 40px;
+    margin-top: 15px;
+}
+
+.payment-products {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    margin-top: 15px;
+}
+
+.payment-total-container {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    height: 40px;
+    margin-top: 15px;
+}
+
+.payment-total {
+    display: inline;
+}
+
+.payment-price {
+    display: inline;
+    /* margin-left: 70%;  */
+}
+
+
+.payment-method {
+    grid-column: 2/3;
+    grid-row: 3/4;
+    height: 40px;
+    margin-top: 15px;
+}
+
+.cards {
+    grid-column: 2/3;
+    grid-row: 4/5;
+    margin-bottom: 30px;
+}
+
+.payment-grid form {
+    grid-column: 1/3;
+    grid-row: 5/6;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+form .pay-label {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    font-size: 17px;
+
+}
+
+
+.pay-div {
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+
+.payment-input {
+    border-radius: 0.2em;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid black;
+    padding: 16px 15px;
+    height: 60px;
+    background-color: transparent;
+    margin-bottom: 20px;
+
+}
+
+.lVApJ .dUEXvh {
+    border-radius: 0.2em;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    padding: 10px 15px;
+    height: 1px;
+    box-shadow: inset 0px 1px 0px transparent;
+    background-color: transparent;
+}
+
+
+.form-payment-submit {
+    background-color: var(--green);
+    color: white;
+    text-transform: uppercase;
+    border: none;
+    margin-top: 50px;
+
+    font-size: 10px;
+    font-weight: 100;
+    letter-spacing: 6px;
+    border-radius: 5px;
+    display: block;
+
+
+    margin-right: 25px;
+
+
+    opacity: 1;
+    width: 35%;
 }
