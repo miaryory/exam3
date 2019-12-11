@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import useForm from "react-hook-form";
 import Modal from "react-modal";
@@ -20,8 +20,52 @@ const customStyles = {
 
 export default function Subscribe() {
   const { register, errors, handleSubmit } = useForm({ mode: "onChange" });
-  const onSubmit = data => {
-    console.log(data);
+
+  //get email input from the user
+  const [userEmail, setEmail] = useState(" ");
+
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    fetch(
+      "https://kea3rdsemester-91fd.restdb.io/rest/" +
+        "newsletter?fetchchildren=true",
+      {
+        method: "get",
+        headers: {
+          "Content-Type": "application/json; charset=utf-8",
+          "x-apikey": "5d887df9fd86cb75861e2626",
+          "cache-control": "no-cache"
+        }
+      }
+    )
+      .then(e => e.json())
+      .then(e => setUsers(e));
+  }, []);
+
+  const onSubmit = () => {
+    users.map(user => {
+      if (userEmail === user.email) {
+        alert("You already subscribed!");
+      } else {
+        const data = {
+          email: userEmail
+        };
+
+        const postData = JSON.stringify(data);
+        fetch("https://kea3rdsemester-91fd.restdb.io/rest/newsletter", {
+          method: "post",
+          headers: {
+            "Content-Type": "application/json; charset=utf-8",
+            "x-apikey": "5d887df9fd86cb75861e2626",
+            "cache-control": "no-cache"
+          },
+          body: postData
+        })
+          .then(res => res.json())
+          .then(setIsOpen(false));
+      }
+    });
   };
 
   // MODAL
@@ -86,6 +130,7 @@ export default function Subscribe() {
 
             {/* <label htmlFor="email">Email</label> */}
             <input
+              onChange={e => setEmail(e.target.value)}
               name="email"
               placeholder="Enter your email..."
               type="text"
