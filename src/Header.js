@@ -48,7 +48,15 @@ export default function Header() {
   }
 
   /************************* */
-  const { register, errors } = useForm({ mode: "onChange" });
+  const { register, errors, handleSubmit } = useForm({ mode: "onChange" });
+  const onSubmit = evt => {
+    evt.preventDefault();
+    users.map(user => {
+      if (email === user.email && password === user.password) {
+        setLogStatus(true);
+      }
+    });
+  };
 
   const [users, setUsers] = useState([]);
 
@@ -74,15 +82,6 @@ export default function Header() {
   const [password, setPassword] = useState(" ");
 
   const [logged, setLogStatus] = useState(false);
-
-  const submit = evt => {
-    evt.preventDefault();
-    users.map(user => {
-      if (email === user.email && password === user.password) {
-        setLogStatus(true);
-      }
-    });
-  };
 
   const handleLogOut = evt => {
     evt.preventDefault();
@@ -174,7 +173,10 @@ export default function Header() {
           ) : (
             <>
               <h3 className="login-title">Welcome back!</h3>
-              <div className="login-container" onSubmit={submit}>
+              <div
+                className="login-container"
+                onSubmit={handleSubmit(onSubmit)}
+              >
                 <form className="form-login-container">
                   <label htmlFor="email">Email</label>
                   <input
