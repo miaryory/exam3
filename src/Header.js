@@ -44,6 +44,7 @@ export default function Header() {
 
   function closeModal() {
     setIsOpen(false);
+    setNewUser(false);
   }
 
   /************************* */
