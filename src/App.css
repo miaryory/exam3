@@ -7,6 +7,10 @@
     width: 100vw;
 }
 
+html,
+body {
+    height: 100%;
+}
 
 * {
     box-sizing: border-box;
@@ -25,6 +29,7 @@
 .FullSite {
     background-color: #004B32;
     width: 100wh;
+    height: 100%;
 }
 
 

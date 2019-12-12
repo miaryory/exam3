@@ -5,6 +5,7 @@ import "./Header.css";
 import logo from "./temp_assets/logo.png";
 import useForm from "react-hook-form";
 import CreateAccount from "./CreateAcount";
+import Mobilemenu from "./Mobilemenu";
 
 Modal.setAppElement("body");
 
@@ -128,6 +129,7 @@ export default function Header() {
     return (
       <div>
         <header>
+          <Mobilemenu />
           <img id="logoImg" src={logo}></img>
           <nav id="desktop-nav">
             <ul>
