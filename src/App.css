@@ -529,17 +529,15 @@ form .pay-label {
     width: 80%;
     display: block;
     margin: 0 auto;
-}
-
-.slider-text {
     text-align: center;
 }
+
 
 .slider-form label {
     font-size: 30px;
 }
 
-.slider-container p {
+.slider-form p {
     font-size: 10px;
     background-color: var(--green);
     color: white;

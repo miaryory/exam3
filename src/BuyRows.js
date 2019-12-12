@@ -81,15 +81,11 @@ class BuyRows extends Component {
             max="100"
             step="10"
           />
-
-          {/* <input className="buy-btn" type="submit" value="Submit" /> */}
-        </form>
-        <div className="slider-text">
           <p>{this.state.value} rows selected </p>
           <button className="buy-btn" type="submit">
             {this.state.value * 5} KR - BUY NOW
           </button>
-        </div>
+        </form>
       </div>
     );
   }
