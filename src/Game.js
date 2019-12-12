@@ -104,7 +104,7 @@ export default class Gameplace extends React.Component {
   /*note*/
   render() {
     const spinClick = () => {
-      localStorage.setItem("subscribed", true);
+      localStorage.setItem("subscribed", false);
       // we need an  onclick for the submit button on the form that changes the localstorage to true.
       if (localStorage.getItem("winstatus") === "true") {
         alert("you already won");
