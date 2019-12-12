@@ -81,11 +81,11 @@ class BuyRows extends Component {
             max="100"
             step="10"
           />
-
-          <input type="submit" value="Submit" />
+          <p>{this.state.value} rows selected </p>
+          <button className="buy-btn" type="submit">
+            {this.state.value * 5} KR - BUY NOW
+          </button>
         </form>
-        <p>{this.state.value} rows selected </p>
-        <p>{this.state.value * 5} KR - BUY NOW </p>
       </div>
     );
   }

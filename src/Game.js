@@ -8,7 +8,6 @@ const default_emoji3 = `./assets/dice/placeholder.svg`;
 const default_gamestatus = "";
 let counter = 0;
 
-
 function rungame(current_gamestate) {
   counter++;
   let emoji1 = FindEmoji();
@@ -45,6 +44,7 @@ function CheckForWin(emoji1, emoji2, emoji3) {
     localStorage.setItem("winstatus", "true");
   } else {
     gamestatus = "lose";
+    localStorage.setItem("winstatus", "false");
   }
   return gamestatus;
 }
@@ -54,11 +54,9 @@ function alerting(gamestatus) {
     alert(
       "Congratulations! You just won 5 extra rows with your next Lucky7 purchase :)"
     );
-  }
-  else if (gamestatus === "lose" && counter < 4) {
+  } else if (gamestatus === "lose" && counter < 4) {
     alert("You lost, try again!");
-    console.log(gamestatus)
-
+    console.log(gamestatus);
   } else if (gamestatus === "lose" && counter === 4) {
     alert("unfortunately you've lost and run out of tries.");
   }
@@ -80,7 +78,7 @@ export default class Gameplace extends React.Component {
         animation2: false,
         animation3: false,
       }
-    }
+    };
     this.spin = this.spin.bind(this); //this is a boilerplate for ES6 because of  a quirk in JS: https://www.freecodecamp.org/news/this-is-why-we-need-to-bind-event-handlers-in-class-components-in-react-f7ea1a6f93eb/
   }
 
@@ -102,6 +100,7 @@ export default class Gameplace extends React.Component {
     return new_state;
   }
 
+
   /*note*/
   render() {
     const spinClick = () => {
@@ -118,30 +117,37 @@ export default class Gameplace extends React.Component {
         } else {
           this.spin(this.state);
         }
+
       }
     };
     ///the animation code is heavily inspired by https://stackoverflow.com/questions/24111813/how-can-i-animate-a-react-js-component-onclick-and-detect-the-end-of-the-animati
 
     const animation1end = () => {
+
       this.setState({
         ...this.state, animation_state: {
           ...this.state.animation_state, animation1: false,
+
         }
       });
     };
 
     const animation2end = () => {
+
       this.setState({
         ...this.state, animation_state: {
           ...this.state.animation_state, animation2: false,
+
         }
       });
     };
 
     const animation3end = () => {
+
       this.setState({
         ...this.state, animation_state: {
           ...this.state.animation_state, animation3: false,
+
         }
       });
       alerting(this.state.game_state.gamestatus);
@@ -163,19 +169,27 @@ export default class Gameplace extends React.Component {
             <img
               src={require(`${this.state.game_state.emoji1}`)}
               alt="random emoji"
-              className={this.state.animation_state.animation1 ? animationClasses : defaultClassnames}
+              className={
+                this.state.animation_state.animation1
+                  ? animationClasses
+                  : defaultClassnames
+              }
               onAnimationEnd={() => animation1end()}
             ></img>
             <img
               src={require(`${this.state.game_state.emoji2}`)}
               alt="random emoji"
+
               className={this.state.animation_state.animation2 ? animationClasses : defaultClassnames}
+
               onAnimationEnd={() => animation2end()}
             ></img>
             <img
               src={require(`${this.state.game_state.emoji3}`)}
               alt="random emoji"
+
               className={this.state.animation_state.animation3 ? animationClasses : defaultClassnames}
+
               onAnimationEnd={() => animation3end()}
               id="lastemoji"
             ></img>
