@@ -9,29 +9,21 @@ const default_gamestatus = "";
 let counter = 0;
 
 function rungame(current_gamestate) {
-  if (localStorage.getItem("winstatus") === "true") {
-    alert("you already won");
-    return current_gamestate;
-  } else if (localStorage.getItem("tries") >= 4) {
-    alert("max 3 tries!");
-    return current_gamestate;
-  } else {
-    counter++;
-    let emoji1 = FindEmoji();
-    let emoji2 = FindEmoji();
-    let emoji3 = FindEmoji();
-    let gamestatus = CheckForWin(emoji1, emoji2, emoji3);
-    console.log(gamestatus);
-    console.log(counter);
-    localStorage.setItem("tries", counter);
-    return {
-      ...current_gamestate,
-      emoji1: emoji1,
-      emoji2: emoji2,
-      emoji3: emoji3,
-      gamestatus: gamestatus
-    };
-  }
+  counter++;
+  let emoji1 = FindEmoji();
+  let emoji2 = FindEmoji();
+  let emoji3 = FindEmoji();
+  let gamestatus = CheckForWin(emoji1, emoji2, emoji3);
+  console.log(gamestatus);
+  console.log(counter);
+  localStorage.setItem("tries", counter);
+  return {
+    ...current_gamestate,
+    emoji1: emoji1,
+    emoji2: emoji2,
+    emoji3: emoji3,
+    gamestatus: gamestatus
+  };
 }
 
 function FindEmoji() {
@@ -85,11 +77,9 @@ export default class Gameplace extends React.Component {
         animation1: false,
         animation2: false,
         animation3: false,
-        waitForSpin: false
       }
     };
     this.spin = this.spin.bind(this); //this is a boilerplate for ES6 because of  a quirk in JS: https://www.freecodecamp.org/news/this-is-why-we-need-to-bind-event-handlers-in-class-components-in-react-f7ea1a6f93eb/
-    this.animationEndAndUpdate = this.animationEndAndUpdate.bind(this);
   }
 
   //
@@ -98,82 +88,69 @@ export default class Gameplace extends React.Component {
   spin(current_state) {
     let new_state = {
       ...current_state,
-      animation_state: { ...current_state.animation_state, waitForSpin: false },
-      game_state: rungame(current_state.game_state)
+      game_state: rungame(current_state.game_state),
+      animation_state: {
+        ...current_state.animation_state,
+        animation1: true,
+        animation2: true,
+        animation3: true,
+      }
     };
-    //alerting();
+    this.setState(new_state);
     return new_state;
   }
 
-  //reset animations then spin
-
-  animationEndAndUpdate(new_state) {
-    if (
-      new_state.animation_state.waitForSpin === true &&
-      new_state.animation_state.animation1 === false &&
-      new_state.animation_state.animation2 === false &&
-      new_state.animation_state.animation3 === false
-    ) {
-      this.setState(this.spin(new_state));
-    } else {
-      this.setState(new_state);
-    }
-  }
 
   /*note*/
   render() {
     const spinClick = () => {
-      localStorage.setItem("subscribed", false);
+      localStorage.setItem("subscribed", true);
       // we need an  onclick for the submit button on the form that changes the localstorage to true.
-      if (
-        localStorage.getItem("subscribed") === "false" &&
-        localStorage.getItem("tries") >= 1
-      ) {
-        alert("subscribe to our newsletter for 3 more tries");
-        console.log("subsribe form goes here");
+      if (localStorage.getItem("winstatus") === "true") {
+        alert("you already won");
+      } else if (localStorage.getItem("tries") >= 4) {
+        alert("max 4 tries!");
       } else {
-        this.setState({
-          ...this.state,
-          animation_state: {
-            ...this.state.animation_state,
-            animation1: true,
-            animation2: true,
-            animation3: true,
-            waitForSpin: true
-          }
-        });
+        if (localStorage.getItem("subscribed") === "false" && localStorage.getItem("tries") >= 1) {
+          alert("subscribe to our newsletter for 3 more tries");
+          console.log("subsribe form goes here")
+        } else {
+          this.spin(this.state);
+        }
+
       }
     };
     ///the animation code is heavily inspired by https://stackoverflow.com/questions/24111813/how-can-i-animate-a-react-js-component-onclick-and-detect-the-end-of-the-animati
 
     const animation1end = () => {
-      this.animationEndAndUpdate({
-        ...this.state,
-        animation_state: {
-          ...this.state.animation_state,
-          animation1: false
+
+      this.setState({
+        ...this.state, animation_state: {
+          ...this.state.animation_state, animation1: false,
+
         }
       });
     };
 
     const animation2end = () => {
-      this.animationEndAndUpdate({
-        ...this.state,
-        animation_state: {
-          ...this.state.animation_state,
-          animation2: false
+
+      this.setState({
+        ...this.state, animation_state: {
+          ...this.state.animation_state, animation2: false,
+
         }
       });
     };
 
     const animation3end = () => {
-      this.animationEndAndUpdate({
-        ...this.state,
-        animation_state: {
-          ...this.state.animation_state,
-          animation3: false
+
+      this.setState({
+        ...this.state, animation_state: {
+          ...this.state.animation_state, animation3: false,
+
         }
       });
+      alerting(this.state.game_state.gamestatus);
     };
 
     const defaultClassnames = "oneEmoji";
@@ -202,21 +179,17 @@ export default class Gameplace extends React.Component {
             <img
               src={require(`${this.state.game_state.emoji2}`)}
               alt="random emoji"
-              className={
-                this.state.animation_state.animation1
-                  ? animationClasses
-                  : defaultClassnames
-              }
+
+              className={this.state.animation_state.animation2 ? animationClasses : defaultClassnames}
+
               onAnimationEnd={() => animation2end()}
             ></img>
             <img
               src={require(`${this.state.game_state.emoji3}`)}
               alt="random emoji"
-              className={
-                this.state.animation_state.animation1
-                  ? animationClasses
-                  : defaultClassnames
-              }
+
+              className={this.state.animation_state.animation3 ? animationClasses : defaultClassnames}
+
               onAnimationEnd={() => animation3end()}
               id="lastemoji"
             ></img>
