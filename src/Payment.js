@@ -3,7 +3,7 @@ import "./App.css";
 import useForm from "react-hook-form";
 import Modal from "react-modal";
 import Card from "./Card";
-import cards from "./temp_assets/cards.PNG";
+import cards from "./assets/cards.PNG";
 
 Modal.setAppElement("body");
 

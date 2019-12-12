@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
 import "./Header.css";
 //import Login from "./Login";
-import logo from "./temp_assets/logo.png";
+import logo from "./assets/logo.png";
 import useForm from "react-hook-form";
 import CreateAccount from "./CreateAcount";
 import Mobilemenu from "./Mobilemenu";
