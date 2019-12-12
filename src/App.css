@@ -531,6 +531,51 @@ form .pay-label {
     margin: 0 auto;
 }
 
+.slider-text {
+    text-align: center;
+}
+
+.slider-form label {
+    font-size: 30px;
+}
+
+.slider-container p {
+    font-size: 10px;
+    background-color: var(--green);
+    color: white;
+    text-transform: uppercase;
+    border: 1px solid white;
+    padding: 7px;
+    font-size: 12px;
+    font-weight: 100;
+    letter-spacing: 6px;
+    cursor: pointer;
+    display: inline;
+    padding-top: 7px;
+    padding-bottom: 8px;
+    padding-left: 18px;
+}
+
+
+.buy-btn {
+    background-color: var(--orange);
+    color: white;
+    text-transform: uppercase;
+    border: 1px solid white;
+    margin-top: 30px;
+    padding: 7px;
+    font-size: 12px;
+    font-weight: 100;
+    letter-spacing: 6px;
+    cursor: pointer;
+    display: inline;
+    padding-top: 9px;
+    padding-bottom: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 20px;
+}
+
 .slider {
     -webkit-appearance: none;
     width: 100%;
@@ -538,6 +583,7 @@ form .pay-label {
     outline: none;
     height: 15px;
     border-radius: 5px;
+    margin-top: 20px;
 }
 
 .slider::-webkit-slider-thumb {
