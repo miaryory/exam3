@@ -10,29 +10,21 @@ let counter = 0;
 
 
 function rungame(current_gamestate) {
-  if (localStorage.getItem("winstatus") === "true") {
-    alert("you already won");
-    return current_gamestate;
-  } else if (localStorage.getItem("tries") >= 4) {
-    alert("max 3 tries!");
-    return current_gamestate;
-  } else {
-    counter++;
-    let emoji1 = FindEmoji();
-    let emoji2 = FindEmoji();
-    let emoji3 = FindEmoji();
-    let gamestatus = CheckForWin(emoji1, emoji2, emoji3);
-    console.log(gamestatus);
-    console.log(counter);
-    localStorage.setItem("tries", counter);
-    return {
-      ...current_gamestate,
-      emoji1: emoji1,
-      emoji2: emoji2,
-      emoji3: emoji3,
-      gamestatus: gamestatus
-    };
-  }
+  counter++;
+  let emoji1 = FindEmoji();
+  let emoji2 = FindEmoji();
+  let emoji3 = FindEmoji();
+  let gamestatus = CheckForWin(emoji1, emoji2, emoji3);
+  console.log(gamestatus);
+  console.log(counter);
+  localStorage.setItem("tries", counter);
+  return {
+    ...current_gamestate,
+    emoji1: emoji1,
+    emoji2: emoji2,
+    emoji3: emoji3,
+    gamestatus: gamestatus
+  };
 }
 
 function FindEmoji() {
@@ -87,11 +79,9 @@ export default class Gameplace extends React.Component {
         animation1: false,
         animation2: false,
         animation3: false,
-
       }
     }
     this.spin = this.spin.bind(this); //this is a boilerplate for ES6 because of  a quirk in JS: https://www.freecodecamp.org/news/this-is-why-we-need-to-bind-event-handlers-in-class-components-in-react-f7ea1a6f93eb/
-
   }
 
   //
@@ -112,12 +102,10 @@ export default class Gameplace extends React.Component {
     return new_state;
   }
 
-
-
   /*note*/
   render() {
     const spinClick = () => {
-      localStorage.setItem("subscribed", false);
+      localStorage.setItem("subscribed", true);
       // we need an  onclick for the submit button on the form that changes the localstorage to true.
       if (localStorage.getItem("winstatus") === "true") {
         alert("you already won");
@@ -155,7 +143,6 @@ export default class Gameplace extends React.Component {
         ...this.state, animation_state: {
           ...this.state.animation_state, animation3: false,
         }
-
       });
       alerting(this.state.game_state.gamestatus);
     };
@@ -182,13 +169,13 @@ export default class Gameplace extends React.Component {
             <img
               src={require(`${this.state.game_state.emoji2}`)}
               alt="random emoji"
-              className={this.state.animation_state.animation1 ? animationClasses : defaultClassnames}
+              className={this.state.animation_state.animation2 ? animationClasses : defaultClassnames}
               onAnimationEnd={() => animation2end()}
             ></img>
             <img
               src={require(`${this.state.game_state.emoji3}`)}
               alt="random emoji"
-              className={this.state.animation_state.animation1 ? animationClasses : defaultClassnames}
+              className={this.state.animation_state.animation3 ? animationClasses : defaultClassnames}
               onAnimationEnd={() => animation3end()}
               id="lastemoji"
             ></img>
