@@ -7,7 +7,6 @@
 
 #fullGame {
     text-align: center;
-    /* max-width: 600px; */
     margin: 0 auto;
 
     max-width: 300px;
@@ -17,22 +16,14 @@
 #machineWrap {
     max-width: 500px;
     margin: 0 auto;
-    /* height: 350px; */
-
     height: 290px;
 }
 
 .oneEmoji {
-    /* width: 12%; */
     width: 16%;
 }
 
-.oneEmoji:hover {
-    animation:  linear 1s rotateA;
-}
-
-.oneEmojiAnim{
-    /* transform: rotate(45deg); */
+.oneEmojiAnim {
     animation: 1s linear 1s rotateA;
 }
 
@@ -72,7 +63,7 @@
     /* margin-top: 20px; */
     z-index: 1;
     pointer-events: none;
-display: none;
+    display: none;
     width: 88%;
     margin-top: 0px;
 }
