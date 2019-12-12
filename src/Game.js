@@ -72,7 +72,6 @@ function alerting(gamestatus) {
   }
 }
 
-
 export default class Gameplace extends React.Component {
   ///read react docs about this part
   constructor(props) {
