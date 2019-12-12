@@ -88,7 +88,7 @@ export default function Payment() {
             </div>
 
             <h4 className="payment-method">Payment Method</h4>
-            <img className="cards" src={cards}></img>
+            <img className="cards" alt="Cards" src={cards}></img>
 
             <form
               className="form-acount-container"

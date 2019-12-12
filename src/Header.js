@@ -103,7 +103,7 @@ export default function Header() {
     return (
       <div>
         <header>
-          <img id="logoImg" src={logo}></img>
+          <img id="logoImg" alt="Logo" src={logo}></img>
           <nav id="desktop-nav">
             <ul>
               <li>
@@ -130,7 +130,7 @@ export default function Header() {
       <div>
         <header>
           <Mobilemenu />
-          <img id="logoImg" src={logo}></img>
+          <img id="logoImg" alt="Logo" src={logo}></img>
           <nav id="desktop-nav">
             <ul>
               <li>

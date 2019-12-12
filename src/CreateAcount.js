@@ -129,7 +129,6 @@ export default function BtnForm() {
             name="checkboxV"
             type="checkbox"
             placeholder="By clicking Sign Up, you agree to our Terms and that you have read our Data Use Policy.Subscribe to Newsletter. 18+"
-            name="Subscribe to Newsletter"
             ref={register({
               required: "This is required"
             })}
