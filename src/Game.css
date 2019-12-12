@@ -24,12 +24,16 @@
 
 .oneEmoji {
     /* width: 12%; */
-    /* width: 16%; */
-    width: 45px;
+    width: 16%;
 }
 
 .oneEmoji:hover {
-    animation: rotateA 3s infinite;
+    animation:  linear 1s rotateA;
+}
+
+.oneEmojiAnim{
+    /* transform: rotate(45deg); */
+    animation: 1s linear 1s rotateA;
 }
 
 @keyframes rotateA {
@@ -68,7 +72,7 @@
     /* margin-top: 20px; */
     z-index: 1;
     pointer-events: none;
-
+display: none;
     width: 88%;
     margin-top: 0px;
 }
@@ -94,23 +98,8 @@
     top: 179%;
 }
 
-#whiteBox {
-    position: absolute;
-    /* top: 147%; */
-    background-color: white;
-    /* width: 280px; */
-    /* height: 150px; */
-    left: 50%;
-    position: absolute;
-    right: auto;
-    bottom: auto;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
 
-    width: 236px;
-    height: 122px;
-    top: 157%;
-}
+
 
 #gameH1 {
     color: var(--orange);
@@ -151,6 +140,9 @@
         height: 115px;
         margin-bottom: 0px;
     }
+}
+
+@media only screen and (min-width: 601px) {
 
     .oneEmoji+.oneEmoji {
         margin-left: 2.4em;
