@@ -31,8 +31,9 @@
   }
 
   .banner-text .countdown {
-    margin-top: -55px;
+    /* margin-top: -55px; */
     margin-bottom: 60px;
+    margin-top: 5px;
   }
 
 
