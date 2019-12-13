@@ -18,7 +18,7 @@ const customStyles = {
   }
 };
 
-export default function Subscribe() {
+export default function Subscribe(props) {
   const { register, errors, handleSubmit } = useForm({ mode: "onChange" });
 
   //get email input from the user
@@ -69,7 +69,7 @@ export default function Subscribe() {
   };
 
   // MODAL
-  var close;
+  let close;
   const [modalIsOpen, setIsOpen] = React.useState(false);
   function openModal() {
     setIsOpen(true);
@@ -87,17 +87,13 @@ export default function Subscribe() {
     close.style.border = "none";
   }
 
-  function closeModal() {
-    setIsOpen(false);
-  }
-
   return (
     <>
-      <button onClick={openModal}>Open subscribe</button>
+      {/* <button onClick={openModal}>Open subscribe</button> */}
       <Modal
-        isOpen={modalIsOpen}
+        isOpen={props.display}
         onAfterOpen={afterOpenModal}
-        onRequestClose={closeModal}
+        onRequestClose={props.closeIt}
         style={customStyles}
         contentLabel="Modal Subscribe"
       >
@@ -173,7 +169,7 @@ export default function Subscribe() {
           </form>
         </div>
 
-        <button ref={_close => (close = _close)} onClick={closeModal}>
+        <button ref={_close => (close = _close)} onClick={props.closeIt}>
           &times;
         </button>
       </Modal>

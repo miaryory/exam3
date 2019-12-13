@@ -1,6 +1,7 @@
 import React from "react";
 import "./Game.css";
 import machineImg from "./assets/slotmachine.svg";
+import Subscribe from "./Subscribe";
 
 const default_emoji1 = `./assets/dice/placeholder.svg`;
 const default_emoji2 = `./assets/dice/placeholder.svg`;
@@ -67,6 +68,7 @@ export default class Gameplace extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      modalDisplay: false,
       game_state: {
         emoji1: default_emoji1,
         emoji2: default_emoji2,
@@ -76,10 +78,11 @@ export default class Gameplace extends React.Component {
       animation_state: {
         animation1: false,
         animation2: false,
-        animation3: false,
+        animation3: false
       }
     };
     this.spin = this.spin.bind(this); //this is a boilerplate for ES6 because of  a quirk in JS: https://www.freecodecamp.org/news/this-is-why-we-need-to-bind-event-handlers-in-class-components-in-react-f7ea1a6f93eb/
+    this.closeModal = this.closeModal.bind(this);
   }
 
   //
@@ -93,13 +96,17 @@ export default class Gameplace extends React.Component {
         ...current_state.animation_state,
         animation1: true,
         animation2: true,
-        animation3: true,
+        animation3: true
       }
     };
     this.setState(new_state);
     return new_state;
   }
 
+  //closing modal by changing state in parent (Game)
+  closeModal() {
+    this.setState({ modalDisplay: false });
+  }
 
   /*note*/
   render() {
@@ -111,43 +118,46 @@ export default class Gameplace extends React.Component {
       } else if (localStorage.getItem("tries") >= 4) {
         alert("max 4 tries!");
       } else {
-        if (localStorage.getItem("subscribed") === "false" && localStorage.getItem("tries") >= 1) {
+        if (
+          localStorage.getItem("subscribed") === "false" &&
+          localStorage.getItem("tries") >= 1
+        ) {
           alert("subscribe to our newsletter for 3 more tries");
-          console.log("subsribe form goes here")
+          this.setState({ modalDisplay: true });
         } else {
           this.spin(this.state);
         }
-
       }
     };
+
     ///the animation code is heavily inspired by https://stackoverflow.com/questions/24111813/how-can-i-animate-a-react-js-component-onclick-and-detect-the-end-of-the-animati
 
     const animation1end = () => {
-
       this.setState({
-        ...this.state, animation_state: {
-          ...this.state.animation_state, animation1: false,
-
+        ...this.state,
+        animation_state: {
+          ...this.state.animation_state,
+          animation1: false
         }
       });
     };
 
     const animation2end = () => {
-
       this.setState({
-        ...this.state, animation_state: {
-          ...this.state.animation_state, animation2: false,
-
+        ...this.state,
+        animation_state: {
+          ...this.state.animation_state,
+          animation2: false
         }
       });
     };
 
     const animation3end = () => {
-
       this.setState({
-        ...this.state, animation_state: {
-          ...this.state.animation_state, animation3: false,
-
+        ...this.state,
+        animation_state: {
+          ...this.state.animation_state,
+          animation3: false
         }
       });
       alerting(this.state.game_state.gamestatus);
@@ -157,46 +167,56 @@ export default class Gameplace extends React.Component {
     const animationClasses = "oneEmoji oneEmojiAnim";
 
     return (
-      <div id="fullGame">
-        <div id="mainRow">
-          <div id="machineWrap">
-            <button onClick={() => spinClick()} id="spinBTN">
-              Spin
-            </button>
-            <img src={machineImg} alt="slotmachine" id="machineImg" />
+      <>
+        <Subscribe
+          display={this.state.modalDisplay}
+          closeIt={this.closeModal}
+        />
+        <div id="fullGame">
+          <div id="mainRow">
+            <div id="machineWrap">
+              <button onClick={() => spinClick()} id="spinBTN">
+                Spin
+              </button>
+              <img src={machineImg} alt="slotmachine" id="machineImg" />
+            </div>
+            <div id="dice">
+              <img
+                src={require(`${this.state.game_state.emoji1}`)}
+                alt="random emoji"
+                className={
+                  this.state.animation_state.animation1
+                    ? animationClasses
+                    : defaultClassnames
+                }
+                onAnimationEnd={() => animation1end()}
+              ></img>
+              <img
+                src={require(`${this.state.game_state.emoji2}`)}
+                alt="random emoji"
+                className={
+                  this.state.animation_state.animation2
+                    ? animationClasses
+                    : defaultClassnames
+                }
+                onAnimationEnd={() => animation2end()}
+              ></img>
+              <img
+                src={require(`${this.state.game_state.emoji3}`)}
+                alt="random emoji"
+                className={
+                  this.state.animation_state.animation3
+                    ? animationClasses
+                    : defaultClassnames
+                }
+                onAnimationEnd={() => animation3end()}
+                id="lastemoji"
+              ></img>
+            </div>
+            <p> {this.state.gamestatus} </p>
           </div>
-          <div id="dice">
-            <img
-              src={require(`${this.state.game_state.emoji1}`)}
-              alt="random emoji"
-              className={
-                this.state.animation_state.animation1
-                  ? animationClasses
-                  : defaultClassnames
-              }
-              onAnimationEnd={() => animation1end()}
-            ></img>
-            <img
-              src={require(`${this.state.game_state.emoji2}`)}
-              alt="random emoji"
-
-              className={this.state.animation_state.animation2 ? animationClasses : defaultClassnames}
-
-              onAnimationEnd={() => animation2end()}
-            ></img>
-            <img
-              src={require(`${this.state.game_state.emoji3}`)}
-              alt="random emoji"
-
-              className={this.state.animation_state.animation3 ? animationClasses : defaultClassnames}
-
-              onAnimationEnd={() => animation3end()}
-              id="lastemoji"
-            ></img>
-          </div>
-          <p> {this.state.gamestatus} </p>
         </div>
-      </div>
+      </>
     );
   }
 }

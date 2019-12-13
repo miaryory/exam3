@@ -6,7 +6,7 @@ import Payment from "./Payment";
 export default function Footer() {
   return (
     <>
-      <Subscribe />
+      {/* <Subscribe /> */}
       <Payment />
 
       <footer>
