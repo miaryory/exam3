@@ -86,12 +86,13 @@ export default function Header() {
 
   const [password, setPassword] = useState(" ");
 
-  const [logged, setLogStatus] = useState(false);
+  //const [logged, setLogStatus] = useState(false);
 
   const handleLogOut = evt => {
     evt.preventDefault();
-    setLogStatus(false);
+    //setLogStatus(false);
     closeModal();
+    localStorage.setItem("logStatus", "false");
     alert("You are logged out");
   };
 
@@ -104,14 +105,16 @@ export default function Header() {
   const onSubmit = () => {
     users.map(user => {
       if (email === user.email && password === user.password) {
-        setLogStatus(true);
+        //setLogStatus(true);
+        localStorage.setItem("logStatus", "true");
+        closeModal();
       }
     });
   };
 
   /********************** */
 
-  if (logged) {
+  if (localStorage.getItem("logStatus") === "true") {
     return (
       <div>
         <header>
@@ -137,7 +140,7 @@ export default function Header() {
         </header>
       </div>
     );
-  } else {
+  } else if (localStorage.getItem("logStatus") === "false") {
     return (
       <div>
         <header>

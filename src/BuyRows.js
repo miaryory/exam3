@@ -48,16 +48,22 @@
 
 import React, { Component } from "react";
 import Payment from "./Payment";
+import Login from "./Login";
 
 class BuyRows extends Component {
   constructor(props) {
     super(props);
-    this.state = { value: 10, showPayment: false };
+    this.state = {
+      value: 10,
+      showPayment: false,
+      showLogIn: false
+    };
 
     localStorage.setItem("rows", this.state.value);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.hidePayment = this.hidePayment.bind(this);
+    this.hideLogin = this.hideLogin.bind(this);
   }
 
   handleChange(event) {
@@ -65,20 +71,46 @@ class BuyRows extends Component {
     this.setState({ value: event.target.value });
   }
 
+  //checking if the user is already stocked in the DB
+  // hasAccount(a, obj) {
+  //   var i = a.length;
+  //   while (i--) {
+  //     if (a[i].email === obj) {
+  //       return true;
+  //     }
+  //   }
+  //   return false;
+  // }
+
   handleSubmit(event) {
     //alert("You selected: " + localStorage.getItem("rows") + " rows");
+    const isLogged = localStorage.getItem("logStatus");
     event.preventDefault();
-    this.setState({ showPayment: true });
+    if (isLogged === "false") {
+      //alert("Create an account");
+      this.setState({ showPayment: false });
+      this.setState({ showLogIn: true });
+    } else if (isLogged === "true") {
+      this.setState({ showLogIn: false });
+      this.setState({ showPayment: true });
+    }
   }
 
   hidePayment() {
     this.setState({ showPayment: false });
   }
 
+  hideLogin() {
+    this.setState({ showLogIn: false });
+  }
+
   render() {
     const total = this.state.value * 5;
+    //const logStatus = localStorage.getItem("logStatus");
+
     return (
       <>
+        <Login display={this.state.showLogIn} hide={this.hideLogin} />
         <Payment
           display={this.state.showPayment}
           hide={this.hidePayment}
