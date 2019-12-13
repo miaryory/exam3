@@ -112,7 +112,7 @@ export default function Login(props) {
           </>
         ) : (
           <>
-            <h3 className="login-title">Welcome back!</h3>
+            <h3 className="login-title">Please login to complete purchase</h3>
             <div className="login-container" onSubmit={handleSubmit(onSubmit)}>
               <form className="form-login-container">
                 <label htmlFor="email">Email</label>
