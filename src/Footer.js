@@ -1,14 +1,9 @@
 import React from "react";
 import "./Footer.css";
-import Subscribe from "./Subscribe";
-import Payment from "./Payment";
 
 export default function Footer() {
   return (
     <>
-      {/* <Subscribe /> */}
-      <Payment />
-
       <footer>
         <p>© 2019 LUCKY 7 </p>
         <div id="col1">
