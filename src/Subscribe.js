@@ -43,37 +43,50 @@ export default function Subscribe(props) {
       .then(e => setUsers(e));
   }, []);
 
-  const onSubmit = () => {
-    users.map(user => {
-      if (userEmail === user.email) {
-        alert("You already subscribed!");
-      } else {
-        const data = {
-          email: userEmail
-        };
+  const newMember = mail => {
+    const data = {
+      email: mail
+    };
 
-        const postData = JSON.stringify(data);
-        fetch("https://kea3rdsemester-91fd.restdb.io/rest/newsletter", {
-          method: "post",
-          headers: {
-            "Content-Type": "application/json; charset=utf-8",
-            "x-apikey": "5d887df9fd86cb75861e2626",
-            "cache-control": "no-cache"
-          },
-          body: postData
-        })
-          .then(res => res.json())
-          .then(setIsOpen(false));
+    const postData = JSON.stringify(data);
+    fetch("https://kea3rdsemester-91fd.restdb.io/rest/newsletter", {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json; charset=utf-8",
+        "x-apikey": "5d887df9fd86cb75861e2626",
+        "cache-control": "no-cache"
+      },
+      body: postData
+    })
+      .then(res => res.json())
+      .then(() => {
+        alert("Successfully subsribed!");
+        users.push(data);
+      });
+  };
+
+  //checking if the user is already stocked in the DB
+  function isMember(a, obj) {
+    var i = a.length;
+    while (i--) {
+      if (a[i].email === obj) {
+        return true;
       }
-    });
+    }
+    return false;
+  }
+
+  const onSubmit = () => {
+    props.closeIt();
+    if (!isMember(users, userEmail)) {
+      newMember(userEmail);
+    } else {
+      alert("You already Subscribed!");
+    }
   };
 
   // MODAL
   let close;
-  const [modalIsOpen, setIsOpen] = React.useState(false);
-  function openModal() {
-    setIsOpen(true);
-  }
 
   function afterOpenModal() {
     // Add style here
@@ -89,7 +102,6 @@ export default function Subscribe(props) {
 
   return (
     <>
-      {/* <button onClick={openModal}>Open subscribe</button> */}
       <Modal
         isOpen={props.display}
         onAfterOpen={afterOpenModal}
@@ -106,25 +118,6 @@ export default function Subscribe(props) {
             className="form-subscribe-container"
             onSubmit={handleSubmit(onSubmit)}
           >
-            {/* <label htmlFor="firstname">First name</label>
-        <input
-          name="firstname"
-          placeholder="first name"
-          ref={register({
-            required: "This is a required",
-            minLength: {
-              value: 2,
-              message: "Firts name must have more then 2 characters!"
-            },
-            maxLength: {
-              value: 20,
-              message: "First name must have no more then 20 characters!"
-            }
-          })}
-        />
-        {errors.firstname && <p>{errors.firstname.message}</p>} */}
-
-            {/* <label htmlFor="email">Email</label> */}
             <input
               onChange={e => setEmail(e.target.value)}
               name="email"
