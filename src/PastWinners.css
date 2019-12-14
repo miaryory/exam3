@@ -22,17 +22,20 @@
     padding-top: 3vh;
 }
 
+.winning-numbers .one-number {
+    display: inline-block;
+    margin-left: 2vw;
+}
+
+.winning-numbers .hexagon {
+    width: 40px;
+}
+
 .winning-numbers p {
+    position: absolute;
     color: white;
     font-size: 1.2rem;
-    padding: 5px;
-    display: inline-block;
-    background-color: var(--orange);
-    border-radius: 100%;
-    width: 40px;
-    height: 40px;
-    text-align: center;
-    margin-left: 2vw;
+    padding: 9px;
 }
 
 table {
@@ -88,10 +91,13 @@ td.col-one {
         width: 50%;
     }
 
-    .winning-numbers p {
-        padding: 10px;
+    .winning-numbers .hexagon {
         width: 50px;
-        height: 50px;
+    }
+
+    .winning-numbers p {
+        font-size: 1.3rem;
+        padding: 14px;
     }
 
 }
@@ -118,10 +124,12 @@ td.col-one {
         padding-top: 5vh;
     }
 
-    .winning-numbers p {
-        padding: 15px;
-        width: 60px;
-        height: 60px;
-        margin-left: 2vw;
+    .winning-numbers .hexagon {
+        width: 55px;
     }
+
+    .winning-numbers p {
+        padding: 17px;
+    }
+
 }
