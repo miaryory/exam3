@@ -9,9 +9,6 @@ import FourOptions from "./FourOptions";
 import PastWinners from "./PastWinners";
 
 function MainSite() {
-  //by default the user is logged out
-  //localStorage.setItem("logStatus", "false");
-
   //fetching the data from past week statistics and store it
   const [winners, setWinners] = useState([]);
 

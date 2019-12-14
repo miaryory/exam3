@@ -10,7 +10,6 @@ class BuyRows extends Component {
       showPayment: false,
       showLogIn: false
     };
-
     localStorage.setItem("rows", this.state.value);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -26,12 +25,12 @@ class BuyRows extends Component {
   handleSubmit(event) {
     const isLogged = localStorage.getItem("logStatus");
     event.preventDefault();
-    if (isLogged === "false") {
-      this.setState({ showPayment: false });
-      this.setState({ showLogIn: true });
-    } else if (isLogged === "true") {
+    if (isLogged === "true") {
       this.setState({ showLogIn: false });
       this.setState({ showPayment: true });
+    } else {
+      this.setState({ showPayment: false });
+      this.setState({ showLogIn: true });
     }
   }
 
@@ -45,7 +44,6 @@ class BuyRows extends Component {
 
   render() {
     const total = this.state.value * 5;
-    //const logStatus = localStorage.getItem("logStatus");
 
     return (
       <>
