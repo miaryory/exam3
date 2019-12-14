@@ -88,8 +88,9 @@ export default function Header() {
 
   const [logged, setLogStatus] = useState(false);
 
-  const handleLogOut = evt => {
-    evt.preventDefault();
+  const handleLogOut = () => {
+    //evt.preventDefault();
+    window.location.reload();
     setLogStatus(false);
 
     localStorage.setItem("logStatus", "false");

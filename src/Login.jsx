@@ -73,10 +73,9 @@ export default function Login(props) {
 
   //checking if email and password match one user in DB
   function isAuthentificated(a, mail, psw) {
-    var i = a.length;
+    let i = a.length;
     while (i--) {
       if (a[i].email === mail && a[i].password === psw) {
-        localStorage.setItem("logStatus", "true");
         return true;
       }
     }
@@ -85,6 +84,7 @@ export default function Login(props) {
 
   const onSubmit = () => {
     if (isAuthentificated(users, email, password)) {
+      localStorage.setItem("logStatus", "true");
       window.location.reload();
       props.hide();
     }
