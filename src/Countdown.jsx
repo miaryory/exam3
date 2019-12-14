@@ -9,11 +9,9 @@ export default class CountDown extends React.Component {
     let nextTarget = this.figureOutNextTargetDate();
     let targetDate = new Date(nextTarget);
     this.targetDate = targetDate.getTime();
-    this.getTimeTill(this.targetDate, timeRemaining => {
-      this.state = {
-        timeRemaining
-      };
-    });
+    this.state = {
+      timeRemaining: ""
+    };
   }
 
   figureOutNextTargetDate() {
@@ -44,6 +42,10 @@ export default class CountDown extends React.Component {
     callback(timeRemaing);
   }
   componentDidMount() {
+    this.getTimeTill(this.targetDate, timeRemaining => {
+      this.setState({ timeRemaining: timeRemaining });
+    });
+
     this.timeInterval = setInterval(() => {
       this.getTimeTill(this.targetDate, timeRemaining => {
         this.setState({
