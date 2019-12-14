@@ -76,6 +76,7 @@ export default function Login(props) {
     var i = a.length;
     while (i--) {
       if (a[i].email === mail && a[i].password === psw) {
+        localStorage.setItem("logStatus", "true");
         return true;
       }
     }
@@ -84,7 +85,7 @@ export default function Login(props) {
 
   const onSubmit = () => {
     if (isAuthentificated(users, email, password)) {
-      localStorage.setItem("logStatus", "true");
+      window.location.reload();
       props.hide();
     }
   };
