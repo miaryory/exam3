@@ -4,18 +4,31 @@ import "./Header.css";
 import useForm from "react-hook-form";
 import Phone from "./Phone";
 
-export default function BtnForm() {
+export default function CreateAcount(props) {
+  const [email, userEmail] = useState(" ");
+  //checking if the user is already stocked in the DB
+  function isMember(a, obj) {
+    var i = a.length;
+    while (i--) {
+      if (a[i].email === obj) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   const { register, errors, handleSubmit } = useForm({ mode: "onChange" });
   const onSubmit = () => {
-    setSubmit(true);
+    //check if the user already have an account
+    if (isMember(props.users, email)) {
+      alert("already used email");
+      setSubmit(false);
+    } else {
+      setSubmit(true);
+    }
   };
 
   const [submit, setSubmit] = useState(false);
-
-  // const submitHandler = evt => {
-  //   evt.preventDefault();
-  //   setSubmit(true);
-  // };
 
   if (submit) {
     return (
@@ -67,6 +80,7 @@ export default function BtnForm() {
 
         <label htmlFor="email">Email</label>
         <input
+          onChange={e => userEmail(e.target.value)}
           name="email"
           placeholder="name@yahoo.com"
           type="text"

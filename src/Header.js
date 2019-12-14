@@ -103,14 +103,25 @@ export default function Header() {
     setNewUser(true);
   };
 
-  const onSubmit = () => {
-    users.map(user => {
-      if (email === user.email && password === user.password) {
-        setLogStatus(true);
-        localStorage.setItem("logStatus", "true");
-        closeModal();
+  //checking if email and password match one user in DB
+  function isAuthentificated(a, mail, psw) {
+    var i = a.length;
+    while (i--) {
+      if (a[i].email === mail && a[i].password === psw) {
+        return true;
       }
-    });
+    }
+    return false;
+  }
+
+  const onSubmit = () => {
+    if (isAuthentificated(users, email, password)) {
+      setLogStatus(true);
+      localStorage.setItem("logStatus", "true");
+      closeModal();
+    } else {
+      setLogStatus(false);
+    }
   };
 
   /********************** */
@@ -201,7 +212,7 @@ export default function Header() {
 
           {newuser ? (
             <>
-              <CreateAccount />
+              <CreateAccount users={users} />
               <button
                 className="alreadyacount"
                 onClick={() => setNewUser(false)}
