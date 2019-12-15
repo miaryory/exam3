@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="2000" viewBox="0 0 2000 2000">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #df7b2a;
+      }
+
+      .cls-2, .cls-3 {
+        fill: #004b32;
+      }
+
+      .cls-3 {
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <rect id="Rounded_Rectangle_1" data-name="Rounded Rectangle 1" class="cls-1" width="2000" height="2000" rx="100" ry="100"/>
+  <ellipse class="cls-2" cx="1000.5" cy="619" rx="527.5" ry="468"/>
+  <path class="cls-3" d="M372,1364s584.084-848.93,1190-36S-14.645,2053.38,348,1403"/>
+</svg>

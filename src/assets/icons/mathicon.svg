@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="2000" viewBox="0 0 2000 2000">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #df7b2a;
+      }
+
+      .cls-2 {
+        font-size: 500px;
+        fill: #004b32;
+        text-anchor: middle;
+        font-family: Arial;
+        font-weight: 800;
+      }
+    </style>
+  </defs>
+  <rect id="Rounded_Rectangle_1" data-name="Rounded Rectangle 1" class="cls-1" width="2000" height="2000" rx="100" ry="100"/>
+  <text id="_2_2_4" data-name="2+2=4" class="cls-2" transform="matrix(0.791, 0.853, -1.935, 0.835, 664.148, 1118.04)"><tspan x="0">2+2=4</tspan></text>
+</svg>

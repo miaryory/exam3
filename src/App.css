@@ -514,9 +514,47 @@ form .pay-label {
     opacity: 1;
     width: 35%;
 }
+/*///////////////////////////////// FOUR OPTIONS ////////////////////////////////*/
+.FOh2{
+    margin-top: 1em;
+    font-family: Helvetica, sans-serif;
+    color: #FFFFFF;
+}
 
+.fourThings{
+    text-align: center;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    padding: 5em;
+}
 
+.FOp{
+    margin-top: 1em;
+    color: white;
+    font-family: Helvetica, sans-serif;
+}
 
+.FOimg{
+    width:40%;
+}
+.oneItem{
+    padding: 1em;
+    margin-bottom: 2em;
+    margin-top:2em;
+}
+
+.FObutton{
+    padding: 1em;
+    margin-top: 2em;
+    font-family: Helvetica, sans-serif;
+    background-color: var(--orange);
+    color: var(--green);
+    border-style: none;
+    border-radius: 1em;
+    font-size: 1em;
+    font-weight: bold;
+}
 /* ///////////////////////////////////// ROWS ///////////////////////////////////*/
 .slider-container {
     display: block;
