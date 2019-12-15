@@ -368,6 +368,7 @@ input:disabled {
     color: #4f4f4f;
     font-size: 11px;
     font-family: Helvetica, Arial, sans-serif;
+    pointer-events: visible;
 
 
 }
@@ -377,10 +378,25 @@ input:disabled {
     opacity: 1;
     cursor: pointer;
     height: 15px;
-    width: 13px;
-    margin-top: 7px;
+    width: 16px;
     display: flex;
+    bottom: 70%;
+
 }
+
+@media only screen and (min-width: 330px) {
+    .subscribe-container .form-subscribe-container .subscribeCheckbox {
+        bottom: 56%;
+    }
+}
+
+
+@media only screen and (min-width: 418px) {
+    .subscribe-container .form-subscribe-container .subscribeCheckbox {
+        bottom: 28%;
+    }
+}
+
 
 @media only screen and (min-width: 432px) {
     .subscribe-close {

@@ -143,28 +143,28 @@ export default function Subscribe(props) {
 
             <input className="form-subscribe-submit" type="Submit" />
 
-            <input
+            {/* <input
               className="subscribeCheckbox"
               name="subscribeCheckbox"
               type="checkbox"
               ref={register({
                 required: "This is required"
               })}
-            />
+            /> */}
             <label
               htmlFor="subscribeCheckbox"
               className="subscribe-label-checkbox"
             >
               Yes, I want to subscribe for LUCKY 7 newsletter. I have read and
               agree to the Website Terms of Use. View our privacy policy
-              {/* <input
+              <input
                 className="subscribeCheckbox"
                 name="subscribeCheckbox"
                 type="checkbox"
                 ref={register({
                   required: "This is required"
                 })}
-              /> */}
+              />
             </label>
             {errors.subscribeCheckbox && (
               <p>{errors.subscribeCheckbox.message}</p>
