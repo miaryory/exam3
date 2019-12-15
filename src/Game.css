@@ -9,6 +9,11 @@
     width: 16%;
 }
 
+#machineWrap {
+    margin-bottom: 30px;
+}
+
+
 .oneEmojiAnim {
     animation: 1s linear 1s rotateA;
 }

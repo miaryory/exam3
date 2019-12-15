@@ -1,8 +1,9 @@
 /* ////////// FOOTER /////////// */
 footer {
-    background-color: white;
+    background-color: #004B32;
     margin-top: 50px;
     text-align: center;
+    color: white;
 }
 
 footer h3 {
@@ -20,7 +21,7 @@ footer ul {
 
 footer li a {
     display: block;
-    color: black;
+    color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;

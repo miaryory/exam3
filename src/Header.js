@@ -135,13 +135,16 @@ export default function Header() {
           <nav id="desktop-nav">
             <ul>
               <li>
-                <a href="#home">Section1</a>
+                <a href="#home">Game</a>
               </li>
               <li>
-                <a href="#news">Section2</a>
+                <a href="#news">Buy Rows</a>
               </li>
               <li>
-                <a href="#contact">Section3</a>
+                <a href="#contact">More Options</a>
+              </li>
+              <li>
+                <a href="#contact">Past Winners</a>
               </li>
               <li>
                 <a onClick={handleLogOut} href="#about">
@@ -162,15 +165,18 @@ export default function Header() {
               isOpen={menuOpen}
               onStateChange={state => setMenuOpen(state.isOpen)}
             >
-              <a className="menu-item" href="#home">
-                Section1
+              <a className="menu-item" href=".slotmachine-container">
+                Game
               </a>
 
               <a className="menu-item" href="#news">
-                Section2
+                Buy Rows
               </a>
               <a onClick={showSettings} className="menu-item" href="#news">
-                Section3
+                More Options
+              </a>
+              <a onClick={showSettings} className="menu-item" href="#news">
+                Past Winners
               </a>
 
               <a onClick={setLoginMobile} href="#about">
@@ -183,14 +189,18 @@ export default function Header() {
           <nav id="desktop-nav">
             <ul>
               <li>
-                <a href="#home">Section1</a>
+                <a href=".slotmachine-container">Game</a>
               </li>
               <li>
-                <a href="#news">Section2</a>
+                <a href="#news">Buy Rows</a>
               </li>
               <li>
-                <a href="#contact">Section3</a>
+                <a href="#contact">More Options</a>
               </li>
+              <li>
+                <a href="#contact">Past Winners</a>
+              </li>
+
               <li>
                 <a onClick={openModal} href="#about">
                   Log in

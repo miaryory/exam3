@@ -557,7 +557,9 @@ form .pay-label {
 .slider-container {
     display: block;
     margin: 0 auto;
-    color: white;
+    color: black;
+    background-color: white;
+    height: 360px;
 }
 
 
@@ -566,6 +568,7 @@ form .pay-label {
     display: block;
     margin: 0 auto;
     text-align: center;
+    padding-top: 50px;
 }
 
 
@@ -617,7 +620,7 @@ form .pay-label {
     outline: none;
     height: 15px;
     border-radius: 5px;
-    margin-top: 20px;
+    margin-top: 70px;
 }
 
 .slider::-webkit-slider-thumb {
