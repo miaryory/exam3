@@ -179,14 +179,14 @@ nav li:last-child {
 }
 
 
-@media only screen and (min-width: 200px) and (max-width: 599px) {
+@media only screen and (min-width: 200px) and (max-width: 675px) {
     #desktop-nav {
         display: none;
     }
 
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 675px) {
     .menu-mobile {
         display: none;
     }

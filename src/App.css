@@ -232,19 +232,28 @@ svg {
     top: 3px;
 }
 
-.arrow {
-    width: 3%;
-    height: auto;
+/* Thank you page -create acount*/
+#mark {
+    width: 85px;
+    display: block;
+    margin: 0 auto;
     margin-top: 30px;
-    margin-left: 97%;
 }
 
 .welcome {
-    font-size: 60px;
+    font-size: 45px;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 15px;
 }
 
+.acount-thanks {
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.acount-message {
+    font-size: 11px;
+}
 
 .alreadyacount {
     text-align: center;
@@ -274,16 +283,13 @@ svg {
     font-size: 33px;
     color: #DF7B2A;
     margin-top: 20px;
-
 }
 
 .subscribe-container h5 {
     font-size: 18px;
     font-weight: 400;
     margin-bottom: 30px;
-
 }
-
 
 .subscribe-container h6 {
     line-height: 16px;
@@ -296,12 +302,9 @@ svg {
     font-family: Helvetica, Arial, sans-serif;
 }
 
-
-
 .form-subscribe-container {
     max-width: 500px;
     margin-top: 15px;
-
 }
 
 .form-subscribe-container p {
@@ -332,17 +335,13 @@ svg {
     text-transform: uppercase;
     border: none;
     margin-top: 0px;
-
     font-size: 10px;
     font-weight: 100;
     letter-spacing: 6px;
     border-radius: 5px;
     display: block;
-
     float: right;
     margin-right: 25px;
-
-
     opacity: 1;
     width: 35%;
 }
@@ -351,15 +350,9 @@ svg {
     background: black;
 }
 
-
-
 input:disabled {
     opacity: 0.4;
 }
-
-
-
-
 
 
 /* The container */

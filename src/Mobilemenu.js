@@ -10,7 +10,6 @@ class Mobilemenu extends React.Component {
 
   render() {
     return (
-<<<<<<< HEAD
       <Menu>
         <a id="home" className="menu-item" href="/">
           Home
@@ -25,31 +24,6 @@ class Mobilemenu extends React.Component {
           Settings
         </a>
       </Menu>
-=======
-      <div className="menu-mobile">
-        <Menu>
-          <a className="menu-item" href="#home">
-            Section1
-          </a>
-
-          <a className="menu-item" href="#news">
-            Section2
-          </a>
-          <a onClick={this.showSettings} className="menu-item" href="#news">
-            Section3
-          </a>
-
-          {/* <a
-            onClick={this.showSettings}
-            className="menu-item"
-            onClick={openModal}
-            href="#about"
-          >
-            Log in
-          </a> */}
-        </Menu>
-      </div>
->>>>>>> 736d3a1d6d305a983c46d3aaa13e2a1d3d87a363
     );
   }
 }

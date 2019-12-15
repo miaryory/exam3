@@ -3,6 +3,7 @@ import "./App.css";
 import "./Header.css";
 import useForm from "react-hook-form";
 import Phone from "./Phone";
+import mark from "./assets/mark.png";
 
 export default function CreateAcount(props) {
   const [email, userEmail] = useState(" ");
@@ -33,8 +34,12 @@ export default function CreateAcount(props) {
   if (submit) {
     return (
       <div className="acount-container">
-        <h1 className="welcome">WELCOME</h1>
-        <h5>Thank you for signing up.</h5>
+        <img id="mark" alt="mark" src={mark}></img>
+        <h1 className="welcome">THANK YOU!</h1>
+        <h5 className="acount-thanks">Thank you for signing up!</h5>
+        <p className="acount-message">
+          Your acount was created and you're now a member of Lucky7 website.
+        </p>
       </div>
     );
   }
