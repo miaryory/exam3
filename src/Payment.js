@@ -73,6 +73,9 @@ export default function Payment(props) {
             <p className="payment-products">
               {localStorage.getItem("rows")} rows
             </p>
+            {/* ****** */}
+            <p className="payment-free"> rows free</p>
+            {/* ****** */}
             <div className="payment-total-container">
               <h4 className="payment-total">Total</h4>
               <p className="payment-price">{props.total} dkk</p>

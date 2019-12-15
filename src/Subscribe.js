@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import useForm from "react-hook-form";
 import Modal from "react-modal";
+import Thanks from "./Thanks";
 
 Modal.setAppElement("body");
-
+//  Style for modal
 const customStyles = {
   content: {
     top: "50%",
@@ -89,14 +90,12 @@ export default function Subscribe(props) {
   let close;
 
   function afterOpenModal() {
-    // Add style here
+    //style for close button
     close.style.color = "#aaa";
     close.style.backgroundColor = "white";
     close.style.float = "right";
     close.style.fontSize = "30px";
     close.style.fontWeight = "700";
-    // close.style.marginRight = "-32px";
-    // close.style.marginTop = "-180px";
     close.style.border = "none";
   }
 
@@ -111,9 +110,7 @@ export default function Subscribe(props) {
       >
         <div className="subscribe-container">
           <h1>Do you want more free spins?</h1>
-          <h5>
-            Subscribe to our newsletter and get <span>3</span> spins for FREE!
-          </h5>
+          <h5>Subscribe to our newsletter and get 3 spins for FREE!</h5>
           <form
             className="form-subscribe-container"
             onSubmit={handleSubmit(onSubmit)}
@@ -143,14 +140,6 @@ export default function Subscribe(props) {
 
             <input className="form-subscribe-submit" type="Submit" />
 
-            {/* <input
-              className="subscribeCheckbox"
-              name="subscribeCheckbox"
-              type="checkbox"
-              ref={register({
-                required: "This is required"
-              })}
-            /> */}
             <label
               htmlFor="subscribeCheckbox"
               className="subscribe-label-checkbox"
