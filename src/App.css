@@ -58,7 +58,6 @@ html {
     content: "⚠ ";
 }
 
-
 .form-login-container input {
     display: block;
     width: 100%;
@@ -82,7 +81,6 @@ html {
     margin-bottom: 0;
 }
 
-
 .form-login-container .form-login-submit {
     background-color: var(--green);
     color: white;
@@ -105,7 +103,6 @@ html {
 .form-login-submit:hover {
     background: var(--green);
 }
-
 
 .form-login-submit:active {
     transition: 0.3s all;
@@ -133,7 +130,6 @@ html {
     color: black;
     padding-top: 20px;
     height: 600px;
-
     margin-top: 10px;
 
 }
@@ -163,7 +159,6 @@ html {
     margin-bottom: 10px;
     font-size: 14px;
     height: 45px;
-
 }
 
 .form-acount-container label {
@@ -514,14 +509,15 @@ form .pay-label {
     opacity: 1;
     width: 35%;
 }
+
 /*///////////////////////////////// FOUR OPTIONS ////////////////////////////////*/
-.FOh2{
+.FOh2 {
     margin-top: 1em;
     font-family: Helvetica, sans-serif;
     color: #FFFFFF;
 }
 
-.fourThings{
+.fourThings {
     text-align: center;
     display: grid;
     grid-template-rows: repeat(2, 1fr);
@@ -529,22 +525,23 @@ form .pay-label {
     padding: 5em;
 }
 
-.FOp{
+.FOp {
     margin-top: 1em;
     color: white;
     font-family: Helvetica, sans-serif;
 }
 
-.FOimg{
-    width:40%;
-}
-.oneItem{
-    padding: 1em;
-    margin-bottom: 2em;
-    margin-top:2em;
+.FOimg {
+    width: 40%;
 }
 
-.FObutton{
+.oneItem {
+    padding: 1em;
+    margin-bottom: 2em;
+    margin-top: 2em;
+}
+
+.FObutton {
     padding: 1em;
     margin-top: 2em;
     font-family: Helvetica, sans-serif;
@@ -555,6 +552,7 @@ form .pay-label {
     font-size: 1em;
     font-weight: bold;
 }
+
 /* ///////////////////////////////////// ROWS ///////////////////////////////////*/
 .slider-container {
     display: block;

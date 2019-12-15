@@ -4,13 +4,20 @@ header {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-#logoImg {
+/* #logoImg {
     width: 150px;
     float: left;
-    /* padding: 14px 16px; */
-
-
     padding: 0px 16px;
+} */
+
+#logoImg {
+    width: 150px;
+    padding: 14px 16px;
+    float: left;
+}
+
+#desktop-nav {
+    float: right;
 }
 
 
@@ -21,10 +28,17 @@ nav ul {
     overflow: hidden;
 }
 
-nav ul li {
+/* nav ul li {
     float: left;
     border-right: 1px solid #bbb;
+} */
+
+
+nav ul li {
+    border-right: 1px solid #bbb;
+    display: inline-block;
 }
+
 
 nav li a {
     display: block;
@@ -94,17 +108,15 @@ nav li:last-child {
 /* MOBILE NAVIGATION */
 /* Position and sizing of burger button */
 .bm-burger-button {
-    /* position: fixed; */
-    /* width: 36px;
-    height: 30px;
-    right: 28px;
-    top: 10px; */
     position: relative;
     width: 34px;
     height: 21px;
     right: -84%;
     top: 26px;
+}
 
+.menu-mobile {
+    height: 0
 }
 
 /* Color/shape of burger icon bars */
