@@ -7,7 +7,10 @@ header {
 #logoImg {
     width: 150px;
     float: left;
-    padding: 14px 16px;
+    /* padding: 14px 16px; */
+
+
+    padding: 0px 16px;
 }
 
 
@@ -91,21 +94,27 @@ nav li:last-child {
 /* MOBILE NAVIGATION */
 /* Position and sizing of burger button */
 .bm-burger-button {
-    position: fixed;
-    width: 36px;
+    /* position: fixed; */
+    /* width: 36px;
     height: 30px;
-    left: 36px;
-    top: 36px;
+    right: 28px;
+    top: 10px; */
+    position: relative;
+    width: 34px;
+    height: 21px;
+    right: -84%;
+    top: 26px;
+
 }
 
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
-    background: #373a47;
+    background: #DF7B2A;
 }
 
 /* Color/shape of burger icon bars on hover*/
 .bm-burger-bars-hover {
-    background: #a90000;
+    background: #773e09;
 }
 
 /* Position and sizing of clickable cross button */
@@ -116,7 +125,7 @@ nav li:last-child {
 
 /* Color/shape of close button cross */
 .bm-cross {
-    background: #bdc3c7;
+    background: black;
 }
 
 /*
@@ -130,7 +139,7 @@ nav li:last-child {
 
 /* General sidebar styles */
 .bm-menu {
-    background: #373a47;
+    background: white;
     padding: 2.5em 1.5em 0;
     font-size: 1.15em;
 }
@@ -154,4 +163,19 @@ nav li:last-child {
 /* Styling of overlay */
 .bm-overlay {
     background: rgba(0, 0, 0, 0.3);
+}
+
+
+@media only screen and (min-width: 200px) and (max-width: 599px) {
+    #desktop-nav {
+        display: none;
+    }
+
+}
+
+@media only screen and (min-width: 600px) {
+    .menu-mobile {
+        display: none;
+    }
+
 }

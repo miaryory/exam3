@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
 import "./Header.css";
 //import Login from "./Login";
-import logo from "./temp_assets/logo.png";
+import logo from "./assets/logo.png";
 import useForm from "react-hook-form";
 import CreateAccount from "./CreateAcount";
-import Mobilemenu from "./Mobilemenu";
+//import Mobilemenu from "./Mobilemenu";
+import { slide as Menu } from "react-burger-menu";
 
 Modal.setAppElement("body");
 
@@ -48,16 +49,19 @@ export default function Header() {
     setNewUser(false);
   }
 
+  function showSettings(event) {
+    event.preventDefault();
+  }
+
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  function setLoginMobile() {
+    setMenuOpen(false);
+    setIsOpen(true);
+  }
+
   /************************* */
   const { register, errors, handleSubmit } = useForm({ mode: "onChange" });
-  const onSubmit = evt => {
-    evt.preventDefault();
-    users.map(user => {
-      if (email === user.email && password === user.password) {
-        setLogStatus(true);
-      }
-    });
-  };
 
   const [users, setUsers] = useState([]);
 
@@ -84,11 +88,14 @@ export default function Header() {
 
   const [logged, setLogStatus] = useState(false);
 
-  const handleLogOut = evt => {
-    evt.preventDefault();
+  const handleLogOut = () => {
+    //evt.preventDefault();
+    window.location.reload();
     setLogStatus(false);
-    closeModal();
+
+    localStorage.setItem("logStatus", "false");
     alert("You are logged out");
+    closeModal();
   };
 
   const [newuser, setNewUser] = useState(false);
@@ -97,13 +104,34 @@ export default function Header() {
     setNewUser(true);
   };
 
+  //checking if email and password match one user in DB
+  function isAuthentificated(a, mail, psw) {
+    var i = a.length;
+    while (i--) {
+      if (a[i].email === mail && a[i].password === psw) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  const onSubmit = () => {
+    if (isAuthentificated(users, email, password)) {
+      setLogStatus(true);
+      localStorage.setItem("logStatus", "true");
+      closeModal();
+    } else {
+      setLogStatus(false);
+    }
+  };
+
   /********************** */
 
-  if (logged) {
+  if (logged || localStorage.getItem("logStatus") === "true") {
     return (
       <div>
         <header>
-          <img id="logoImg" src={logo}></img>
+          <img id="logoImg" alt="Logo" src={logo}></img>
           <nav id="desktop-nav">
             <ul>
               <li>
@@ -129,8 +157,29 @@ export default function Header() {
     return (
       <div>
         <header>
-          <Mobilemenu />
-          <img id="logoImg" src={logo}></img>
+          <div className="menu-mobile">
+            <Menu
+              isOpen={menuOpen}
+              onStateChange={state => setMenuOpen(state.isOpen)}
+            >
+              <a className="menu-item" href="#home">
+                Section1
+              </a>
+
+              <a className="menu-item" href="#news">
+                Section2
+              </a>
+              <a onClick={showSettings} className="menu-item" href="#news">
+                Section3
+              </a>
+
+              <a onClick={setLoginMobile} href="#about">
+                Log in
+              </a>
+            </Menu>
+          </div>
+
+          <img id="logoImg" alt="Logo" src={logo}></img>
           <nav id="desktop-nav">
             <ul>
               <li>
@@ -164,7 +213,7 @@ export default function Header() {
 
           {newuser ? (
             <>
-              <CreateAccount />
+              <CreateAccount users={users} />
               <button
                 className="alreadyacount"
                 onClick={() => setNewUser(false)}

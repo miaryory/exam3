@@ -7,7 +7,6 @@
 
 #fullGame {
     text-align: center;
-    /* max-width: 600px; */
     margin: 0 auto;
 
     max-width: 300px;
@@ -17,18 +16,15 @@
 #machineWrap {
     max-width: 500px;
     margin: 0 auto;
-    /* height: 350px; */
-
     height: 290px;
 }
 
 .oneEmoji {
-    /* width: 12%; */
     width: 16%;
 }
 
-.oneEmoji:hover {
-    animation: rotateA 3s infinite;
+.oneEmojiAnim {
+    animation: 1s linear 1s rotateA;
 }
 
 @keyframes rotateA {
@@ -56,8 +52,9 @@
     margin-right: -50%;
     transform: translate(-50%, -50%);
 
-    top: 183%;
+
     left: 53%;
+    top: 157%;
 }
 
 #machineImg {
@@ -66,7 +63,7 @@
     /* margin-top: 20px; */
     z-index: 1;
     pointer-events: none;
-
+    display: none;
     width: 88%;
     margin-top: 0px;
 }
@@ -88,28 +85,12 @@
     margin-right: -50%;
     transform: translate(-50%, -50%);
 
-
-    top: 205%;
     font-size: 2.3em;
+    top: 179%;
 }
 
-#whiteBox {
-    position: absolute;
-    /* top: 147%; */
-    background-color: white;
-    /* width: 280px; */
-    /* height: 150px; */
-    left: 50%;
-    position: absolute;
-    right: auto;
-    bottom: auto;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
 
-    width: 236px;
-    height: 122px;
-    top: 184%;
-}
+
 
 #gameH1 {
     color: var(--orange);
@@ -127,40 +108,28 @@
 
 }
 
+.text-container {
+    height: 220px;
+    margin-bottom: 20px;
+}
 
 
 
-@media only screen and (min-width: 312px) {
-    #machineImg {
-        width: 88%;
-        margin-top: 0px;
-    }
 
-    #spinBTN {
-        top: 202%;
-    }
-
-    #whiteBox {
-        top: 181%;
-    }
+@media only screen and (min-width: 400px) {
 
     #dice {
-        top: 180%;
+        left: 52%
     }
 }
 
-@media only screen and (min-width: 321px) {
 
-    #spinBTN {
-        top: 193%;
-    }
 
-    #whiteBox {
-        top: 171%;
-    }
+@media only screen and (min-width: 601px) {
 
-    #dice {
-        top: 171%;
+    .text-container {
+        height: 115px;
+        margin-bottom: 0px;
     }
 }
 

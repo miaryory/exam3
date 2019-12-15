@@ -3,7 +3,7 @@ import "./App.css";
 import useForm from "react-hook-form";
 import Modal from "react-modal";
 import Card from "./Card";
-import cards from "./temp_assets/cards.PNG";
+import cards from "./assets/cards.PNG";
 
 Modal.setAppElement("body");
 
@@ -22,7 +22,7 @@ const customStyles = {
   }
 };
 
-export default function Payment() {
+export default function Payment(props) {
   const { register, errors, handleSubmit } = useForm({ mode: "onChange" });
   const onSubmit = data => {
     console.log(data);
@@ -39,11 +39,7 @@ export default function Payment() {
   );
 
   // MODAL
-  var close;
-  const [modalIsOpen, setIsOpen] = React.useState(false);
-  function openModal() {
-    setIsOpen(true);
-  }
+  let close;
 
   function afterOpenModal() {
     // Add style here
@@ -57,38 +53,34 @@ export default function Payment() {
     close.style.border = "none";
   }
 
-  function closeModal() {
-    setIsOpen(false);
-  }
-
   return (
     <>
-      <button onClick={openModal}>Open payment</button>
       <Modal
-        isOpen={modalIsOpen}
+        isOpen={props.display}
         onAfterOpen={afterOpenModal}
-        onRequestClose={closeModal}
+        onRequestClose={props.hide}
         style={customStyles}
         contentLabel="Modal Subscribe"
       >
         <div className="acount-container">
-          <button ref={_close => (close = _close)} onClick={closeModal}>
+          <button ref={_close => (close = _close)} onClick={props.hide}>
             &times;
           </button>
-          {/* <div className="payment-grid"> */}
           <h1 className="payment-title">Payment information</h1>
           <ColoredLine color="gray" />
           <div className="payment-grid">
             <h4 className="payment-products-title">My products</h4>
-            <p className="payment-products">5 rows</p>
+            <p className="payment-products">
+              {localStorage.getItem("rows")} rows
+            </p>
             <div className="payment-total-container">
               <h4 className="payment-total">Total</h4>
-              <p className="payment-price">100 dkk</p>
+              <p className="payment-price">{props.total} dkk</p>
               <ColoredLine color="gray" />
             </div>
 
             <h4 className="payment-method">Payment Method</h4>
-            <img className="cards" src={cards}></img>
+            <img className="cards" alt="Cards" src={cards}></img>
 
             <form
               className="form-acount-container"

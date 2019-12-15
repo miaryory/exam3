@@ -1,6 +1,6 @@
 [{
         "date": "23 November",
-        "winningnumbers": [7, 8, 9, 10, 12, 27, 29],
+        "winningnumbers": ["07", "08", "09", 10, 12, 27, 29],
         "winners7": {
             "number": 1,
             "price": "6.000.000"
@@ -24,7 +24,7 @@
     },
     {
         "date": "16 November",
-        "winningnumbers": [1, 2, 9, 23, 25, 34, 35],
+        "winningnumbers": ["01", "02", "09", 23, 25, 34, 35],
         "winners7": {
             "number": 1,
             "price": "10.000.000"
@@ -48,7 +48,7 @@
     },
     {
         "date": "09 November",
-        "winningnumbers": [4, 5, 9, 11, 17, 28, 23],
+        "winningnumbers": ["04", "05", "09", 11, 17, 28, 23],
         "winners7": {
             "number": 0,
             "price": "0"
@@ -72,7 +72,7 @@
     },
     {
         "date": "02 November",
-        "winningnumbers": [6, 7, 8, 9, 15, 28, 36],
+        "winningnumbers": ["06", "07", "08", "09", 15, 28, 36],
         "winners7": {
             "number": 2,
             "price": "3.000.000"

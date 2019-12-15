@@ -7,6 +7,14 @@
     width: 100vw;
 }
 
+html,
+body {
+    height: 100%;
+}
+
+html {
+    overflow-x: hidden;
+}
 
 * {
     box-sizing: border-box;
@@ -25,6 +33,7 @@
 .FullSite {
     background-color: #004B32;
     width: 100wh;
+    height: 100%;
 }
 
 
@@ -505,9 +514,47 @@ form .pay-label {
     opacity: 1;
     width: 35%;
 }
+/*///////////////////////////////// FOUR OPTIONS ////////////////////////////////*/
+.FOh2{
+    margin-top: 1em;
+    font-family: Helvetica, sans-serif;
+    color: #FFFFFF;
+}
 
+.fourThings{
+    text-align: center;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    padding: 5em;
+}
 
+.FOp{
+    margin-top: 1em;
+    color: white;
+    font-family: Helvetica, sans-serif;
+}
 
+.FOimg{
+    width:40%;
+}
+.oneItem{
+    padding: 1em;
+    margin-bottom: 2em;
+    margin-top:2em;
+}
+
+.FObutton{
+    padding: 1em;
+    margin-top: 2em;
+    font-family: Helvetica, sans-serif;
+    background-color: var(--orange);
+    color: var(--green);
+    border-style: none;
+    border-radius: 1em;
+    font-size: 1em;
+    font-weight: bold;
+}
 /* ///////////////////////////////////// ROWS ///////////////////////////////////*/
 .slider-container {
     display: block;
@@ -520,6 +567,49 @@ form .pay-label {
     width: 80%;
     display: block;
     margin: 0 auto;
+    text-align: center;
+}
+
+
+.slider-form label {
+    font-size: 30px;
+}
+
+.slider-form p {
+    font-size: 10px;
+    background-color: var(--green);
+    color: white;
+    text-transform: uppercase;
+    border: 1px solid white;
+    padding: 7px;
+    font-size: 12px;
+    font-weight: 100;
+    letter-spacing: 6px;
+    cursor: pointer;
+    display: inline;
+    padding-top: 7px;
+    padding-bottom: 8px;
+    padding-left: 18px;
+}
+
+
+.buy-btn {
+    background-color: var(--orange);
+    color: white;
+    text-transform: uppercase;
+    border: 1px solid white;
+    margin-top: 30px;
+    padding: 7px;
+    font-size: 12px;
+    font-weight: 100;
+    letter-spacing: 6px;
+    cursor: pointer;
+    display: inline;
+    padding-top: 9px;
+    padding-bottom: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 20px;
 }
 
 .slider {
@@ -529,6 +619,7 @@ form .pay-label {
     outline: none;
     height: 15px;
     border-radius: 5px;
+    margin-top: 20px;
 }
 
 .slider::-webkit-slider-thumb {
