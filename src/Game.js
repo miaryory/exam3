@@ -190,7 +190,7 @@ export default class Gameplace extends React.Component {
                     : defaultClassnames
                 }
                 onAnimationEnd={() => animation1end()}
-              ></img>
+              />
               <img
                 src={require(`${this.state.game_state.emoji2}`)}
                 alt="random emoji"
@@ -200,7 +200,7 @@ export default class Gameplace extends React.Component {
                     : defaultClassnames
                 }
                 onAnimationEnd={() => animation2end()}
-              ></img>
+              />
               <img
                 src={require(`${this.state.game_state.emoji3}`)}
                 alt="random emoji"
@@ -211,7 +211,7 @@ export default class Gameplace extends React.Component {
                 }
                 onAnimationEnd={() => animation3end()}
                 id="lastemoji"
-              ></img>
+              />
             </div>
             <p> {this.state.gamestatus} </p>
           </div>
