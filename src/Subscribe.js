@@ -95,8 +95,8 @@ export default function Subscribe(props) {
     close.style.float = "right";
     close.style.fontSize = "30px";
     close.style.fontWeight = "700";
-    close.style.marginRight = "-32px";
-    close.style.marginTop = "-300px";
+    // close.style.marginRight = "-32px";
+    // close.style.marginTop = "-180px";
     close.style.border = "none";
   }
 
@@ -118,6 +118,14 @@ export default function Subscribe(props) {
             className="form-subscribe-container"
             onSubmit={handleSubmit(onSubmit)}
           >
+            <button
+              className="subscribe-close"
+              ref={_close => (close = _close)}
+              onClick={props.closeIt}
+            >
+              &times;
+            </button>
+
             <input
               onChange={e => setEmail(e.target.value)}
               name="email"
@@ -135,36 +143,34 @@ export default function Subscribe(props) {
 
             <input className="form-subscribe-submit" type="Submit" />
 
+            <input
+              className="subscribeCheckbox"
+              name="subscribeCheckbox"
+              type="checkbox"
+              ref={register({
+                required: "This is required"
+              })}
+            />
             <label
               htmlFor="subscribeCheckbox"
               className="subscribe-label-checkbox"
             >
               Yes, I want to subscribe for LUCKY 7 newsletter. I have read and
               agree to the Website Terms of Use. View our privacy policy
-              <input
+              {/* <input
                 className="subscribeCheckbox"
                 name="subscribeCheckbox"
                 type="checkbox"
                 ref={register({
                   required: "This is required"
                 })}
-              />
+              /> */}
             </label>
             {errors.subscribeCheckbox && (
               <p>{errors.subscribeCheckbox.message}</p>
             )}
-            {/* <h6>
-          You must be at least 18 years old to sign up for Newsletter. You can
-          unsubscribe at any time through the link in all messages we send out.
-          For more information on how we use your personal data, please see our
-          Privacy Policy.
-        </h6> */}
           </form>
         </div>
-
-        <button ref={_close => (close = _close)} onClick={props.closeIt}>
-          &times;
-        </button>
       </Modal>
     </>
   );
