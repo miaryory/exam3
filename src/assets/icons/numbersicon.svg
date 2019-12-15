@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="2000" viewBox="0 0 2000 2000">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #df7b2a;
+      }
+
+      .cls-2 {
+        font-size: 500px;
+        fill: #004b32;
+        text-anchor: middle;
+        font-family: Arial;
+        font-weight: 800;
+      }
+    </style>
+  </defs>
+  <rect id="Rounded_Rectangle_1" data-name="Rounded Rectangle 1" class="cls-1" width="2000" height="2000" rx="100" ry="100"/>
+  <text id="_16" data-name="16" class="cls-2" transform="matrix(1.568, 0.684, -0.991, 1.614, 1160.062, 920.122)"><tspan x="0">16</tspan></text>
+  <text id="_7" data-name="7" class="cls-2" transform="translate(533.728 865.252) scale(2)"><tspan x="0">7</tspan></text>
+  <text id="_8" data-name="8" class="cls-2" transform="matrix(2.693, -0.611, -0.74, 1.904, 430.724, 1787.918)"><tspan x="0">8</tspan></text>
+  <text id="_20" data-name="20" class="cls-2" transform="matrix(1.309, -0.092, 0, 1.303, 1419.12, 1798.924)"><tspan x="0">20</tspan></text>
+</svg>
