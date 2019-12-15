@@ -135,16 +135,16 @@ export default function Header() {
           <nav id="desktop-nav">
             <ul>
               <li>
-                <a href="#home">Game</a>
+                <a href="#fullGame">Game</a>
               </li>
               <li>
-                <a href="#news">Buy Rows</a>
+                <a href="#slider-container">Buy Rows</a>
               </li>
               <li>
-                <a href="#contact">More Options</a>
+                <a href="#fourThings">More Options</a>
               </li>
               <li>
-                <a href="#contact">Past Winners</a>
+                <a href="#winners-section">Past Winners</a>
               </li>
               <li>
                 <a onClick={handleLogOut} href="#about">
@@ -165,17 +165,25 @@ export default function Header() {
               isOpen={menuOpen}
               onStateChange={state => setMenuOpen(state.isOpen)}
             >
-              <a className="menu-item" href=".slotmachine-container">
+              <a className="menu-item" href="#fullGame">
                 Game
               </a>
 
-              <a className="menu-item" href="#news">
+              <a className="menu-item" href="#slider-container">
                 Buy Rows
               </a>
-              <a onClick={showSettings} className="menu-item" href="#news">
+              <a
+                onClick={showSettings}
+                className="menu-item"
+                href="#fourThings"
+              >
                 More Options
               </a>
-              <a onClick={showSettings} className="menu-item" href="#news">
+              <a
+                onClick={showSettings}
+                className="menu-item"
+                href="#winners-section"
+              >
                 Past Winners
               </a>
 
@@ -189,16 +197,16 @@ export default function Header() {
           <nav id="desktop-nav">
             <ul>
               <li>
-                <a href=".slotmachine-container">Game</a>
+                <a href="#fullGame">Game</a>
               </li>
               <li>
-                <a href="#news">Buy Rows</a>
+                <a href="#slider-container">Buy Rows</a>
               </li>
               <li>
-                <a href="#contact">More Options</a>
+                <a href="#fourThings">More Options</a>
               </li>
               <li>
-                <a href="#contact">Past Winners</a>
+                <a href="#winners-section">Past Winners</a>
               </li>
 
               <li>

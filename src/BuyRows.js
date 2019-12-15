@@ -53,7 +53,7 @@ class BuyRows extends Component {
           hide={this.hidePayment}
           total={total}
         />
-        <div className="slider-container">
+        <div id="slider-container">
           <form className="slider-form" onSubmit={this.handleSubmit}>
             <label>Choose number of rows below:</label>
             <input

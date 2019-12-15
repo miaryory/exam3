@@ -15,7 +15,7 @@ class PastWinners extends Component {
   render() {
     const { week } = this.state;
     return (
-      <section className="winners-section">
+      <section id="winners-section">
         <select className="dropdwon-select" onClick={this.handleClick}>
           <option value="23 November">Draw of 23 November</option>
           <option value="16 November"> Draw of 16 November</option>

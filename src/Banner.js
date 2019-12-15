@@ -12,6 +12,9 @@ export default function Banner() {
         </div>
         <h1 className="price">6 000 000 kr</h1>
         <p className="slogan">Take your chance. Play Lucky 7.</p>
+        <button>
+          <a href="#fullGame">Click to scroll</a>
+        </button>
       </div>
     </div>
   );
