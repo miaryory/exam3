@@ -5,20 +5,6 @@
     --orange: #DF7B2A;
 }
 
-#fullGame {
-    text-align: center;
-    margin: 0 auto;
-
-    max-width: 300px;
-}
-
-
-#machineWrap {
-    max-width: 500px;
-    margin: 0 auto;
-    height: 290px;
-}
-
 .oneEmoji {
     width: 16%;
 }
@@ -41,55 +27,47 @@
     margin-left: 2.1em;
 }
 
-#dice {
-    position: absolute;
-    /* top: 148%; */
-    text-align: center;
-    /* left: 51.3%; */
-    position: absolute;
-    right: auto;
-    bottom: auto;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-
-
-    left: 53%;
-    top: 157%;
+#mainRow {
+    position: relative;
 }
 
 #machineImg {
-    /* width: 61%; */
     position: relative;
-    /* margin-top: 20px; */
-    z-index: 1;
     pointer-events: none;
-    display: none;
-    width: 88%;
-    margin-top: 0px;
+    width: 90%;
+    display: block;
+    margin: auto;
 }
+
+#dice {
+    position: absolute;
+    text-align: center;
+    width: 110%;
+    top: 20%;
+    margin-left: -5%;
+}
+
+#dice *:not(:first-child) {
+    margin-left: 8%;
+}
+
 
 #spinBTN {
     position: absolute;
-    /* top: 174%; */
-    left: 51%;
+    z-index: 0;
+    width: 65%;
+    height: 31%;
+    top: 62%;
+    margin-left: 18%;
     font-family: 'Rye', cursive;
-    /* font-size: 2.6em; */
     color: var(--green);
     background-color: var(--orange);
     border: none;
-    padding: .6em 1.5em;
+    padding: 2rem;
     border-radius: 7%;
     cursor: pointer;
-    right: auto;
-    bottom: auto;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-
-    font-size: 2.3em;
-    top: 179%;
+    font-size: 2rem;
 }
-
-
 
 
 #gameH1 {
@@ -103,104 +81,32 @@
     text-align: center;
     font-family: Helvetica, sans-serif;
     font-size: 1em;
-    margin: 1em;
+    margin: 2em;
     color: white;
-
 }
 
-.text-container {
-    height: 220px;
-    margin-bottom: 20px;
-}
-
-
-
-
-@media only screen and (min-width: 400px) {
-
-    #dice {
-        left: 52%
-    }
-}
-
-
-
-@media only screen and (min-width: 601px) {
-
-    .text-container {
-        height: 115px;
-        margin-bottom: 0px;
-    }
-}
-
-@media only screen and (min-width: 601px) {
-
-    .oneEmoji+.oneEmoji {
-        margin-left: 2.4em;
-    }
-
-    #machineImg {
-        width: 88%;
-        margin-top: 0px;
+@media all and (min-width: 550px) {
+    #mainRow {
+        max-width: 80vw;
+        margin: auto;
     }
 
     #spinBTN {
-        top: 165%;
-        font-size: 2.2em;
+        font-size: 2.5rem;
     }
 
-    #whiteBox {
-        top: 143%;
-        width: 238px;
-        height: 116px;
-    }
-
-    #dice {
-        top: 143%;
-        left: 51.3%;
-    }
-
-    .oneEmoji {
-        width: 9%;
-    }
 }
 
+@media all and (min-width: 700px) {
+    #mainRow {
+        max-width: 500px;
+    }
 
-@media only screen and (min-width: 800px) {
-    #fullGame {
+}
+
+@media all and (min-width: 1000px) {
+    #mainRow {
         max-width: 600px;
     }
 
-    #machineWrap {
-        height: 400px;
-    }
-
-    .oneEmoji {
-        width: 16%;
-    }
-
-    .oneEmoji+.oneEmoji {
-        margin-left: 2.63em;
-    }
-
-    #dice {
-        top: 151%;
-        left: 50.8%;
-    }
-
-    #machineImg {
-        width: 80%;
-        margin-top: 0px;
-    }
-
-    #spinBTN {
-        top: 185%;
-        font-size: 3.7em;
-    }
-
-    #whiteBox {
-        width: 350px;
-        height: 180px;
-        top: 153%;
-    }
 }
