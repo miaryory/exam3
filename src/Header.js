@@ -269,6 +269,7 @@ export default function Header() {
                     onChange={e => setPassword(e.target.value)}
                     name="passwordL"
                     placeholder="password"
+                    value=""
                     //  useVendorStyles={false}
                     ref={register({
                       required: "This is required",
