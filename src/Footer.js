@@ -11,13 +11,10 @@ export default function Footer() {
 
           <ul>
             <li>
-              <a href="#">Privacy Policy</a>
+              <a href="#fullGame">Game</a>
             </li>
             <li>
-              <a href="#">Link2</a>
-            </li>
-            <li>
-              <a href="#c">Link3</a>
+              <a href="#slider-container">Buy Rows</a>
             </li>
           </ul>
         </div>
@@ -25,13 +22,10 @@ export default function Footer() {
           <h3>Title here</h3>
           <ul>
             <li>
-              <a href="#">Link4</a>
+              <a href="#fourThings">More Options</a>
             </li>
             <li>
-              <a href="#">Link5</a>
-            </li>
-            <li>
-              <a href="#c">Link6</a>
+              <a href="#winners-section">Past Winners</a>
             </li>
           </ul>
         </div>
