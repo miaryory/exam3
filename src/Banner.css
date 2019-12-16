@@ -36,6 +36,9 @@
 }
 
 /*  //////////  SCROLL  //////////// */
+.button-scroll {
+  border: none;
+}
 
 .scroll-down {
   opacity: 1;
