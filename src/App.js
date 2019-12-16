@@ -7,6 +7,7 @@ import SlotMachine from "./SlotMachine";
 import BuyRows from "./BuyRows";
 import FourOptions from "./FourOptions";
 import PastWinners from "./PastWinners";
+//import Modal from "react-modal";
 
 function MainSite() {
   //fetching the data from past week statistics and store it

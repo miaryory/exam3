@@ -4,31 +4,33 @@ import "./Footer.css";
 export default function Footer() {
   return (
     <>
-      <footer>
-        <p>© 2019 LUCKY 7 </p>
+      <footer id="footer">
         <div id="col1">
-          <h3>Title here</h3>
-
+          {/* logo here */}
           <ul>
             <li>
-              <a href="#fullGame">Game</a>
+              <p>
+                Lygten 16
+                <br />
+                2200 Copenhagen N
+              </p>
             </li>
             <li>
-              <a href="#slider-container">Buy Rows</a>
+              <a href="#footer">Accountability</a>
             </li>
           </ul>
         </div>
         <div id="col2">
-          <h3>Title here</h3>
           <ul>
             <li>
-              <a href="#fourThings">More Options</a>
+              <a href="#footer">Privacy policy</a>
             </li>
             <li>
-              <a href="#winners-section">Past Winners</a>
+              <a href="#footer">Terms and conditions</a>
             </li>
           </ul>
         </div>
+        <p>© 2019 LUCKY 7 </p>
       </footer>
     </>
   );

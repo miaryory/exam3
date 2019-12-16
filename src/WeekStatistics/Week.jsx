@@ -17,9 +17,9 @@ export default function Sorted(props) {
       <table>
         <thead>
           <tr>
-            <th>Antal rigtige </th>
-            <th>Antal vindere</th>
-            <th>Gevinst</th>
+            <th>Number of right numbers</th>
+            <th>Amount of winners</th>
+            <th>Prize</th>
           </tr>
         </thead>
         <tbody>
