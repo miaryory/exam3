@@ -30,7 +30,7 @@ export default function Subscribe(props) {
   useEffect(() => {
     fetch(
       "https://kea3rdsemester-91fd.restdb.io/rest/" +
-        "newsletter?fetchchildren=true",
+      "newsletter?fetchchildren=true",
       {
         method: "get",
         headers: {
@@ -81,6 +81,7 @@ export default function Subscribe(props) {
     props.closeIt();
     if (!isMember(users, userEmail)) {
       newMember(userEmail);
+      localStorage.setItem("subscribed", true);
     } else {
       alert("You already Subscribed!");
     }
