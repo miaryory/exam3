@@ -2,11 +2,19 @@ import React, { useState } from "react";
 import "./App.css";
 import "./Header.css";
 import useForm from "react-hook-form";
-import Phone from "./Phone";
+//import Phone from "./Phone";
 import mark from "./assets/mark.png";
+import "react-phone-number-input/style.css";
+import PhoneInput from "react-phone-number-input";
 
 export default function CreateAcount(props) {
+  const [firstname, setFirstname] = useState(" ");
+  const [lastname, setLastname] = useState(" ");
+  const [password, setPassword] = useState(" ");
   const [email, userEmail] = useState(" ");
+  const [tel, setTel] = useState();
+  const [postcode, setPostcode] = useState(" ");
+
   //checking if the user is already stocked in the DB
   function isMember(a, obj) {
     var i = a.length;
@@ -25,7 +33,27 @@ export default function CreateAcount(props) {
       alert("already used email");
       setSubmit(false);
     } else {
-      setSubmit(true);
+      const data = {
+        firstname: firstname,
+        lastname: lastname,
+        email: email,
+        password: password,
+        tel: tel,
+        postcode: postcode
+      };
+
+      const postData = JSON.stringify(data);
+      fetch("https://kea3rdsemester-91fd.restdb.io/rest/subscribers", {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json; charset=utf-8",
+          "x-apikey": "5d887df9fd86cb75861e2626",
+          "cache-control": "no-cache"
+        },
+        body: postData
+      })
+        .then(e => e.json())
+        .then(setSubmit(true));
     }
   };
 
@@ -33,12 +61,12 @@ export default function CreateAcount(props) {
 
   if (submit) {
     return (
-      <div className="acount-container">
+      <div className="acount-container thank-subscribe">
         <img id="mark" alt="mark" src={mark}></img>
         <h1 className="welcome">THANK YOU!</h1>
         <h5 className="acount-thanks">Thank you for signing up!</h5>
         <p className="acount-message">
-          Your acount was created and you're now a member of Lucky7 website.
+          Your acount was created and you're now a member of Lucky 7 website.
         </p>
       </div>
     );
@@ -50,6 +78,7 @@ export default function CreateAcount(props) {
       <form className="form-acount-container" onSubmit={handleSubmit(onSubmit)}>
         <label htmlFor="firstname">First Name</label>
         <input
+          onChange={e => setFirstname(e.target.value)}
           name="firstname"
           placeholder="firstname"
           ref={register({
@@ -67,6 +96,7 @@ export default function CreateAcount(props) {
         {errors.firstname && <p>{errors.firstname.message}</p>}
         <label htmlFor="lastname">Last Name</label>
         <input
+          onChange={e => setLastname(e.target.value)}
           name="lastname"
           placeholder="lastname"
           ref={register({
@@ -101,6 +131,7 @@ export default function CreateAcount(props) {
 
         <label htmlFor="password">Password</label>
         <input
+          onChange={e => setPassword(e.target.value)}
           name="password"
           placeholder="password"
           ref={register({
@@ -115,10 +146,18 @@ export default function CreateAcount(props) {
         {errors.password && <p>{errors.password.message}</p>}
 
         <label htmlFor="phone">Phone number</label>
-        <Phone />
+        <PhoneInput
+          className="phone"
+          name="phone"
+          country="DK"
+          placeholder="Enter phone number"
+          value={tel}
+          onChange={setTel}
+        />
 
         <label htmlFor="zip">Zip code</label>
         <input
+          onChange={e => setPostcode(e.target.value)}
           name="zip"
           placeholder="Post number"
           type="tel"

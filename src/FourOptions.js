@@ -12,7 +12,7 @@ export default function FourOptions() {
         <div className="oneItem">
           <img src={icon_person} alt="icon of person" className="FOimg"></img>
           <h2 className="FOh2">Create an account!</h2>
-          <p className="FOp">You need to create an account to play lucky7</p>
+          <p className="FOp">You need to create an account to play Lucky 7</p>
           <button className="FObutton">Create an account</button>
         </div>
         <div className="oneItem">
@@ -23,7 +23,7 @@ export default function FourOptions() {
         </div>
         <div className="oneItem">
           <img src={icon_luck} alt="icon of luck" className="FOimg"></img>
-          <h2 className="FOh2">Lucky 7s!</h2>
+          <h2 className="FOh2">The Lucky 7s!</h2>
           <p className="FOp">
             Pick you lucky numbers, and have them appear in your rows
           </p>
@@ -31,9 +31,10 @@ export default function FourOptions() {
         </div>
         <div className="oneItem">
           <img src={icon_math} alt="icon of math" className="FOimg"></img>
-          <h2 className="FOh2">Systematic Lucky7!</h2>
+          <h2 className="FOh2">Systematic Lucky 7!</h2>
           <p className="FOp">
-            For a more mathematical approach to the game, play Systematic Lucky7
+            For a more mathematical approach to the game, play Systematic Lucky
+            7
           </p>
           <button className="FObutton">Play Now</button>
         </div>

@@ -10,6 +10,7 @@
 html,
 body {
     height: 100%;
+    scroll-behavior: smooth;
 }
 
 html {
@@ -132,6 +133,10 @@ html {
     height: 600px;
     margin-top: 10px;
 
+}
+
+.thank-subscribe {
+    overflow-y: hidden;
 }
 
 .form-acount-container {
@@ -269,7 +274,7 @@ svg {
 
 /* ///////// SUBSCRIBE STYLE ////////////// */
 .subscribe-container {
-    max-width: 590px;
+    width: 590px;
     margin: 0 auto;
     background-color: white;
     color: black;

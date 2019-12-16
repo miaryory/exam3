@@ -13,7 +13,9 @@ export default function Banner() {
         <h1 className="price">6 000 000 kr</h1>
         <p className="slogan">Take your chance. Play Lucky 7.</p>
         <button className="button-scroll">
-          <a className="scroll-down" href="#fullGame"></a>
+          <a className="scroll-down" href="#fullGame">
+            {" "}
+          </a>
         </button>
       </div>
     </div>

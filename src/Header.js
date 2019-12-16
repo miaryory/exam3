@@ -85,7 +85,7 @@ export default function Header() {
 
   const [email, setEmail] = useState(" ");
 
-  const [password, setPassword] = useState(" ");
+  const [password, setPassword] = useState("");
 
   const [logged, setLogStatus] = useState(false);
 
@@ -142,10 +142,10 @@ export default function Header() {
                 <a href="#slider-container">Buy Rows</a>
               </li>
               <li>
-                <a href="#fourThings">More Options</a>
+                <a href="#fourThings">Options</a>
               </li>
               <li>
-                <a href="#winners-section">Past Winners</a>
+                <a href="#winners-section">Winners</a>
               </li>
               <li>
                 <a onClick={handleLogOut} href="#about">
@@ -173,19 +173,11 @@ export default function Header() {
               <a className="menu-item" href="#slider-container">
                 Buy Rows
               </a>
-              <a
-                onClick={showSettings}
-                className="menu-item"
-                href="#fourThings"
-              >
-                More Options
+              <a className="menu-item" href="#fourThings">
+                Options
               </a>
-              <a
-                onClick={showSettings}
-                className="menu-item"
-                href="#winners-section"
-              >
-                Past Winners
+              <a className="menu-item" href="#winners-section">
+                Winners
               </a>
 
               <a onClick={setLoginMobile} href="#about">
@@ -204,10 +196,10 @@ export default function Header() {
                 <a href="#slider-container">Buy Rows</a>
               </li>
               <li>
-                <a href="#fourThings">More Options</a>
+                <a href="#fourThings">Options</a>
               </li>
               <li>
-                <a href="#winners-section">Past Winners</a>
+                <a href="#winners-section">Winners</a>
               </li>
 
               <li>
@@ -264,12 +256,13 @@ export default function Header() {
                   />
                   {errors.email && <p>{errors.email.message}</p>}
 
-                  <label htmlFor="passwordL">Password</label>
+                  <label htmlFor="password">Password</label>
                   <PasswordMask
-                    onChange={e => setPassword(e.target.value)}
-                    name="passwordL"
+                    id="password"
+                    name="password"
                     placeholder="password"
-                    value=""
+                    value={password}
+                    onChange={e => setPassword(e.target.value)}
                     //  useVendorStyles={false}
                     ref={register({
                       required: "This is required",
@@ -281,7 +274,7 @@ export default function Header() {
                     })}
                   />
 
-                  {errors.passwordL && <p>{errors.passwordL.message}</p>}
+                  {errors.password && <p>{errors.password.message}</p>}
 
                   <label htmlFor="submit"></label>
                   <input

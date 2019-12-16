@@ -4,24 +4,20 @@ import "./Header.css";
 import { slide as Menu } from "react-burger-menu";
 
 class Mobilemenu extends React.Component {
-  showSettings(event) {
-    event.preventDefault();
-  }
-
   render() {
     return (
       <Menu>
-        <a id="home" className="menu-item" href="/">
-          Home
+        <a className="menu-item" href="#fullGame">
+          Game
         </a>
-        <a id="about" className="menu-item" href="/about">
-          About
+        <a className="menu-item" href="#slider-container">
+          Buy Rows
         </a>
-        <a id="contact" className="menu-item" href="/contact">
-          Contact
+        <a className="menu-item" href="#fourThings">
+          Options
         </a>
-        <a onClick={this.showSettings} className="menu-item--small" href="">
-          Settings
+        <a className="menu-item--small" href="#winners-section">
+          Winners
         </a>
       </Menu>
     );

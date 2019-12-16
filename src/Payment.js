@@ -23,7 +23,7 @@ const customStyles = {
 };
 
 export default function Payment(props) {
-  const { register, errors, handleSubmit } = useForm({ mode: "onChange" });
+  const { handleSubmit } = useForm({ mode: "onChange" });
   const onSubmit = data => {
     console.log(data);
   };
@@ -70,21 +70,33 @@ export default function Payment(props) {
           <ColoredLine color="gray" />
           <div className="payment-grid">
             <h4 className="payment-products-title">My products</h4>
+
             <p className="payment-products">
               {localStorage.getItem("rows")} rows
             </p>
             {/* ****** */}
-            <p className="payment-free"> rows free</p>
+            {localStorage.getItem("winstatus") === "true" ? (
+              <>
+                <h4 className="payment-bonus-title">Bonus</h4>
+                <p className="payment-free">5 rows</p>
+                <h4 className="payment-bonus-title">Total rows</h4>
+                <p>{`${parseInt(localStorage.getItem("rows")) + 5}`} rows</p>
+              </>
+            ) : (
+              <>
+                <h4 className="payment-bonus-title"> </h4>
+                <p className="payment-free"> </p>
+              </>
+            )}
+
             {/* ****** */}
+            <h4 className="payment-total">Total</h4>
             <div className="payment-total-container">
-              <h4 className="payment-total">Total</h4>
               <p className="payment-price">{props.total} dkk</p>
               <ColoredLine color="gray" />
             </div>
-
             <h4 className="payment-method">Payment Method</h4>
             <img className="cards" alt="Cards" src={cards}></img>
-
             <form
               className="form-acount-container"
               onSubmit={handleSubmit(onSubmit)}
@@ -95,6 +107,7 @@ export default function Payment(props) {
               </div>
               <label htmlFor="submit"></label>
               <input
+                onClick={props.hide}
                 className="form-payment-submit"
                 type="submit"
                 value="PAY"
