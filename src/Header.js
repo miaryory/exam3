@@ -7,6 +7,7 @@ import useForm from "react-hook-form";
 import CreateAccount from "./CreateAcount";
 //import Mobilemenu from "./Mobilemenu";
 import { slide as Menu } from "react-burger-menu";
+import PasswordMask from "react-password-mask";
 
 Modal.setAppElement("body");
 
@@ -264,7 +265,7 @@ export default function Header() {
                   {errors.email && <p>{errors.email.message}</p>}
 
                   <label htmlFor="passwordL">Password</label>
-                  <input
+                  <PasswordMask
                     onChange={e => setPassword(e.target.value)}
                     name="passwordL"
                     placeholder="password"
@@ -277,6 +278,7 @@ export default function Header() {
                       }
                     })}
                   />
+
                   {errors.passwordL && <p>{errors.passwordL.message}</p>}
 
                   <label htmlFor="submit"></label>
