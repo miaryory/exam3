@@ -14,7 +14,7 @@ const customStyles = {
     bottom: "auto",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
-    padding: "10px 50px 20px",
+    padding: "20px",
     paddingLeft: "0px"
   }
 };
@@ -95,7 +95,7 @@ export default function Subscribe(props) {
     //style for close button
     close.style.color = "#aaa";
     close.style.backgroundColor = "white";
-    close.style.float = "right";
+    // close.style.float = "right";
     close.style.fontSize = "30px";
     close.style.fontWeight = "700";
     close.style.border = "none";
@@ -110,64 +110,65 @@ export default function Subscribe(props) {
         style={customStyles}
         contentLabel="Modal Subscribe"
       >
-        {thanks ? (
-          <>
-            <Thanks />
-          </>
-        ) : (
-          <div className="subscribe-container">
-            <h1>Do you want more free spins?</h1>
-            <h5>Subscribe to our newsletter and get 3 spins for FREE!</h5>
-            <form
-              className="form-subscribe-container"
-              onSubmit={handleSubmit(onSubmit)}
-            >
-              <button
-                className="subscribe-close"
-                ref={_close => (close = _close)}
-                onClick={props.closeIt}
+        <div className="subscribe-container">
+          <button
+            className="subscribe-close"
+            ref={_close => (close = _close)}
+            onClick={props.closeIt}
+          >
+            &times;
+          </button>
+          {thanks ? (
+            <>
+              <Thanks />
+            </>
+          ) : (
+            <>
+              <h1>Do you want more free spins?</h1>
+              <h5>Subscribe to our newsletter and get 3 spins for FREE!</h5>
+              <form
+                className="form-subscribe-container"
+                onSubmit={handleSubmit(onSubmit)}
               >
-                &times;
-              </button>
-
-              <input
-                onChange={e => setEmail(e.target.value)}
-                name="email"
-                placeholder="Enter your email..."
-                type="text"
-                ref={register({
-                  required: "This is required",
-                  pattern: {
-                    value: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
-                    message: "Invalid email address"
-                  }
-                })}
-              />
-              {errors.email && <p>{errors.email.message}</p>}
-
-              <input className="form-subscribe-submit" type="Submit" />
-
-              <label
-                htmlFor="subscribeCheckbox"
-                className="subscribe-label-checkbox"
-              >
-                Yes, I want to subscribe for LUCKY 7 newsletter. I have read and
-                agree to the Website Terms of Use. View our privacy policy
                 <input
-                  className="subscribeCheckbox"
-                  name="subscribeCheckbox"
-                  type="checkbox"
+                  onChange={e => setEmail(e.target.value)}
+                  name="email"
+                  placeholder="Enter your email..."
+                  type="text"
                   ref={register({
-                    required: "This is required"
+                    required: "This is required",
+                    pattern: {
+                      value: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+                      message: "Invalid email address"
+                    }
                   })}
                 />
-              </label>
-              {errors.subscribeCheckbox && (
-                <p>{errors.subscribeCheckbox.message}</p>
-              )}
-            </form>
-          </div>
-        )}
+                {errors.email && <p>{errors.email.message}</p>}
+
+                <input className="form-subscribe-submit" type="Submit" />
+
+                <label
+                  htmlFor="subscribeCheckbox"
+                  className="subscribe-label-checkbox"
+                >
+                  Yes, I want to subscribe for LUCKY 7 newsletter. I have read
+                  and agree to the Website Terms of Use. View our privacy policy
+                  <input
+                    className="subscribeCheckbox"
+                    name="subscribeCheckbox"
+                    type="checkbox"
+                    ref={register({
+                      required: "This is required"
+                    })}
+                  />
+                </label>
+                {errors.subscribeCheckbox && (
+                  <p>{errors.subscribeCheckbox.message}</p>
+                )}
+              </form>
+            </>
+          )}
+        </div>
       </Modal>
     </>
   );

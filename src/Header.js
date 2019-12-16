@@ -50,10 +50,6 @@ export default function Header() {
     setNewUser(false);
   }
 
-  function showSettings(event) {
-    event.preventDefault();
-  }
-
   const [menuOpen, setMenuOpen] = useState(false);
 
   function setLoginMobile() {
@@ -258,8 +254,8 @@ export default function Header() {
 
                   <label htmlFor="password">Password</label>
                   <PasswordMask
-                    id="password"
                     name="password"
+                    id="password"
                     placeholder="password"
                     value={password}
                     onChange={e => setPassword(e.target.value)}

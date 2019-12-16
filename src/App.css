@@ -274,7 +274,8 @@ svg {
 
 /* ///////// SUBSCRIBE STYLE ////////////// */
 .subscribe-container {
-    width: 590px;
+    position: relative;
+    max-width: 590px;
     margin: 0 auto;
     background-color: white;
     color: black;
@@ -284,8 +285,9 @@ svg {
 }
 
 .subscribe-close {
-    margin-right: -32px;
-    margin-top: -180px
+    position: absolute;
+    right: 0;
+    margin-top: -40px;
 }
 
 .subscribe-container h1 {
@@ -403,18 +405,18 @@ input:disabled {
 }
 
 
-@media only screen and (min-width: 432px) {
+/* @media only screen and (min-width: 432px) {
     .subscribe-close {
         margin-top: -134px;
     }
-}
+} */
 
 
 
 @media only screen and (min-width: 600px) {
-    .subscribe-close {
+    /* .subscribe-close {
         margin-top: -181px;
-    }
+    } */
 
     .subscribe-container h1 {
         font-size: 33px;
@@ -437,12 +439,12 @@ input:disabled {
 
 }
 
-@media only screen and (min-width: 634px) {
+/* @media only screen and (min-width: 634px) {
     .subscribe-close {
-        margin-right: -71px;
-        margin-top: -150px;
+        right: 0;
+        margin-top: -40px;
     }
-}
+} */
 
 
 
