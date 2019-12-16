@@ -8,6 +8,7 @@ const default_emoji2 = `./assets/dice/placeholder.svg`;
 const default_emoji3 = `./assets/dice/placeholder.svg`;
 const default_gamestatus = "";
 let counter = 0;
+localStorage.setItem("subscribed", false);
 
 function rungame(current_gamestate) {
   counter++;
@@ -111,7 +112,7 @@ export default class Gameplace extends React.Component {
   /*note*/
   render() {
     const spinClick = () => {
-      localStorage.setItem("subscribed", false);
+      //localStorage.setItem("subscribed", false);
       // we need an  onclick for the submit button on the form that changes the localstorage to true.
       if (localStorage.getItem("winstatus") === "true") {
         alert("you already won");
@@ -122,8 +123,10 @@ export default class Gameplace extends React.Component {
           localStorage.getItem("subscribed") === "false" &&
           localStorage.getItem("tries") >= 1
         ) {
-          alert("subscribe to our newsletter for 3 more tries");
+
+
           this.setState({ modalDisplay: true });
+
         } else {
           this.spin(this.state);
         }
