@@ -221,29 +221,6 @@ svg {
   top: 3px;
 }
 
-/* Thank you page -create acount*/
-.thank-modal {
-  width: 100%;
-}
-
-.thank-modal #mark {
-  width: 85px;
-  display: block;
-  margin: auto;
-}
-
-.thank-modal .welcome {
-  font-size: 1.5rem;
-  text-align: center;
-  margin-top: 0px;
-}
-
-.thank-modal .acount-message {
-  font-size: 0.8rem;
-  text-align: center;
-  margin-top: 10px;
-}
-
 .alreadyacount {
   text-align: center;
   font-size: 13px;
@@ -255,6 +232,38 @@ svg {
   margin: 0 auto;
   margin-top: 110px;
 }
+
+/* Thank you page - create acount */
+.thank-acount {
+  height: 250px;
+  margin-top: 73px;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 27px 20px;
+}
+
+.acount-container #mark {
+  margin-bottom: 30px;
+}
+
+.acount-container .welcome {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 0px;
+  color: var(--orange);
+}
+
+.acount-container .acount-message {
+  font-size: 0.8rem;
+  text-align: center;
+  margin-top: 10px;
+}
+
+
+
 
 /* ///////// SUBSCRIBE STYLE ////////////// */
 .subscribe-container {
@@ -352,6 +361,32 @@ input:disabled {
   font-family: Helvetica, Arial, sans-serif;
   pointer-events: visible;
 }
+
+
+/* Thank you page - subscribe*/
+.thank-modal {
+  width: 100%;
+}
+
+#mark {
+  width: 85px;
+  display: block;
+  margin: auto;
+}
+
+.thank-modal .welcome {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 0px;
+}
+
+.thank-modal .acount-message {
+  font-size: 0.8rem;
+  text-align: center;
+  margin-top: 10px;
+}
+
+
 
 .subscribe-container .form-subscribe-container .subscribeCheckbox {
   position: absolute;
