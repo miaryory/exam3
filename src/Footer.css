@@ -13,6 +13,8 @@ footer {
 #col1,
 #col2 {
     padding-bottom: 1em;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 
 footer p {

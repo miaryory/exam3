@@ -549,6 +549,104 @@ form .pay-label {
   width: 35%;
 }
 
+
+
+/* ///////////////////////////////////// ROWS ///////////////////////////////////*/
+#slider-container {
+  display: block;
+  margin: 0 auto;
+  height: 360px;
+}
+
+.slider-form {
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.slider-form label {
+  font-size: 30px;
+}
+
+.slider-form p {
+  font-size: 10px;
+  background-color: var(--green);
+  color: white;
+  text-transform: uppercase;
+  border: 1px solid white;
+  padding: 7px;
+  font-size: 12px;
+  font-weight: 100;
+  letter-spacing: 6px;
+  cursor: pointer;
+  display: inline;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 18px;
+}
+
+.buy-btn {
+  background-color: var(--orange);
+  color: white;
+  text-transform: uppercase;
+  border: 1px solid white;
+  margin-top: 30px;
+  padding: 7px;
+  font-size: 12px;
+  font-weight: 100;
+  letter-spacing: 6px;
+  cursor: pointer;
+  display: inline;
+  padding-top: 22px;
+  padding-bottom: 21px;
+  padding-left: 15px;
+  padding-right: 15px;
+
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  background: var(--orange);
+  outline: none;
+  height: 15px;
+  border-radius: 5px;
+  margin-top: 70px;
+  margin-bottom: 30px;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #4caf50;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #4caf50;
+  cursor: pointer;
+}
+
+@media all and (min-width:700px) {
+  .slider-form p {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .buy-btn {
+    padding-top: 32px;
+    padding-bottom: 30px;
+  }
+
+}
+
 /*///////////////////////////////// FOUR OPTIONS ////////////////////////////////*/
 .FOh2 {
   margin-top: 1em;
@@ -632,7 +730,6 @@ form .pay-label {
   margin-top: 2vh;
 }
 
-/* ///////////////////////////////////// ROWS ///////////////////////////////////*/
 .purchase-section {
   background-color: white;
   color: black;
@@ -668,84 +765,3 @@ form .pay-label {
 
 
 @media all and (min-width:1200px) {}
-
-#slider-container {
-  display: block;
-  margin: 0 auto;
-  height: 360px;
-}
-
-.slider-form {
-  width: 80%;
-  display: block;
-  margin: 0 auto;
-  text-align: center;
-  padding-top: 50px;
-}
-
-.slider-form label {
-  font-size: 30px;
-}
-
-.slider-form p {
-  font-size: 10px;
-  background-color: var(--green);
-  color: white;
-  text-transform: uppercase;
-  border: 1px solid white;
-  padding: 7px;
-  font-size: 12px;
-  font-weight: 100;
-  letter-spacing: 6px;
-  cursor: pointer;
-  display: inline;
-  padding-top: 7px;
-  padding-bottom: 8px;
-  padding-left: 18px;
-}
-
-.buy-btn {
-  background-color: var(--orange);
-  color: white;
-  text-transform: uppercase;
-  border: 1px solid white;
-  margin-top: 30px;
-  padding: 7px;
-  font-size: 12px;
-  font-weight: 100;
-  letter-spacing: 6px;
-  cursor: pointer;
-  display: inline;
-  padding-top: 9px;
-  padding-bottom: 8px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-bottom: 20px;
-}
-
-.slider {
-  -webkit-appearance: none;
-  width: 100%;
-  background: var(--orange);
-  outline: none;
-  height: 15px;
-  border-radius: 5px;
-  margin-top: 70px;
-}
-
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 25px;
-  height: 25px;
-  background: #4caf50;
-  cursor: pointer;
-  border-radius: 50%;
-}
-
-.slider::-moz-range-thumb {
-  width: 25px;
-  height: 25px;
-  background: #4caf50;
-  cursor: pointer;
-}
