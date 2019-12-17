@@ -56,8 +56,23 @@ nav li a:hover {
 }
 
 nav li:last-child {
+    cursor: pointer;
     float: right;
     border-right: none;
+    padding: 5px;
+    padding-top: 7px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+nav li:last-child a {
+    padding: inherit;
+}
+
+nav li:last-child #profile {
+    width: 30px;
+    margin: auto;
+
 }
 
 .login-title {

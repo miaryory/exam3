@@ -108,10 +108,3 @@
     }
 
 }
-
-@media all and (min-width: 1000px) {
-    #mainRow {
-        max-width: 600px;
-    }
-
-}

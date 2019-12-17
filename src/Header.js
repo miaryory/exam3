@@ -8,6 +8,7 @@ import CreateAccount from "./CreateAcount";
 //import Mobilemenu from "./Mobilemenu";
 import { slide as Menu } from "react-burger-menu";
 import PasswordMask from "react-password-mask";
+import Profile from "./assets/profile.png";
 
 Modal.setAppElement("body");
 
@@ -143,10 +144,9 @@ export default function Header() {
               <li>
                 <a href="#winners-section">Winners</a>
               </li>
-              <li>
-                <a onClick={handleLogOut} href="#about">
-                  Log out
-                </a>
+              <li onClick={handleLogOut}>
+                <img id="profile" alt="Profile" src={Profile}></img>
+                <a href="#about">Log out</a>
               </li>
             </ul>
           </nav>
@@ -198,10 +198,9 @@ export default function Header() {
                 <a href="#winners-section">Winners</a>
               </li>
 
-              <li>
-                <a onClick={openModal} href="#about">
-                  Log in
-                </a>
+              <li onClick={openModal}>
+                <img id="profile" alt="Profile" src={Profile} />
+                <a href="#about">Log in</a>
               </li>
             </ul>
           </nav>
