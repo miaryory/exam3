@@ -10,7 +10,7 @@ export default function Thanks(props) {
       <p className="acount-message">
         Your acount was created and you're now a member of Lucky 7 website.
         <br />
-        The email will be sent to {props.email}
+        The email will be sent to <b>{props.email}</b>
       </p>
     </div>
   );

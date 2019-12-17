@@ -128,10 +128,6 @@ html {
   margin-top: 10px;
 }
 
-.thank-subscribe {
-  overflow-y: hidden;
-}
-
 .form-acount-container {
   max-width: 600px;
   margin: 0 auto;
@@ -227,29 +223,25 @@ svg {
 
 /* Thank you page -create acount*/
 .thank-modal {
-  width: 90vw;
+  width: 100%;
 }
 
-#mark {
+.thank-modal #mark {
   width: 85px;
   display: block;
-  margin: 0 auto;
-  margin-top: 30px;
+  margin: auto;
 }
 
-.welcome {
-  font-size: 45px;
+.thank-modal .welcome {
+  font-size: 1.5rem;
   text-align: center;
-  margin-top: 15px;
+  margin-top: 0px;
 }
 
-.acount-thanks {
-  font-size: 13px;
-  font-weight: 400;
-}
-
-.acount-message {
-  font-size: 11px;
+.thank-modal .acount-message {
+  font-size: 0.8rem;
+  text-align: center;
+  margin-top: 10px;
 }
 
 .alreadyacount {
