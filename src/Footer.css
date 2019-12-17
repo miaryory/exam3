@@ -1,36 +1,22 @@
 /* ////////// FOOTER /////////// */
 footer {
     background-color: #004B32;
-    margin-top: 50px;
     text-align: center;
     color: white;
+    padding-top: 1em;
 }
 
-footer h3 {
-    color: #DF7B2A;
-    font-size: 20px;
+#logofooter {
+    width: 120px;
 }
 
-footer ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+#col1,
+#col2 {
+    padding-bottom: 1em;
 }
 
-
-footer li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-footer li a:hover {
-    color: #DF7B2A;
-    text-decoration: underline;
-    transition: all .5s;
+footer p {
+    margin-bottom: 5px;
 }
 
 .footer-icons {
@@ -58,26 +44,18 @@ footer li a:hover {
         grid-template-columns: 1fr 1fr;
     }
 
-    footer h3 {
-        font-size: 18px;
-    }
 
     #col1 {
         grid-column: 1/2;
         display: inline-block;
-        width: 50%;
-
     }
 
     #col2 {
         grid-column: 2/3;
         display: inline-block;
-        width: 50%;
+        padding-top: 37px;
     }
 
-    footer li a {
-        font-size: 14px;
-    }
 }
 
 @media all and (min-width:900px) {
