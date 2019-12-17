@@ -9,7 +9,7 @@ Modal.setAppElement("body");
 const customStyles = {
   content: {
     top: "50%",
-    left: "50%",
+    left: "51%",
     right: "auto",
     bottom: "auto",
     marginRight: "-50%",
@@ -120,7 +120,7 @@ export default function Subscribe(props) {
           </button>
           {thanks ? (
             <>
-              <Thanks />
+              <Thanks email={userEmail} />
             </>
           ) : (
             <>
@@ -131,6 +131,7 @@ export default function Subscribe(props) {
                 onSubmit={handleSubmit(onSubmit)}
               >
                 <input
+                  className="email-input"
                   onChange={e => setEmail(e.target.value)}
                   name="email"
                   placeholder="Enter your email..."
@@ -143,28 +144,32 @@ export default function Subscribe(props) {
                     }
                   })}
                 />
-                {errors.email && <p>{errors.email.message}</p>}
+                {errors.email && (
+                  <p className="error-msg-email">{errors.email.message}</p>
+                )}
+                <div>
+                  <label
+                    htmlFor="subscribeCheckbox"
+                    className="subscribe-label-checkbox"
+                  >
+                    Yes, I want to subscribe for LUCKY 7 newsletter. I have read
+                    and agree to the Website Terms of Use. View our privacy
+                    policy
+                    <input
+                      className="subscribeCheckbox"
+                      name="subscribeCheckbox"
+                      type="checkbox"
+                      ref={register({
+                        required: "This is required"
+                      })}
+                    />
+                  </label>
+                  {errors.subscribeCheckbox && (
+                    <p>{errors.subscribeCheckbox.message}</p>
+                  )}
+                </div>
 
                 <input className="form-subscribe-submit" type="Submit" />
-
-                <label
-                  htmlFor="subscribeCheckbox"
-                  className="subscribe-label-checkbox"
-                >
-                  Yes, I want to subscribe for LUCKY 7 newsletter. I have read
-                  and agree to the Website Terms of Use. View our privacy policy
-                  <input
-                    className="subscribeCheckbox"
-                    name="subscribeCheckbox"
-                    type="checkbox"
-                    ref={register({
-                      required: "This is required"
-                    })}
-                  />
-                </label>
-                {errors.subscribeCheckbox && (
-                  <p>{errors.subscribeCheckbox.message}</p>
-                )}
               </form>
             </>
           )}
