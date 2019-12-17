@@ -453,6 +453,13 @@ input:disabled {
   margin-top: 15px;
 }
 
+.payment-bonus-title {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
 .payment-free {
   grid-column: 2/3;
   grid-row: 2/3;
@@ -460,16 +467,34 @@ input:disabled {
   margin-bottom: 15px;
 }
 
-.payment-total-container {
+.payment-subtotal-title {
+  grid-column: 1/2;
+  grid-row: 3/4;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.payment-subtotal {
   grid-column: 2/3;
   grid-row: 3/4;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.payment-total {
+  grid-column: 1/2;
+  grid-row: 4/5;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.payment-total-container {
+  grid-column: 2/3;
+  grid-row: 4/5;
   height: 40px;
   margin-top: 15px;
 }
 
-.payment-total {
-  display: inline;
-}
 
 .payment-price {
   display: inline;
@@ -478,20 +503,20 @@ input:disabled {
 
 .payment-method {
   grid-column: 2/3;
-  grid-row: 4/5;
+  grid-row: 5/6;
   height: 40px;
   margin-top: 15px;
 }
 
 .cards {
   grid-column: 2/3;
-  grid-row: 5/6;
+  grid-row: 6/7;
   margin-bottom: 30px;
 }
 
 .payment-grid form {
   grid-column: 1/3;
-  grid-row: 6/7;
+  grid-row: 7/8;
   margin: 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -555,7 +580,7 @@ form .pay-label {
 #slider-container {
   display: block;
   margin: 0 auto;
-  height: 360px;
+  height: 330px;
 }
 
 .slider-form {
@@ -563,7 +588,6 @@ form .pay-label {
   display: block;
   margin: 0 auto;
   text-align: center;
-  padding-top: 50px;
 }
 
 .slider-form label {

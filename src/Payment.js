@@ -79,8 +79,10 @@ export default function Payment(props) {
               <>
                 <h4 className="payment-bonus-title">Bonus</h4>
                 <p className="payment-free">5 rows</p>
-                <h4 className="payment-bonus-title">Total rows</h4>
-                <p>{`${parseInt(localStorage.getItem("rows")) + 5}`} rows</p>
+                <h4 className="payment-subtotal-title">Total rows</h4>
+                <p className="payment-subtotal">
+                  {`${parseInt(localStorage.getItem("rows")) + 5}`} rows
+                </p>
               </>
             ) : (
               <>
