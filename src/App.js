@@ -9,6 +9,7 @@ import FourOptions from "./FourOptions";
 import PastWinners from "./PastWinners";
 import Intro from "./Intro";
 //import Modal from "react-modal";
+import CookieConsent from "react-cookie-consent";
 
 function MainSite() {
   //fetching the data from past week statistics and store it
@@ -50,6 +51,9 @@ function MainSite() {
 
   return (
     <div className="FullSite">
+      <CookieConsent>
+        This website uses cookies to enhance the user experience.
+      </CookieConsent>
       <Header />
       <Banner />
       <Intro />

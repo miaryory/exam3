@@ -826,3 +826,24 @@ form .pay-label {
 
 
 @media all and (min-width:1200px) {}
+
+
+
+
+
+/* ////////// COOKIE ///////// */
+
+.cookie-p {
+  display: inline;
+  margin-right: 20px;
+}
+
+.cookie-btn {
+  background: rgb(255, 212, 45);
+  border: none;
+  border-radius: 3px;
+  color: black;
+  cursor: pointer;
+  padding: 7px 30px;
+  display: inline;
+}
