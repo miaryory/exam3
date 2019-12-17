@@ -21,7 +21,8 @@ export default function Intro() {
         <div>
           <img src={newsletter} alt="Newsletter" />
           <p>
-            Get directly on your email the weekly statistics and jackpot update
+            Subscribe and get directly on your email the weekly statistics and
+            jackpot update
           </p>
         </div>
       </div>

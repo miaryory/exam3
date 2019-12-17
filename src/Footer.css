@@ -33,9 +33,27 @@ footer li a:hover {
     transition: all .5s;
 }
 
+.footer-icons {
+    background-color: white;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+
+.footer-icons *:not(:first-child) {
+    margin-left: 50px;
+}
+
+.footer-icons img {
+    width: 50px;
+}
+
+.footer-icons #gambling-pic {
+    width: 70px;
+}
+
 
 @media screen and (min-width: 450px) {
-    footer {
+    #footer {
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
@@ -60,4 +78,15 @@ footer li a:hover {
     footer li a {
         font-size: 14px;
     }
+}
+
+@media all and (min-width:900px) {
+    .footer-icons img {
+        width: 60px;
+    }
+
+    .footer-icons #gambling-pic {
+        width: 70px;
+    }
+
 }

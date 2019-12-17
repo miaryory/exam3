@@ -73,7 +73,7 @@ td.col-one {
 @media all and (min-width: 500px) {
     .dropdwon-select {
         width: 60vw;
-        margin-bottom: 10vh;
+        margin-bottom: 5vh;
     }
 
     table {
@@ -115,7 +115,6 @@ td.col-one {
 
     .dropdwon-select {
         width: 40vw;
-        margin-bottom: 10vh;
     }
 
     .winning-numbers {
