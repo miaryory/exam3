@@ -9,6 +9,7 @@ import CreateAccount from "./CreateAcount";
 import { slide as Menu } from "react-burger-menu";
 import PasswordMask from "react-password-mask";
 import Profile from "./assets/profile.png";
+import User from "./assets/user-mobile.png";
 
 Modal.setAppElement("body");
 
@@ -162,10 +163,15 @@ export default function Header() {
               isOpen={menuOpen}
               onStateChange={state => setMenuOpen(state.isOpen)}
             >
+              <img id="logomobile" alt="Logo" src={logo}></img>
+              <img id="user" alt="User" src={User}></img>
+              <a className="menu-item" onClick={setLoginMobile} href="#about">
+                Log in
+              </a>
+
               <a className="menu-item" href="#fullGame">
                 Game
               </a>
-
               <a className="menu-item" href="#slider-container">
                 Buy Rows
               </a>
@@ -174,10 +180,6 @@ export default function Header() {
               </a>
               <a className="menu-item" href="#winners-section">
                 Winners
-              </a>
-
-              <a onClick={setLoginMobile} href="#about">
-                Log in
               </a>
             </Menu>
           </div>
