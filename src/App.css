@@ -592,6 +592,46 @@ form .pay-label {
   font-weight: bold;
 }
 
+/*********************************GAME INTRO****************************/
+.game-intro {
+  background-color: white;
+  padding: 2.5rem;
+}
+
+.game-intro img {
+  width: 130px;
+  display: block;
+  margin: auto;
+  margin-bottom: 2vh;
+}
+
+
+.game-intro .advantages div {
+  margin-bottom: 2vh;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+}
+
+.game-intro .advantages div img {
+  width: 35px;
+}
+
+.game-warning {
+  font-size: 0.8rem;
+}
+
+.guide,
+.guide ul {
+  color: black;
+  width: 80vw;
+  margin: auto;
+  margin-bottom: 7vh;
+}
+
+.guide li {
+  margin-top: 2vh;
+}
+
 /* ///////////////////////////////////// ROWS ///////////////////////////////////*/
 .purchase-section {
   background-color: white;
@@ -600,53 +640,34 @@ form .pay-label {
   width: 100%;
 }
 
-.purchase-section .game-intro img {
-  width: 130px;
-  display: block;
-  margin: auto;
-  margin-bottom: 2vh;
-}
-
-
-.purchase-section .game-intro .advantages div {
-  margin-bottom: 2vh;
-  display: grid;
-  grid-template-columns: 1fr 5fr;
-}
-
-.purchase-section .game-intro .advantages div img {
-  width: 35px;
-}
-
-.purchase-section .game-warning {
-  font-size: 0.8rem;
-}
-
 @media all and (min-width:600px) {
 
-  .purchase-section .game-intro .advantages,
-  .purchase-section .game-intro .advantages div {
-    width: 80%;
-    margin: auto;
-  }
-
-  .purchase-section .game-intro .advantages div img {
+  .game-intro .advantages div img {
     width: 40px;
   }
 
-  .purchase-section .game-warning {
+  .game-warning {
     text-align: center;
   }
 }
 
-@media all and (min-width:1200px) {
 
-  .purchase-section .game-intro .advantages,
-  .purchase-section .game-intro .advantages div {
-    width: 65%;
+@media all and (min-width:900px) {
+
+  .game-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .guide,
+  .guide ul {
+    width: inherit;
   }
 
 }
+
+
+@media all and (min-width:1200px) {}
 
 #slider-container {
   display: block;

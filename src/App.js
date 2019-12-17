@@ -7,6 +7,7 @@ import SlotMachine from "./SlotMachine";
 import BuyRows from "./BuyRows";
 import FourOptions from "./FourOptions";
 import PastWinners from "./PastWinners";
+import Intro from "./Intro";
 //import Modal from "react-modal";
 
 function MainSite() {
@@ -51,6 +52,7 @@ function MainSite() {
     <div className="FullSite">
       <Header />
       <Banner />
+      <Intro />
       <SlotMachine />
       <BuyRows users={users} />
       <FourOptions />
