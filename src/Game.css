@@ -90,6 +90,18 @@
     color: white;
 }
 
+.guide,
+.guide ul {
+    color: white;
+    width: 80vw;
+    margin: auto;
+    margin-bottom: 7vh;
+}
+
+.guide li {
+    margin-top: 2vh;
+}
+
 @media all and (min-width: 550px) {
     #mainRow {
         max-width: 80vw;
@@ -100,6 +112,31 @@
         font-size: 2.5rem;
     }
 
+}
+
+@media all and (min-width: 650px) {
+
+    .guide,
+    .guide ul {
+        width: 60vw;
+    }
+
+}
+
+@media all and (min-width: 950px) {
+
+    .guide,
+    .guide ul {
+        width: 50vw;
+    }
+}
+
+@media all and (min-width: 1295px) {
+
+    .guide,
+    .guide ul {
+        width: 30vw;
+    }
 }
 
 @media all and (min-width: 700px) {

@@ -376,6 +376,7 @@ input:disabled {
 }
 
 @media only screen and (min-width: 600px) {
+
   .thank-modal,
   .subscribe-container {
     max-width: 590px;
@@ -592,11 +593,64 @@ form .pay-label {
 }
 
 /* ///////////////////////////////////// ROWS ///////////////////////////////////*/
+.purchase-section {
+  background-color: white;
+  color: black;
+  padding: 2rem;
+  width: 100%;
+}
+
+.purchase-section .game-intro img {
+  width: 130px;
+  display: block;
+  margin: auto;
+  margin-bottom: 2vh;
+}
+
+
+.purchase-section .game-intro .advantages div {
+  margin-bottom: 2vh;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+}
+
+.purchase-section .game-intro .advantages div img {
+  width: 35px;
+}
+
+.purchase-section .game-warning {
+  font-size: 0.8rem;
+}
+
+@media all and (min-width:600px) {
+
+  .purchase-section .game-intro .advantages,
+  .purchase-section .game-intro .advantages div {
+    width: 80%;
+    margin: auto;
+  }
+
+  .purchase-section .game-intro .advantages div img {
+    width: 40px;
+  }
+
+  .purchase-section .game-warning {
+    text-align: center;
+  }
+}
+
+@media all and (min-width:1200px) {
+
+  .purchase-section .game-intro .advantages,
+  .purchase-section .game-intro .advantages div {
+    width: 65%;
+  }
+
+}
+
 #slider-container {
   display: block;
   margin: 0 auto;
-  color: black;
-  background-color: white;
   height: 360px;
 }
 
