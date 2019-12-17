@@ -82,17 +82,15 @@ export default class Gameplace extends React.Component {
         animation3: false
       }
     };
-    this.spin = this.spin.bind(this); //this is a boilerplate for ES6 because of  a quirk in JS: https://www.freecodecamp.org/news/this-is-why-we-need-to-bind-event-handlers-in-class-components-in-react-f7ea1a6f93eb/
+    this.startSpin = this.startSpin.bind(this); //this is a boilerplate for ES6 because of  a quirk in JS: https://www.freecodecamp.org/news/this-is-why-we-need-to-bind-event-handlers-in-class-components-in-react-f7ea1a6f93eb/
+    this.finishSpin = this.finishSpin.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
 
-  //
-  //spin! it spin!!!
-  //spread syntax
-  spin(current_state) {
+
+  startSpin(current_state) {
     let new_state = {
       ...current_state,
-      game_state: rungame(current_state.game_state),
       animation_state: {
         ...current_state.animation_state,
         animation1: true,
@@ -104,16 +102,28 @@ export default class Gameplace extends React.Component {
     return new_state;
   }
 
-  //closing modal by changing state in parent (Game)
-  closeModal() {
-    this.setState({ modalDisplay: false });
+  //spin! it spin!!!
+  //spread syntax
+  finishSpin(current_state) {
+    let new_state = {
+      ...current_state,
+      game_state: rungame(current_state.game_state),
+    };
+
+    window.setTimeout(() => {
+      alerting(this.state.game_state.gamestatus);
+    }, 500)
+
+    this.setState(new_state);
+    return new_state;
   }
 
+  closeModal() {
+    this.setState({ ...this.state, modalDisplay: false });
+  }
   /*note*/
   render() {
     const spinClick = () => {
-      //localStorage.setItem("subscribed", false);
-      // we need an  onclick for the submit button on the form that changes the localstorage to true.
       if (localStorage.getItem("winstatus") === "true") {
         alert("you already won");
       } else if (localStorage.getItem("tries") >= 4) {
@@ -123,12 +133,9 @@ export default class Gameplace extends React.Component {
           localStorage.getItem("subscribed") === "false" &&
           localStorage.getItem("tries") >= 1
         ) {
-
-
-          this.setState({ modalDisplay: true });
-
+          this.setState({ ...this.state, modalDisplay: true });
         } else {
-          this.spin(this.state);
+          this.startSpin(this.state);
         }
       }
     };
@@ -156,16 +163,15 @@ export default class Gameplace extends React.Component {
     };
 
     const animation3end = () => {
-      this.setState({
+      let new_state = {
         ...this.state,
         animation_state: {
           ...this.state.animation_state,
           animation3: false
         }
-      });
-      alerting(this.state.game_state.gamestatus);
+      }
+      this.finishSpin(new_state);
     };
-
     const defaultClassnames = "oneEmoji";
     const animationClasses = "oneEmoji oneEmojiAnim";
 
