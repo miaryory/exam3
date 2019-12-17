@@ -4,16 +4,11 @@ header {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-/* #logoImg {
-    width: 150px;
-    float: left;
-    padding: 0px 16px;
-} */
-
 #logoImg {
-    width: 150px;
-    padding: 14px 16px;
+    width: 170px;
+    padding: 4px 16px;
     float: left;
+    margin-left: 16px;
 }
 
 #desktop-nav {
