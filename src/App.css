@@ -653,7 +653,6 @@ form .pay-label {
   color: white;
   text-transform: uppercase;
   border: 1px solid white;
-  margin-top: 30px;
   padding: 7px;
   font-size: 16px;
   font-weight: 700;
@@ -675,7 +674,7 @@ form .pay-label {
   height: 15px;
   border-radius: 5px;
   margin-top: 70px;
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 }
 
 .slider::-webkit-slider-thumb {
@@ -705,7 +704,7 @@ form .pay-label {
   }
 
   .buy-btn {
-    padding-top: 32px;
+    padding-top: 33px;
     padding-bottom: 30px;
   }
 
