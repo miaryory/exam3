@@ -9,7 +9,7 @@ export default function Intro() {
   return (
     <div className="game-intro">
       <div className="advantages">
-        <img alt="Logo" src={logo} />
+        <img className="intro-logo" alt="Logo" src={logo} />
         <div>
           <img src={chance} alt="Chance" />
           <p>Improve your odds with the free spins on first purchase</p>
@@ -25,23 +25,6 @@ export default function Intro() {
             jackpot update
           </p>
         </div>
-      </div>
-
-      <div className="guide">
-        <ul>
-          <p>
-            <b>How it works:</b>
-          </p>
-          <li>
-            You are awarded 3 free spins to get the chance to win free rows
-          </li>
-
-          <li>
-            To claim the gain, your purchase must include at least 10 rows
-          </li>
-
-          <li>The award will be added to your product at the checkout</li>
-        </ul>
       </div>
     </div>
   );

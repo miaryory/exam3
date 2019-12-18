@@ -617,8 +617,8 @@ form .pay-label {
 #slider-container {
   display: block;
   margin: 0 auto;
-  height: 330px;
-  padding-top: 15px;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
 }
 
 .slider-form {
@@ -777,11 +777,11 @@ form .pay-label {
   padding: 2.5rem;
 }
 
-.game-intro img {
+.game-intro .intro-logo {
   width: 130px;
   display: block;
   margin: auto;
-  margin-bottom: 2vh;
+  margin-bottom: 5vh;
 }
 
 
@@ -793,65 +793,58 @@ form .pay-label {
 
 .game-intro .advantages div img {
   width: 35px;
+  display: block;
+  margin: auto;
+  margin-bottom: 2vh;
 }
 
 .game-warning {
   font-size: 0.8rem;
-  padding-left: 2em;
-  padding-bottom: 10px;
+  padding-bottom: 5vh;
 }
 
-.guide,
-.guide ul {
+#slider-container .guide,
+#slider-container .guide ul {
   color: black;
-  width: 80vw;
+  width: 70vw;
   margin: auto;
   margin-bottom: 7vh;
 }
 
-.guide li {
+#slider-container .guide li {
   margin-top: 2vh;
 }
 
 .purchase-section {
   background-color: white;
   color: black;
-  /* padding: 2rem; */
   width: 100%;
+}
+
+.purchase-section .rows-number {
+  cursor: initial;
 }
 
 @media all and (min-width:600px) {
 
+  .game-intro .advantages {
+    width: fit-content;
+    margin: auto;
+  }
+
   .game-intro .advantages div img {
     width: 40px;
+  }
+
+  #slider-container .guide,
+  #slider-container .guide ul {
+    width: fit-content;
   }
 
   .game-warning {
     text-align: center;
   }
 }
-
-
-@media all and (min-width:900px) {
-
-  .game-intro {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .guide,
-  .guide ul {
-    width: inherit;
-  }
-
-}
-
-
-@media all and (min-width:1200px) {}
-
-
-
-
 
 /* ////////// COOKIE ///////// */
 
