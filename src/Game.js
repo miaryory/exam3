@@ -87,7 +87,6 @@ export default class Gameplace extends React.Component {
     this.closeModal = this.closeModal.bind(this);
   }
 
-
   startSpin(current_state) {
     let new_state = {
       ...current_state,
@@ -107,12 +106,12 @@ export default class Gameplace extends React.Component {
   finishSpin(current_state) {
     let new_state = {
       ...current_state,
-      game_state: rungame(current_state.game_state),
+      game_state: rungame(current_state.game_state)
     };
 
     window.setTimeout(() => {
       alerting(this.state.game_state.gamestatus);
-    }, 500)
+    }, 500);
 
     this.setState(new_state);
     return new_state;
@@ -169,11 +168,13 @@ export default class Gameplace extends React.Component {
           ...this.state.animation_state,
           animation3: false
         }
-      }
+      };
       this.finishSpin(new_state);
     };
     const defaultClassnames = "oneEmoji";
-    const animationClasses = "oneEmoji oneEmojiAnim";
+    const animationClass1 = "oneEmoji oneEmojiAnim1";
+    const animationClass2 = "oneEmoji oneEmojiAnim2";
+    const animationClass3 = "oneEmoji oneEmojiAnim3";
 
     return (
       <>
@@ -195,7 +196,7 @@ export default class Gameplace extends React.Component {
                 alt="random emoji"
                 className={
                   this.state.animation_state.animation1
-                    ? animationClasses
+                    ? animationClass1
                     : defaultClassnames
                 }
                 onAnimationEnd={() => animation1end()}
@@ -205,7 +206,7 @@ export default class Gameplace extends React.Component {
                 alt="random emoji"
                 className={
                   this.state.animation_state.animation2
-                    ? animationClasses
+                    ? animationClass2
                     : defaultClassnames
                 }
                 onAnimationEnd={() => animation2end()}
@@ -215,7 +216,7 @@ export default class Gameplace extends React.Component {
                 alt="random emoji"
                 className={
                   this.state.animation_state.animation3
-                    ? animationClasses
+                    ? animationClass3
                     : defaultClassnames
                 }
                 onAnimationEnd={() => animation3end()}

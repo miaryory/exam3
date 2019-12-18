@@ -8,7 +8,6 @@ import BuyRows from "./BuyRows";
 import FourOptions from "./FourOptions";
 import PastWinners from "./PastWinners";
 import Intro from "./Intro";
-//import Modal from "react-modal";
 import CookieConsent from "react-cookie-consent";
 
 function MainSite() {

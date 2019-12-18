@@ -15,7 +15,6 @@ const customStyles = {
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
     padding: "10px 50px 20px",
-    // width: "530px"
     width: "70%",
     height: "93%"
   }
@@ -23,7 +22,6 @@ const customStyles = {
 
 export default function Login(props) {
   let close;
-  //const [modalIsOpen, setIsOpen] = React.useState(false);
 
   function afterOpenModal() {
     // Style for modal
@@ -163,7 +161,6 @@ export default function Login(props) {
               </form>
             </div>
             <p className="login-forget">Did you forget your password?</p>
-            {/* <h6>Create acount</h6> */}
             <h6 className="login-new"> I'm new here</h6>
             <button className="login-singup" onClick={handleNewUser}>
               Sign up

@@ -14,17 +14,48 @@
 }
 
 
-.oneEmojiAnim {
-    animation: 1s linear 1s rotateA;
+.oneEmojiAnim1 {
+    animation: rotateA 0.4s linear 6;
+}
+
+.oneEmojiAnim2 {
+    animation: rotateA 0.4s linear 0.1s 5 reverse;
+}
+
+.oneEmojiAnim3 {
+    animation: rotateA 0.5s linear 0.2s 4;
 }
 
 @keyframes rotateA {
-    from {
-        transform: rotate(0deg);
+    0% {
+        opacity: 0;
+        transform: translateY(-150px);
     }
 
-    to {
-        transform: rotate(360deg);
+    20% {
+        opacity: 1;
+        transform: translateY(-75px);
+    }
+
+    40% {
+        opacity: 0;
+        transform: translateY(150px);
+    }
+
+    60% {
+        opacity: 1;
+        transform: translateY(75px);
+    }
+
+    80% {
+        opacity: 0;
+        transform: translateY(-150px);
+    }
+
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
     }
 }
 
@@ -50,6 +81,8 @@
     width: 110%;
     top: 20%;
     margin-left: -5%;
+    overflow: hidden;
+
 }
 
 #dice *:not(:first-child) {
@@ -109,6 +142,10 @@
 @media all and (min-width: 700px) {
     #mainRow {
         max-width: 500px;
+    }
+
+    #spinBTN {
+        font-size: 3rem;
     }
 
 }
