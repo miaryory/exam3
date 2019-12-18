@@ -837,13 +837,22 @@ form .pay-label {
 
   #slider-container .guide,
   #slider-container .guide ul {
-    width: fit-content;
+    width: 60vw;
   }
 
   .game-warning {
     text-align: center;
   }
 }
+
+@media all and (min-width:1200px) {
+
+  #slider-container .guide,
+  #slider-container .guide ul {
+    width: 40vw;
+  }
+}
+
 
 /* ////////// COOKIE ///////// */
 

@@ -58,7 +58,7 @@ function MainSite() {
       <Intro />
       <SlotMachine />
       <BuyRows users={users} />
-      <FourOptions />
+      <FourOptions users={users} />
       <PastWinners winners={winners} />
       <Footer />
     </div>

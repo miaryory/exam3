@@ -12,18 +12,15 @@ export default function Intro() {
         <img className="intro-logo" alt="Logo" src={logo} />
         <div>
           <img src={chance} alt="Chance" />
-          <p>Improve your odds with the free spins on first purchase</p>
+          <p>Win 5 free rows with your next Lucky 7 purchase</p>
         </div>
         <div>
           <img src={jackpot} alt="Jackpot" />
-          <p>Take part in the quest of one of the biggest jackpot</p>
+          <p>It's completely free. No sign-up required for the first spin</p>
         </div>
         <div>
           <img src={newsletter} alt="Newsletter" />
-          <p>
-            Subscribe and get directly on your email the weekly statistics and
-            jackpot update
-          </p>
+          <p>Subscribe to our newsletter to get 3 more spins for free!</p>
         </div>
       </div>
     </div>
