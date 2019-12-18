@@ -659,12 +659,11 @@ form .pay-label {
   font-weight: 700;
   letter-spacing: 4px;
   cursor: pointer;
-  display: inline;
   padding-top: 23px;
   padding-bottom: 21px;
   padding-left: 15px;
   padding-right: 15px;
-  /* margin-top: 30px; */
+  margin-top: 30px;
 
 }
 
