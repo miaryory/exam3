@@ -56,17 +56,17 @@ class BuyRows extends Component {
 
         <div id="slider-container">
           <form className="slider-form" onSubmit={this.handleSubmit}>
-            <label>Choose number of rows below:</label>
+            <label>Buy rows here:</label>
 
             <input
               className="slider"
               value={this.state.value}
-              onChange={this.handleChange}
               id="typeinp"
               type="range"
               min="10"
               max="100"
               step="10"
+              onChange={this.handleChange}
             />
             <p>{this.state.value} rows selected </p>
             <button className="buy-btn" type="submit">

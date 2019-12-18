@@ -6,6 +6,7 @@ import useForm from "react-hook-form";
 import mark from "./assets/mark.png";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
+import PasswordMask from "react-password-mask";
 
 export default function CreateAcount(props) {
   const [firstname, setFirstname] = useState(" ");
@@ -61,10 +62,9 @@ export default function CreateAcount(props) {
 
   if (submit) {
     return (
-      <div className="acount-container thank-subscribe">
+      <div className="acount-container thank-acount">
         <img id="mark" alt="mark" src={mark}></img>
-        <h1 className="welcome">THANK YOU!</h1>
-        <h5 className="acount-thanks">Thank you for signing up!</h5>
+        <h1 className="welcome">THANK YOU FOR SIGNING UP!</h1>
         <p className="acount-message">
           Your acount was created and you're now a member of Lucky 7 website.
         </p>
@@ -143,6 +143,22 @@ export default function CreateAcount(props) {
             }
           })}
         />
+
+        {/* <PasswordMask
+          name="password"
+          // id="password"
+          placeholder="password"
+          onChange={e => setPassword(e.target.value)}
+          ref={register({
+            required: "This is required",
+            pattern: {
+              value: /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/i,
+              message:
+                "Must contain: one number, one uppercase and lowercase letter, at least 8 characters"
+            }
+          })}
+        /> */}
+
         {errors.password && <p>{errors.password.message}</p>}
 
         <label htmlFor="phone">Phone number</label>
