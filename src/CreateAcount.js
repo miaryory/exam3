@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./App.css";
 import "./Header.css";
 import useForm from "react-hook-form";
-//import Phone from "./Phone";
 import mark from "./assets/mark.png";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
@@ -11,7 +10,7 @@ import PasswordMask from "react-password-mask";
 export default function CreateAcount(props) {
   const [firstname, setFirstname] = useState(" ");
   const [lastname, setLastname] = useState(" ");
-  const [password, setPassword] = useState(" ");
+  const [password, setPassword] = useState("");
   const [email, userEmail] = useState(" ");
   const [tel, setTel] = useState();
   const [postcode, setPostcode] = useState(" ");
@@ -130,10 +129,11 @@ export default function CreateAcount(props) {
         {errors.email && <p>{errors.email.message}</p>}
 
         <label htmlFor="password">Password</label>
-        <input
-          onChange={e => setPassword(e.target.value)}
+        <PasswordMask
           name="password"
           placeholder="password"
+          value={password}
+          onChange={e => setPassword(e.target.value)}
           ref={register({
             required: "This is required",
             pattern: {
@@ -143,21 +143,6 @@ export default function CreateAcount(props) {
             }
           })}
         />
-
-        {/* <PasswordMask
-          name="password"
-          // id="password"
-          placeholder="password"
-          onChange={e => setPassword(e.target.value)}
-          ref={register({
-            required: "This is required",
-            pattern: {
-              value: /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/i,
-              message:
-                "Must contain: one number, one uppercase and lowercase letter, at least 8 characters"
-            }
-          })}
-        /> */}
 
         {errors.password && <p>{errors.password.message}</p>}
 

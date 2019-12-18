@@ -79,7 +79,6 @@ export default function Subscribe(props) {
   }
 
   const onSubmit = () => {
-    //props.closeIt();
     if (!isMember(users, userEmail)) {
       newMember(userEmail);
       localStorage.setItem("subscribed", true);
@@ -96,7 +95,6 @@ export default function Subscribe(props) {
     //style for close button
     close.style.color = "#aaa";
     close.style.backgroundColor = "white";
-    // close.style.float = "right";
     close.style.fontSize = "30px";
     close.style.fontWeight = "700";
     close.style.border = "none";

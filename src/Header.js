@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
 import "./Header.css";
-//import Login from "./Login";
 import logo from "./assets/logo.png";
 import useForm from "react-hook-form";
 import CreateAccount from "./CreateAcount";
-//import Mobilemenu from "./Mobilemenu";
 import { slide as Menu } from "react-burger-menu";
 import PasswordMask from "react-password-mask";
 import Profile from "./assets/profile.png";
@@ -22,7 +20,6 @@ const customStyles = {
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
     padding: "10px 50px 20px",
-    // width: "530px"
     width: "70%",
     height: "93%"
   }
@@ -59,6 +56,10 @@ export default function Header() {
     setIsOpen(true);
   }
 
+  function setMenuCLick() {
+    setMenuOpen(false);
+  }
+
   /************************* */
   const { register, errors, handleSubmit } = useForm({ mode: "onChange" });
 
@@ -88,7 +89,6 @@ export default function Header() {
   const [logged, setLogStatus] = useState(false);
 
   const handleLogOut = () => {
-    //evt.preventDefault();
     window.location.reload();
     setLogStatus(false);
 
@@ -128,31 +128,67 @@ export default function Header() {
 
   if (logged || localStorage.getItem("logStatus") === "true") {
     return (
-      <div>
-        <header>
-          <img id="logoImg" alt="Logo" src={logo}></img>
-          <nav id="desktop-nav">
-            <ul>
-              <li>
-                <a href="#fullGame">Game</a>
-              </li>
-              <li>
-                <a href="#slider-container">Buy Rows</a>
-              </li>
-              <li>
-                <a href="#fourThings">Options</a>
-              </li>
-              <li>
-                <a href="#winners-section">Winners</a>
-              </li>
-              <li onClick={handleLogOut}>
-                <img id="profile" alt="Profile" src={Profile}></img>
-                <a href="#about">Log out</a>
-              </li>
-            </ul>
-          </nav>
-        </header>
-      </div>
+      <>
+        <div className="menu-mobile">
+          <Menu
+            isOpen={menuOpen}
+            onStateChange={state => setMenuOpen(state.isOpen)}
+          >
+            <img id="logomobile" alt="Logo" src={logo}></img>
+            <img id="user" alt="User" src={User}></img>
+            <a className="menu-item" onClick={handleLogOut} href="#about">
+              Log out
+            </a>
+
+            <a className="menu-item" href="#fullGame" onClick={setMenuCLick}>
+              Game
+            </a>
+            <a
+              className="menu-item"
+              href="#slider-container"
+              onClick={setMenuCLick}
+            >
+              Buy Rows
+            </a>
+            <a className="menu-item" href="#fourThings" onClick={setMenuCLick}>
+              Options
+            </a>
+            <a
+              className="menu-item"
+              href="#winners-section"
+              onClick={setMenuCLick}
+            >
+              Winners
+            </a>
+          </Menu>
+        </div>
+
+        <div>
+          <header>
+            <img id="logoImg" alt="Logo" src={logo}></img>
+            <nav id="desktop-nav">
+              <ul>
+                <li>
+                  <a href="#fullGame">Game</a>
+                </li>
+                <li>
+                  <a href="#slider-container">Buy Rows</a>
+                </li>
+                <li>
+                  <a href="#fourThings">Options</a>
+                </li>
+                <li>
+                  <a href="#winners-section">Winners</a>
+                </li>
+                <li onClick={handleLogOut}>
+                  <img id="profile" alt="Profile" src={Profile}></img>
+                  <a href="#about">Log out</a>
+                </li>
+              </ul>
+            </nav>
+          </header>
+        </div>
+      </>
     );
   } else {
     return (
@@ -169,16 +205,28 @@ export default function Header() {
                 Log in
               </a>
 
-              <a className="menu-item" href="#fullGame">
+              <a className="menu-item" href="#fullGame" onClick={setMenuCLick}>
                 Game
               </a>
-              <a className="menu-item" href="#slider-container">
+              <a
+                className="menu-item"
+                href="#slider-container"
+                onClick={setMenuCLick}
+              >
                 Buy Rows
               </a>
-              <a className="menu-item" href="#fourThings">
+              <a
+                className="menu-item"
+                href="#fourThings"
+                onClick={setMenuCLick}
+              >
                 Options
               </a>
-              <a className="menu-item" href="#winners-section">
+              <a
+                className="menu-item"
+                href="#winners-section"
+                onClick={setMenuCLick}
+              >
                 Winners
               </a>
             </Menu>
@@ -260,7 +308,6 @@ export default function Header() {
                     placeholder="password"
                     value={password}
                     onChange={e => setPassword(e.target.value)}
-                    //  useVendorStyles={false}
                     ref={register({
                       required: "This is required",
                       pattern: {
@@ -282,7 +329,6 @@ export default function Header() {
                 </form>
               </div>
               <p className="login-forget">Did you forget your password?</p>
-              {/* <h6>Create acount</h6> */}
               <h6 className="login-new"> I'm new here</h6>
               <button className="login-singup" onClick={handleNewUser}>
                 Sign up
