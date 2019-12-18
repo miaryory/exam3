@@ -111,7 +111,7 @@ export default class Gameplace extends React.Component {
 
     window.setTimeout(() => {
       alerting(this.state.game_state.gamestatus);
-    }, 500);
+    }, 750);
 
     this.setState(new_state);
     return new_state;

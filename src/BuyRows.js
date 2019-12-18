@@ -58,17 +58,19 @@ class BuyRows extends Component {
           <div className="guide">
             <ul>
               <p>
-                <b>How it works:</b>
+                <b>How to play Lucky 7:</b>
               </p>
               <li>
-                You are awarded 3 free spins to get the chance to win free rows
+                Each week a row of 7 random numbers are drawn. Each number is between 1 and 20.
               </li>
 
               <li>
-                To claim the gain, your purchase must include at least 10 rows
+                To participate you must buy at least 10 rows. Each row has 7 random numbers between 1 and 20.
               </li>
 
-              <li>The award will be added to your product at the checkout</li>
+              <li>The objective is to get a row matching the winning row. If you have all 7 numbers correct you win the jackpot.</li>
+              <li>The numbers in your row must be in the same order as the winning row for it to count as a win</li>
+              <li>If you get more than 3 correct numbers you win a cash prize. Having more correct numbers means winning a bigger prize.</li>
             </ul>
           </div>
           <form className="slider-form" onSubmit={this.handleSubmit}>
