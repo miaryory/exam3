@@ -618,6 +618,7 @@ form .pay-label {
   display: block;
   margin: 0 auto;
   height: 330px;
+  padding-top: 15px;
 }
 
 .slider-form {
@@ -781,6 +782,7 @@ form .pay-label {
 .game-warning {
   font-size: 0.8rem;
   padding-left: 2em;
+  padding-bottom: 10px;
 }
 
 .guide,
