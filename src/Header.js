@@ -232,8 +232,8 @@ export default function Header() {
             </Menu>
           </div>
 
-          <img id="logoImg" alt="Logo" src={logo}></img>
           <nav id="desktop-nav">
+            <img id="logoImg" alt="Logo" src={logo}></img>
             <ul>
               <li>
                 <a href="#fullGame">Game</a>

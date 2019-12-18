@@ -10,15 +10,18 @@ header {
 }
 
 #logoImg {
-    width: 170px;
-    padding: 4px 16px;
+    width: 190px;
+    padding: 10px 16px;
     float: left;
     margin-left: 16px;
 }
 
 #desktop-nav {
-    float: right;
+    position: absolute;
     padding-right: 16px;
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 100vw;
+
 }
 
 
@@ -39,8 +42,9 @@ nav li a {
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 20px 16px;
     text-decoration: none;
+    font-size: 1.2rem;
 }
 
 nav li a:hover {
@@ -54,13 +58,14 @@ nav li:last-child {
     float: right;
     border-right: none;
     padding: 5px;
-    padding-top: 7px;
+    padding-top: 10px;
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
 
 nav li:last-child a {
     padding: inherit;
+    color: var(--orange);
 }
 
 nav li:last-child #profile {
@@ -217,14 +222,14 @@ nav li:last-child #profile {
 }
 
 
-@media only screen and (min-width: 200px) and (max-width: 675px) {
+@media only screen and (min-width: 200px) and (max-width: 750px) {
     #desktop-nav {
         display: none;
     }
 
 }
 
-@media only screen and (min-width: 675px) {
+@media only screen and (min-width: 750px) {
     .menu-mobile {
         display: none;
     }
