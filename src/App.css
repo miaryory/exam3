@@ -32,8 +32,8 @@ html {
 }
 
 .FullSite {
-  background-color: var(--green);
-  width: 100vh;
+  background-color: #004b32;
+  width: 100vw;
   height: 100%;
 }
 
@@ -443,6 +443,17 @@ input:disabled {
   .subscribe-container .form-subscribe-container .subscribeCheckbox {
     grid-area: check-area;
   }
+
+  /* .form-subscribe-container input {
+    width: 60%;
+    display: inline;
+  }
+
+  .form-subscribe-container .form-subscribe-submit {
+    width: 35%;
+    display: inline;
+    margin-right: 0;
+  } */
 }
 
 /* ///////// PAYMENT STYLE ////////////// */
@@ -516,6 +527,7 @@ input:disabled {
 
 .payment-price {
   display: inline;
+  /* margin-left: 70%;  */
 }
 
 .payment-method {
@@ -808,18 +820,11 @@ form .pay-label {
 
   #slider-container .guide,
   #slider-container .guide ul {
-    width: 60vw;
+    width: fit-content;
   }
 
   .game-warning {
     text-align: center;
-  }
-}
-
-@media all and (min-width: 1200px) {
-  #slider-container .guide,
-  #slider-container .guide ul {
-    width: 40vw;
   }
 }
 
