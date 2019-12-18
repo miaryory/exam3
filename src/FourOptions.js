@@ -31,7 +31,6 @@ export default function FourOptions(props) {
   }
 
   function afterOpenModal() {
-    // Style for modal
     close.style.color = "#aaa";
     close.style.backgroundColor = "white";
     close.style.float = "right";
@@ -45,8 +44,6 @@ export default function FourOptions(props) {
   function closeModal() {
     setIsOpen(false);
   }
-
-  //const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <>

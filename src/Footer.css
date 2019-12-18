@@ -24,8 +24,6 @@ footer p {
 
 .footer-icons {
     background-color: white;
-    padding-top: 1vh;
-    padding-bottom: 1vh;
 }
 
 .footer-icons *:not(:first-child) {
@@ -57,17 +55,6 @@ footer p {
         grid-column: 2/3;
         display: inline-block;
         padding-top: 37px;
-    }
-
-}
-
-@media all and (min-width:900px) {
-    .footer-icons img {
-        width: 60px;
-    }
-
-    .footer-icons #gambling-pic {
-        width: 70px;
     }
 
 }

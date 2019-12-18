@@ -16,8 +16,6 @@ function rungame(current_gamestate) {
   let emoji2 = FindEmoji();
   let emoji3 = FindEmoji();
   let gamestatus = CheckForWin(emoji1, emoji2, emoji3);
-  console.log(gamestatus);
-  console.log(counter);
   localStorage.setItem("tries", counter);
   return {
     ...current_gamestate,
@@ -38,7 +36,6 @@ function FindEmoji() {
 }
 
 function CheckForWin(emoji1, emoji2, emoji3) {
-  console.log(emoji1, emoji2, emoji3);
   let gamestatus = default_gamestatus;
 
   if (emoji1 === emoji2 && emoji2 === emoji3) {
@@ -58,7 +55,6 @@ function alerting(gamestatus) {
     );
   } else if (gamestatus === "lose" && counter < 4) {
     alert("You lost, try again!");
-    console.log(gamestatus);
   } else if (gamestatus === "lose" && counter === 4) {
     alert("unfortunately you've lost and run out of tries.");
   }
@@ -101,7 +97,7 @@ export default class Gameplace extends React.Component {
     return new_state;
   }
 
-  //spin! it spin!!!
+  //spin it
   //spread syntax
   finishSpin(current_state) {
     let new_state = {
@@ -120,7 +116,7 @@ export default class Gameplace extends React.Component {
   closeModal() {
     this.setState({ ...this.state, modalDisplay: false });
   }
-  /*note*/
+
   render() {
     const spinClick = () => {
       if (localStorage.getItem("winstatus") === "true") {

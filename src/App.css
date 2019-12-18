@@ -405,6 +405,7 @@ input:disabled {
 }
 
 @media only screen and (min-width: 600px) {
+
   .thank-modal,
   .subscribe-container {
     max-width: 590px;
@@ -448,7 +449,6 @@ input:disabled {
     width: 60%;
     display: inline;
   }
-
   .form-subscribe-container .form-subscribe-submit {
     width: 35%;
     display: inline;
@@ -481,6 +481,7 @@ input:disabled {
   grid-column: 2/3;
   grid-row: 1/2;
   margin-top: 15px;
+  font-size: 1.2rem;
 }
 
 .payment-bonus-title {
@@ -527,7 +528,9 @@ input:disabled {
 
 .payment-price {
   display: inline;
-  /* margin-left: 70%;  */
+  font-size: 1.5rem;
+  color: var(--orange);
+  font-weight: bold;
 }
 
 .payment-method {
@@ -829,6 +832,7 @@ form .pay-label {
 }
 
 @media all and (min-width: 1200px) {
+
   #slider-container .guide,
   #slider-container .guide ul {
     width: 40vw;
