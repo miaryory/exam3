@@ -32,8 +32,8 @@ html {
 }
 
 .FullSite {
-  background-color: #004b32;
-  width: 100wh;
+  background-color: var(--green);
+  width: 100vh;
   height: 100%;
 }
 
@@ -262,9 +262,6 @@ svg {
   margin-top: 10px;
 }
 
-
-
-
 /* ///////// SUBSCRIBE STYLE ////////////// */
 .subscribe-container {
   position: relative;
@@ -362,7 +359,6 @@ input:disabled {
   pointer-events: visible;
 }
 
-
 /* Thank you page - subscribe*/
 .thank-modal {
   width: 100%;
@@ -385,8 +381,6 @@ input:disabled {
   text-align: center;
   margin-top: 10px;
 }
-
-
 
 .subscribe-container .form-subscribe-container .subscribeCheckbox {
   position: absolute;
@@ -411,7 +405,6 @@ input:disabled {
 }
 
 @media only screen and (min-width: 600px) {
-
   .thank-modal,
   .subscribe-container {
     max-width: 590px;
@@ -450,17 +443,6 @@ input:disabled {
   .subscribe-container .form-subscribe-container .subscribeCheckbox {
     grid-area: check-area;
   }
-
-  /* .form-subscribe-container input {
-    width: 60%;
-    display: inline;
-  }
-
-  .form-subscribe-container .form-subscribe-submit {
-    width: 35%;
-    display: inline;
-    margin-right: 0;
-  } */
 }
 
 /* ///////// PAYMENT STYLE ////////////// */
@@ -532,10 +514,8 @@ input:disabled {
   margin-top: 15px;
 }
 
-
 .payment-price {
   display: inline;
-  /* margin-left: 70%;  */
 }
 
 .payment-method {
@@ -611,8 +591,6 @@ form .pay-label {
   width: 35%;
 }
 
-
-
 /* ///////////////////////////////////// ROWS ///////////////////////////////////*/
 #slider-container {
   display: block;
@@ -664,7 +642,6 @@ form .pay-label {
   padding-left: 15px;
   padding-right: 15px;
   margin-top: 30px;
-
 }
 
 .slider {
@@ -695,10 +672,7 @@ form .pay-label {
   cursor: pointer;
 }
 
-
-
-
-@media all and (min-width:700px) {
+@media all and (min-width: 700px) {
   .slider-form p {
     padding-top: 30px;
     padding-bottom: 30px;
@@ -708,7 +682,6 @@ form .pay-label {
     padding-top: 33px;
     padding-bottom: 30px;
   }
-
 }
 
 /*///////////////////////////////// FOUR OPTIONS ////////////////////////////////*/
@@ -753,7 +726,7 @@ form .pay-label {
   cursor: pointer;
 }
 
-@media all and (min-width:600px) {
+@media all and (min-width: 600px) {
   #fourThings {
     width: 80vw;
     margin: auto;
@@ -782,7 +755,6 @@ form .pay-label {
   margin: auto;
   margin-bottom: 5vh;
 }
-
 
 .game-intro .advantages div {
   margin-bottom: 2vh;
@@ -824,8 +796,7 @@ form .pay-label {
   cursor: initial;
 }
 
-@media all and (min-width:600px) {
-
+@media all and (min-width: 600px) {
   .game-intro .advantages {
     width: fit-content;
     margin: auto;
@@ -845,14 +816,12 @@ form .pay-label {
   }
 }
 
-@media all and (min-width:1200px) {
-
+@media all and (min-width: 1200px) {
   #slider-container .guide,
   #slider-container .guide ul {
     width: 40vw;
   }
 }
-
 
 /* ////////// COOKIE ///////// */
 
