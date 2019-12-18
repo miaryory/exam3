@@ -25,7 +25,7 @@ export default function FourOptions() {
           <img src={icon_luck} alt="icon of luck" className="FOimg"></img>
           <h2 className="FOh2">The Lucky 7s!</h2>
           <p className="FOp">
-            Pick you lucky numbers, and have them appear in your rows
+            Pick your lucky numbers, and have them appear in your rows
           </p>
           <button className="FObutton">Play Now</button>
         </div>

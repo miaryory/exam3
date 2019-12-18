@@ -664,7 +664,7 @@ form .pay-label {
   padding-bottom: 21px;
   padding-left: 15px;
   padding-right: 15px;
-  margin-top: 30px;
+  /* margin-top: 30px; */
 
 }
 
@@ -713,28 +713,26 @@ form .pay-label {
 }
 
 /*///////////////////////////////// FOUR OPTIONS ////////////////////////////////*/
-.FOh2 {
-  margin-top: 1em;
-  font-family: Helvetica, sans-serif;
-  color: #ffffff;
-}
-
 #fourThings {
+  padding-top: 5vh;
+  padding-bottom: 5vh;
   text-align: center;
-  display: grid;
-  grid-template-rows: repeat(2, 1fr);
-  grid-template-columns: repeat(2, 1fr);
-  padding: 5em;
-}
-
-.FOp {
-  margin-top: 1em;
   color: white;
   font-family: Helvetica, sans-serif;
 }
 
+.FOh2 {
+  margin-top: 1em;
+  font-size: 1.2rem;
+}
+
+.FOp {
+  margin-top: 1em;
+}
+
 .FOimg {
-  width: 40%;
+  width: 100px;
+  margin: auto;
 }
 
 .oneItem {
@@ -746,13 +744,31 @@ form .pay-label {
 .FObutton {
   padding: 1em;
   margin-top: 2em;
-  font-family: Helvetica, sans-serif;
   background-color: var(--orange);
   color: var(--green);
   border-style: none;
   border-radius: 1em;
-  font-size: 1em;
+  font-size: 0.9rem;
   font-weight: bold;
+  width: 190px;
+  cursor: pointer;
+}
+
+@media all and (min-width:600px) {
+  #fourThings {
+    width: 80vw;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .FOh2 {
+    font-size: 1.1rem;
+  }
+
+  .oneItem {
+    margin-top: 7vh;
+  }
 }
 
 /*********************************GAME INTRO****************************/
