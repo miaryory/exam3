@@ -181,6 +181,7 @@ export default class Gameplace extends React.Component {
         <div id="fullGame">
           <div id="mainRow">
             <div id="machineWrap">
+              {/* <p className="winornot">{localStorage.getItem("text")}</p> */}
               <button onClick={() => spinClick()} id="spinBTN">
                 Spin
               </button>
