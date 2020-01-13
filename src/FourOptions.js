@@ -6,6 +6,7 @@ import icon_numbers from "./assets/icons/numbersicon.svg";
 import icon_person from "./assets/icons/personicon.svg";
 import icon_luck from "./assets/icons/leaficon.svg";
 import CreateAccount from "./CreateAcount";
+import FlipCard from "./FlipCard";
 
 Modal.setAppElement("body");
 
@@ -61,41 +62,80 @@ export default function FourOptions(props) {
       </Modal>
       <div>
         <div id="fourThings">
-          <div className="oneItem">
-            <img src={icon_person} alt="icon of person" className="FOimg"></img>
-            <h2 className="FOh2">Create an account!</h2>
-            <p className="FOp">You need to create an account to play Lucky 7</p>
-            <button className="FObutton" onClick={openModal}>
-              Create an account
-            </button>
-          </div>
-          <div className="oneItem">
-            <img
-              src={icon_numbers}
-              alt="icon of numbers"
-              className="FOimg"
-            ></img>
-            <h2 className="FOh2">Choose your own!</h2>
-            <p className="FOp">Chose your own numbers for each of your rows</p>
-            <button className="FObutton">Play Now</button>
-          </div>
-          <div className="oneItem">
-            <img src={icon_luck} alt="icon of luck" className="FOimg"></img>
-            <h2 className="FOh2">The Lucky 7s!</h2>
-            <p className="FOp">
-              Pick your lucky numbers, and have them appear in your rows
-            </p>
-            <button className="FObutton">Play Now</button>
-          </div>
-          <div className="oneItem">
-            <img src={icon_math} alt="icon of math" className="FOimg"></img>
-            <h2 className="FOh2">Systematic Lucky 7!</h2>
-            <p className="FOp">
-              For a more mathematical approach to the game, play Systematic
-              Lucky 7
-            </p>
-            <button className="FObutton">Play Now</button>
-          </div>
+          <FlipCard
+            front={
+              <>
+                <img src={icon_person} alt="icon of person" className="FOimg" />
+                <h2 className="FOh2">Create an account!</h2>
+              </>
+            }
+            back={
+              <>
+                <p className="FOp">
+                  You need to create an account to play Lucky 7
+                </p>
+                <button className="FObutton" onClick={openModal}>
+                  Create an account
+                </button>
+              </>
+            }
+          />
+
+          <FlipCard
+            front={
+              <>
+                <img
+                  src={icon_numbers}
+                  alt="icon of numbers"
+                  className="FOimg"
+                ></img>
+                <h2 className="FOh2">Choose your own!</h2>
+              </>
+            }
+            back={
+              <>
+                <p className="FOp">
+                  Chose your own numbers for each of your rows
+                </p>
+                <button className="FObutton">Play Now</button>
+              </>
+            }
+          />
+
+          <FlipCard
+            front={
+              <>
+                <img src={icon_luck} alt="icon of luck" className="FOimg"></img>
+                <h2 className="FOh2">The Lucky 7s!</h2>
+              </>
+            }
+            back={
+              <>
+                <p className="FOp">
+                  Pick your lucky numbers, and have them appear in your rows
+                </p>
+                <button className="FObutton">Play Now</button>
+              </>
+            }
+          />
+
+          <FlipCard
+            front={
+              <>
+                <img src={icon_math} alt="icon of math" className="FOimg"></img>
+                <h2 className="FOh2">Systematic Lucky 7!</h2>
+              </>
+            }
+            back={
+              <>
+                <p className="FOp">
+                  For a more mathematical approach to the game, play Systematic
+                  Lucky 7
+                </p>
+                <button className="FObutton">Play Now</button>
+              </>
+            }
+          />
         </div>
       </div>
     </>

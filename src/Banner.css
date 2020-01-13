@@ -1,13 +1,14 @@
 .banner {
   height: 100vh;
   width: 100vw;
-  background-image: url("./Banner.jpg");
+  background-image: url("./Banner2.jpg");
   background-size: cover;
   padding-top: 27vh;
   color: white;
 
   /* margin-top: -50px; */
 }
+
 
 .banner-text {
   width: fit-content;
@@ -124,6 +125,15 @@
 }
 
 @media all and (min-width: 1000px) {
+
+  svg {
+    position: absolute;
+    width: 50%;
+    margin-left: 27vw;
+    top: 20vh;
+  }
+
+
 
   .banner-text .price {
     font-size: 10rem;
